@@ -1151,6 +1151,8 @@ hr.content {
   position: relative;
   background-color: #ffffff;
   overflow: hidden;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
 .anim-media .media-box img,
