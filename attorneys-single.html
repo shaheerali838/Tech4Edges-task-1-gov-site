@@ -476,5 +476,85 @@
 	<script src="js/script.js"></script>
 
 </body>
+<script>
+	// Get member ID from URL
+	function getUrlParameter(name) {
+		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		var results = regex.exec(location.search);
+		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	}
+
+	const memberId = getUrlParameter('id');
+
+	// If no ID parameter, show default content (Chairman profile)
+	if (!memberId) {
+		// Keep the existing static content for Chairman
+		console.log('Showing default Chairman profile');
+	} else {
+		// Fetch and display specific member data
+		fetch('./js/members-list.json')
+			.then(response => response.json())
+			.then(members => {
+				const member = members.find(m => m.id === memberId);
+
+				if (member) {
+					// Update page content with member data
+					document.title = `${member.name} - KPYA`;
+
+					// Update banner section
+					document.querySelector('.title-page').textContent = `${member.name} Profile`;
+					document.querySelector('.breadcrumb .active').textContent = `${member.name} Profile`;
+
+					// Update main content
+					const mediaBox = document.querySelector('.media-box');
+					if (mediaBox) {
+						mediaBox.innerHTML = `<img src="${member.image}" alt="${member.name}" class="img-fluid">`;
+					}
+
+					const titleElement = document.querySelector('.rs-team-single .title');
+					if (titleElement) {
+						titleElement.textContent = member.name;
+					}
+
+					const positionElements = document.querySelectorAll('.rs-team-single .position');
+					if (positionElements.length > 0) {
+						positionElements[0].textContent = member.position;
+						if (member.organization && positionElements.length > 1) {
+							positionElements[1].textContent = member.organization;
+						}
+					}
+
+					// Update description
+					const descriptionElement = document.querySelector('.rs-team-single p');
+					if (descriptionElement && member.description) {
+						descriptionElement.textContent = member.description;
+					}
+
+					// Update contact info
+					const contactElements = document.querySelectorAll('.rs-team-single p.text-primary');
+					if (contactElements.length > 0 && member.phone) {
+						contactElements[0].innerHTML = `<span class="text-primary">PHONE :</span> ${member.phone}`;
+					}
+					if (contactElements.length > 1 && member.email) {
+						contactElements[1].innerHTML = `<span class="text-primary">E-MAIL :</span> ${member.email}`;
+					}
+
+					// Update CTA button
+					const ctaButton = document.querySelector('.btn-primary');
+					if (ctaButton && member.id !== 'danial') {
+						ctaButton.textContent = 'CONTACT MEMBER';
+					}
+
+				} else {
+					// Member not found - show error or redirect
+					console.log('Member not found');
+				}
+			})
+			.catch(error => {
+				console.error('Error loading member data:', error);
+			});
+	}
+</script>
 
 </html>

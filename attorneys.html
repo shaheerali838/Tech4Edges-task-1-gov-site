@@ -173,119 +173,9 @@
 	<div class="section">
 		<div class="content-wrap">
 			<div class="container">
-				<div class="row">
-					<!-- Item 1 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/Fatima.jpeg" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Fatima Advocate</a></div>
-								<div class="position">Caretaker Speaker Khyber Pakhtunkhwa Youth Assembly</div>
+				<div class="row" id="attorneys">
 
-							</div>
-						</div>
-					</div>
-					<!-- Item 2 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/Danial.JPG" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Danial Ahmad Paracha</a></div>
-								<div class="position">Chairman </div>
 
-							</div>
-						</div>
-					</div>
-					<!-- Item 3 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/Sania.jpeg" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Sania Javed</a></div>
-								<div class="position">Caretaker Chief Minister Khyber Pakhtunkhwa Youth Assembly</div>
-
-							</div>
-						</div>
-					</div>
-					<!-- Item 4 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/dummy-img-600x700.jpg" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Hammad Khalid</a></div>
-								<div class="position"></div>
-
-							</div>
-						</div>
-					</div>
-					<!-- Item 5 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/dummy-img-600x700.jpg" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Zohaib Babar</a></div>
-								<div class="position">Caretaker Chief Minister Khyber Pakhtunkhwa Youth Assembly</div>
-
-							</div>
-						</div>
-					</div>
-					<!-- Item 6 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/dummy-img-600x700.jpg" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Ahad Ullah</a></div>
-								<div class="position">Caretaker Chief Minister Khyber Pakhtunkhwa Youth Assembly</div>
-
-							</div>
-						</div>
-					</div>
-					<!-- Item 7 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/dummy-img-600x700.jpg" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Adnan khan</a></div>
-								<div class="position">Caretaker Chief Minister Khyber Pakhtunkhwa Youth Assembly</div>
-
-							</div>
-						</div>
-					</div>
-					<!-- Item 8 -->
-					<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-						<div class="rs-team-1">
-							<div class="media-box">
-								<a href="attorneys-single.html"><img src="./images/dummy-img-600x700.jpg" alt=""
-										class="img-fluid"></a>
-							</div>
-							<div class="body">
-								<div class="title"><a href="attorneys-single.html">Sania Javed</a></div>
-								<div class="position">Caretaker Chief Minister Khyber Pakhtunkhwa Youth Assembly</div>
-
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -430,5 +320,31 @@
 	<script src="js/script.js"></script>
 
 </body>
+
+<script>
+	fetch("./js/members-list.json")
+		.then(response => response.json())
+		.then(data => {
+			let attorneys = document.getElementById("attorneys");
+			let attorneysList = "";
+
+			// Now all members (including special ones) are in the JSON
+			data.forEach(member => {
+				attorneysList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
+                    <div class="rs-team-1">
+                        <div class="media-box">
+                            <a href="attorneys-single.html?id=${member.id}">
+                                <img src="${member.image}" alt="" class="img-fluid"></a>
+                        </div>
+                        <div class="body">
+                            <div class="title"><a href="member-profile.html?id=${member.id}">${member.name}</a></div>
+                            <div class="position">${member.position}</div>
+                        </div>
+                    </div>
+                </div>`;
+			});
+			attorneys.innerHTML = attorneysList;
+		});
+</script>
 
 </html>
