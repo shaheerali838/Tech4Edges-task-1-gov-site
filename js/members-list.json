@@ -10,24 +10,14 @@
     "email": "danial@kpyouthassembly.com"
   },
   {
-    "id": "fatima",
-    "name": "Fatima Advocate",
-    "position": "Caretaker Speaker",
-    "image": "./images/Fatima.jpeg",
+    "id": "usama",
+    "name": "Muhammad Usama Hamayoun",
+    "position": "Secretary General",
+    "image": "../images/IMG_6083.jpg",
     "organization": "Khyber Pakhtunkhwa Youth Assembly",
-    "description": "Caretaker Speaker of Khyber Pakhtunkhwa Youth Assembly, dedicated to youth empowerment and legislative development.",
+    "description": "Secretary General of Khyber Pakhtunkhwa Youth Assembly, coordinating organizational activities and member engagement.",
     "phone": "091-5700041",
-    "email": "fatima@kpyouthassembly.com"
-  },
-  {
-    "id": "sania",
-    "name": "Sania Javed",
-    "position": "Caretaker Chief Minister",
-    "image": "./images/Sania.jpeg",
-    "organization": "Khyber Pakhtunkhwa Youth Assembly",
-    "description": "Caretaker Chief Minister of Khyber Pakhtunkhwa Youth Assembly, focused on youth leadership and community development.",
-    "phone": "091-5700041",
-    "email": "sania@kpyouthassembly.com"
+    "email": "usama@kpyouthassembly.com"
   },
   {
     "id": "nizar",
@@ -40,14 +30,24 @@
     "email": "nizar@kpyouthassembly.com"
   },
   {
-    "id": "usama",
-    "name": "Muhammad Usama Hamayoun",
-    "position": "Secretary General",
-    "image": "../images/IMG_6083.jpg",
+    "id": "sania",
+    "name": "Sania Javed",
+    "position": "Caretaker Chief Minister",
+    "image": "./images/Sania.jpeg",
     "organization": "Khyber Pakhtunkhwa Youth Assembly",
-    "description": "Secretary General of Khyber Pakhtunkhwa Youth Assembly, coordinating organizational activities and member engagement.",
+    "description": "Caretaker Chief Minister of Khyber Pakhtunkhwa Youth Assembly, focused on youth leadership and community development.",
     "phone": "091-5700041",
-    "email": "usama@kpyouthassembly.com"
+    "email": "sania@kpyouthassembly.com"
+  },
+  {
+    "id": "fatima",
+    "name": "Fatima Advocate",
+    "position": "Caretaker Speaker",
+    "image": "./images/Fatima.jpeg",
+    "organization": "Khyber Pakhtunkhwa Youth Assembly",
+    "description": "Caretaker Speaker of Khyber Pakhtunkhwa Youth Assembly, dedicated to youth empowerment and legislative development.",
+    "phone": "091-5700041",
+    "email": "fatima@kpyouthassembly.com"
   },
   {
     "id": "hammad",
