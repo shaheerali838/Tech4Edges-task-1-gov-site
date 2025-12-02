@@ -4914,3 +4914,23 @@ Back To Top Section
  */
 
 /*# sourceMappingURL=style.css.map */
+
+
+
+.member-profile-frame {
+  width: 100%;
+  height: 100%;
+  border: 2px red solid;
+  padding: 2rem;
+
+  .row {
+    display: flex;
+
+    .name-section-member {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

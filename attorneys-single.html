@@ -2,43 +2,315 @@
 <html lang="en">
 
 <head>
-	<!-- Basic Page Needs
-    ================================================== -->
+	<!-- Basic Page Needs -->
 	<meta charset="utf-8">
-	<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
+	<meta http-equiv="x-ua-compatible" content="IE=9">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>KPYA</title>
+	<title>Member Profile - KPYA</title>
 
-
-	<!-- ==============================================
-	Favicons
-	=============================================== -->
+	<!-- Favicons -->
 	<link rel="shortcut icon" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" sizes="72x72" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" sizes="114x114" href="./images/Kpya Logo.PNG">
 
-	<!-- ==============================================
-	CSS VENDOR
-	=============================================== -->
-	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
-	<link rel="stylesheet" type="text/css" href="css/vendor/owl.theme.default.min.css">
-	<link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
-	<link rel="stylesheet" type="text/css" href="css/vendor/animate.min.css">
+	<!-- CSS VENDOR -->
+	<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+	<link rel="stylesheet" href="css/vendor/font-awesome.min.css">
+	<link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/vendor/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/vendor/magnific-popup.css">
+	<link rel="stylesheet" href="css/vendor/animate.min.css">
 
-	<!-- ==============================================
-	Custom Stylesheet
-	=============================================== -->
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<!-- Custom Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
 
-	<script src="js/vendor/modernizr.min.js"></script>
+	<!-- Inline Critical CSS -->
+	<style>
+		/* Critical loading styles */
+		.animationload {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			z-index: 9999;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 
+		.loader {
+			border: 5px solid #f3f3f3;
+			border-top: 5px solid #3498db;
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			animation: spin 1s linear infinite;
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		/* Optimized banner styles */
+		.banner-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		/* Member profile specific styles */
+		.member-profile-card {
+			transition: transform 0.3s ease;
+		}
+
+		.member-profile-card:hover {
+			transform: translateY(-5px);
+		}
+
+		/* Optimized contact info */
+		.contact-info-optimized {
+			font-size: 0.9rem;
+		}
+
+		.contact-info-optimized a {
+			text-decoration: none;
+			transition: color 0.3s ease;
+		}
+
+		.contact-info-optimized a:hover {
+			color: #3498db;
+		}
+
+		/* Loading states */
+		.loading-placeholder {
+			background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+			background-size: 200% 100%;
+			animation: loading 1.5s infinite;
+		}
+
+		@keyframes loading {
+			0% {
+				background-position: 200% 0;
+			}
+
+			100% {
+				background-position: -200% 0;
+			}
+		}
+
+		/* Optimized image loading */
+		.member-img {
+			width: 100%;
+			height: auto;
+			max-height: 400px;
+			object-fit: cover;
+		}
+
+		/* Better responsive handling */
+		@media (max-width: 768px) {
+			.member-profile-section {
+				padding: 20px 0;
+			}
+
+			.member-info-responsive {
+				text-align: center;
+			}
+		}
+
+		.parent {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+			gap: 8px;
+		}
+
+		.div1 {
+			grid-column: span 2 / span 2;
+			grid-row: span 2 / span 2;
+		}
+
+		.div2 {
+			grid-column: span 2 / span 2;
+			grid-row: span 2 / span 2;
+			grid-column-start: 3;
+		}
+
+		.div3 {
+			grid-row: span 2 / span 2;
+			grid-column-start: 5;
+		}
+
+		.div4 {
+			grid-column: span 5 / span 5;
+			grid-row-start: 3;
+		}
+
+		.div5 {
+			grid-column: span 5 / span 5;
+			grid-row-start: 4;
+		}
+
+		.div6 {
+			grid-column: span 5 / span 5;
+			grid-row-start: 5;
+		}
+
+		.parent {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(5, 1fr);
+			gap: 8px;
+			min-height: 600px;
+			font-family: Arial, sans-serif;
+		}
+
+		.parent>div {
+			padding: 15px;
+			border: 1px solid #e0e0e0;
+			border-radius: 4px;
+			background-color: white;
+		}
+
+		.div1 {
+			grid-column: span 2 / span 2;
+			grid-row: span 2 / span 2;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.div2 {
+			grid-column: span 2 / span 2;
+			grid-row: span 2 / span 2;
+			grid-column-start: 3;
+		}
+
+		.div3 {
+			grid-row: span 2 / span 2;
+			grid-column-start: 5;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.div4 {
+			grid-column: span 5 / span 5;
+			grid-row-start: 3;
+		}
+
+		.div5 {
+			grid-column: span 5 / span 5;
+			grid-row-start: 4;
+		}
+
+		.div6 {
+			grid-column: span 5 / span 5;
+			grid-row-start: 5;
+		}
+
+		/* Style elements to match image */
+		.member-photo {
+			width: 150px;
+			height: 150px;
+			background-color: #f0f0f0;
+			border: 1px solid #ccc;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #666;
+			border-radius: 4px;
+		}
+
+		h1 {
+			font-size: 24px;
+			margin: 0 0 10px 0;
+			color: #333;
+		}
+
+		.position {
+			font-size: 16px;
+			color: #555;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+
+		.organization {
+			font-size: 14px;
+			color: #777;
+			margin-bottom: 15px;
+		}
+
+		.constituency {
+			margin-top: 20px;
+			font-size: 14px;
+			color: #666;
+			line-height: 1.4;
+		}
+
+		.contact-button {
+			margin-top: 20px;
+		}
+
+		.btn {
+			display: inline-block;
+			background-color: #007bff;
+			color: white;
+			padding: 10px 20px;
+			text-decoration: none;
+			border-radius: 4px;
+			font-weight: bold;
+			text-align: center;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.contact-info {
+			font-size: 14px;
+			line-height: 1.5;
+			display: flex;
+			justify-content: space-between;
+			width: 100%;
+		}
+
+		.contact-info p {
+			margin: 5px 0;
+		}
+
+		.social-media {
+			margin-top: 30px;
+			text-align: center;
+		}
+
+		.additional-info h4 {
+			margin-top: 0;
+			color: #333;
+			font-size: 16px;
+		}
+
+		.description {
+			font-size: 14px;
+			line-height: 1.5;
+			color: #555;
+		}
+	</style>
+
+	<script src="js/vendor/modernizr.min.js" defer></script>
 </head>
 
 <body>
-
 	<!-- LOAD PAGE -->
 	<div class="animationload">
 		<div class="loader"></div>
@@ -49,7 +321,6 @@
 
 	<!-- HEADER -->
 	<div class="header header-1">
-
 		<!-- TOPBAR -->
 		<div class="topbar d-none d-md-block">
 			<div class="container">
@@ -60,17 +331,17 @@
 								<i class="fa fa-phone"></i>091-5700041
 							</div>
 							<div class="info-item">
-								<i class="fa fa-envelope-o"></i> <a href="mailto:info@kpyouthassembly.com"
-									title="">info@kpyouthassembly.com</a>
+								<i class="fa fa-envelope-o"></i>
+								<a href="mailto:info@kpyouthassembly.com">info@kpyouthassembly.com</a>
 							</div>
 						</div>
 					</div>
 					<div class="col-sm-4 col-md-6">
 						<div class="sosmed-icon pull-right d-inline-flex">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-instagram"></i></a>
-							<a href="#"><i class="fa fa-linkedin"></i></a>
+							<a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+							<a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+							<a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+							<a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
 						</div>
 					</div>
 				</div>
@@ -82,7 +353,7 @@
 			<div class="container">
 				<nav id="navbar-example" class="navbar navbar-expand-lg">
 					<a class="navbar-brand" href="index.html">
-						<img src="./images/Kpya Logo.PNG" alt="">
+						<img src="./images/Kpya Logo.PNG" alt="KPYA Logo">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
 						aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,8 +368,7 @@
 								<a class="nav-link" href="about.html">ABOUT US</a>
 							</li>
 							<li class="nav-item dropdown active">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-									aria-haspopup="true" aria-expanded="false">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									MEMBERS
 								</a>
 								<div class="dropdown-menu">
@@ -107,8 +377,7 @@
 								</div>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-									aria-haspopup="true" aria-expanded="false">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									COMMITTEES
 								</a>
 								<div class="dropdown-menu">
@@ -117,8 +386,7 @@
 								</div>
 							</li>
 							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-									aria-haspopup="true" aria-expanded="false">
+								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 									PAGES
 								</a>
 								<div class="dropdown-menu">
@@ -135,126 +403,117 @@
 							</li>
 						</ul>
 					</div>
-				</nav> <!-- -->
-
+				</nav>
 			</div>
 		</div>
-
 	</div>
 
 	<!-- BANNER -->
 	<div class="section banner-page" style="position: relative;"
 		data-background="./images/ad7404fa7-b4d1-4ccb-ae3a-6baa362f6ac9.jpg">
-		<div
-			style="position: absolute; top: 0;left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5);">
-		</div>
+		<div class="banner-overlay"></div>
 		<div class="content-wrap pos-relative">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="d-flex bd-highlight mb-3">
-							<div class="title-page">Attorney Profile</div>
+							<div class="title-page">Member Profile</div>
 						</div>
-						<div class="d-flex bd-highlight mb-3">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb ">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item"><a href="attorneys.html">Attorney</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Attorney Profile</li>
-								</ol>
-							</nav>
-						</div>
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+								<li class="breadcrumb-item"><a href="attorneys.html">Members</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Member Profile</li>
+							</ol>
+						</nav>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- CONTENT -->
-	<div class="section">
+	<!-- MEMBER PROFILE CONTENT -->
+	<div class="section member-profile-section">
 		<div class="content-wrap">
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-12 col-md-12 col-lg-8">
+				<!-- Loading State -->
+				<div id="memberLoading" class="text-center py-5">
+					<div class="spinner-border text-primary" role="status">
+						<span class="sr-only">Loading...</span>
+					</div>
+					<p class="mt-3">Loading member information...</p>
+				</div>
 
-						<div class="row rs-team-single">
-							<div class="col-sm-6 col-md-6">
-								<div class="media-box">
-									<img src="./images/Danial.JPG" alt="" class="img-fluid">
-								</div>
-								<div class="overlap-btn">
-									<a href="#" class="btn btn-primary">FREE CONSULTATION</a>
-								</div>
-							</div>
-							<div class="col-sm-6 col-md-6">
-								<div class="title">Daniyal Ahmad Paracha</div>
-								<div class="position">Chairman</div>
-								<div class="position">Khyber Pakhtunkhwa Youth Assembly</div>
-								<p>The Khyber Pakhtunkhwa Youth Assembly is a platform built on vision, unity and
-									purpose a space where young minds come together to learn, lead and shape the future
-									of our province and our nation. Our goal is to empower the youth of Khyber
-									Pakhtunkhwa with the confidence, knowledge and civic awareness necessary to become
-									responsible leaders and active citizens.
-									At Khyber Pakhtunkhwa Youth Assembly we believe that meaningful change begins when
-									young people are given the opportunity to express their ideas and take part in
-									decision-making processes. Through our structured assembly model, leadership
-									programs and community initiatives we aim to transform potential into performance
-									and passion into progress.
-									The youth of Khyber Pakhtunkhwa are not just the leaders of tomorrow they are the
-									strength of today. It is our collective duty to equip them with the tools,
-									mentorship and opportunities to bring positive change at every level of society.
-									Together let us continue to uphold the values of unity, service and integrity as we
-									work towards a brighter and more empowered future for our province and Pakistan.</p>
-								<p class="mb-0"><span class="text-primary">PHONE :</span> 0761-245 1658</p>
-								<p><span class="text-primary">E-MAIL :</span> romedoel@lawyer.com</p>
+				<!-- Error State -->
+				<div id="memberError" class="alert alert-danger text-center" style="display: none;">
+					<h4>Error Loading Member Data</h4>
+					<p id="errorMessage">Unable to load member information. Please try again later.</p>
+					<button class="btn btn-primary mt-2" onclick="loadMemberData()">Retry</button>
+				</div>
 
-								<h4 class="text-secondary">Get in touch</h4>
-								<div class="sosmed-icon icon-bg-secondary d-inline-flex">
-									<a href="#"><i class="fa fa-facebook"></i></a>
-									<a href="#"><i class="fa fa-twitter"></i></a>
-									<a href="#"><i class="fa fa-instagram"></i></a>
-									<a href="#"><i class="fa fa-linkedin"></i></a>
+				<!-- Dynamic Content -->
+				<div id="memberContent" style="display: none;">
+					<div class="row">
+						<!-- Left Column: Member Info -->
+						<div class="col-lg-8 col-md-7">
+							<div class="row rs-team-single">
+								<div class="parent">
+									<div class="div1">
+										<!-- Photo placeholder -->
+										<div class="member-photo">
+											[Photo Here]
+										</div>
+									</div>
+
+									<div class="div2">
+										<h1>Suriya Bibi</h1>
+										<div class="position">PK-1 Chitral Upper Independents</div>
+										<div class="organization">Independent Candidate</div>
+
+										<div class="constituency">
+											<strong>Constituency Address:</strong><br>
+											Mundagh P/O BONI, Awi, Tehsil Mostuj, Dist Chitral
+										</div>
+									</div>
+
+									<div class="div3">
+										<div class="contact-button">
+											<a href="#" class="btn">CONTACT MEMBER</a>
+										</div>
+										<div class="social-media">
+											<!-- Social icons would go here -->
+										</div>
+									</div>
+
+									<div class="div4">
+										<div class="contact-info">
+											<p><strong>Phone:</strong> 03494281729</p>
+											<p><strong>Email:</strong> suriyabibib8@gmail.com</p>
+										</div>
+									</div>
+
+									<div class="div5">
+										<div class="additional-info">
+											<!-- Additional information section -->
+											<h4>Additional Information</h4>
+											<p><strong>Date of Birth:</strong> 0000.00.00</p>
+										</div>
+									</div>
+
+									<div class="div6">
+										<div class="description">
+											<!-- Member description/bio would go here -->
+											<p>Member description and background information would appear in this
+												section.</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
 
-
-
+						<!-- Right Column: Additional Info (Placeholder for future tabs) -->
 
 					</div>
-
-					<div class="col-sm-12 col-md-12 col-lg-4">
-
-
-						<div class="widget">
-							<div class="rs-box-widget bg-secondary">
-								<div class="icon">
-									<i class="fa fa-phone"></i>
-								</div>
-								<div class="body">
-									<h3>How Can We Help You?</h3>
-									<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-										fugiat nulla par- iatur.</p>
-									<a href="contact.html" class="text-primary">CONTACT US</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="widget">
-							<div class="rs-box-widget">
-								<div class="icon">
-									<i class="fa fa-file-pdf-o"></i>
-								</div>
-								<div class="body">
-									<h3>Download Brochure</h3>
-									<p>We always take care of clients seriously</p>
-									<a href="#" class="btn btn-primary">DOWNLOAD</a>
-								</div>
-							</div>
-						</div>
-
-					</div>
-					<!-- End Sidebar -->
 				</div>
 			</div>
 		</div>
@@ -267,7 +526,7 @@
 				<div class="row">
 					<div class="col-sm-12 col-md-12">
 						<div class="text-center text-white">
-							<h3>Contact us: 091-5700041</h3>
+							<h3 class="mb-0">Contact us: 091-5700041</h3>
 						</div>
 					</div>
 				</div>
@@ -276,37 +535,30 @@
 	</div>
 
 	<!-- FOOTER SECTION -->
-	<div class="footer " style="position: relative;" data-background="./images/download4.jpg">
-
-		<div
-			style="position: absolute; top: 0;left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7);">
-		</div>
+	<footer class="footer" style="position: relative;" data-background="./images/download4.jpg">
+		<div class="footer-overlay"></div>
 		<div class="content-wrap">
 			<div class="container">
-
 				<div class="row">
 					<div class="col-sm-6 col-md-6 col-lg-3">
 						<div class="footer-item">
-							<img src="./images/Kpya Logo.PNG" alt="logo bottom" class="logo-bottom">
+							<img src="./images/Kpya Logo.PNG" alt="KPYA Logo" class="logo-bottom">
 							<div class="spacer-30"></div>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-								tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-								nonummy.</p>
+							<p>The Khyber Pakhtunkhwa Youth Assembly empowers young leaders through civic engagement and
+								leadership development.</p>
 							<div class="sosmed-icon icon-bg-primary d-inline-flex">
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-twitter"></i></a>
-								<a href="#"><i class="fa fa-instagram"></i></a>
-								<a href="#"><i class="fa fa-pinterest"></i></a>
-								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+								<a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+								<a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+								<a href="#" aria-label="Pinterest"><i class="fa fa-pinterest"></i></a>
+								<a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-sm-6 col-md-6 col-lg-3">
 						<div class="footer-item">
-							<div class="footer-title">
-								Contact Info
-							</div>
+							<div class="footer-title">Contact Info</div>
 							<ul class="list-info">
 								<li>
 									<div class="info-icon">
@@ -326,45 +578,30 @@
 									</div>
 									<div class="info-text">info@kpyouthassembly.com</div>
 								</li>
-								<!-- <li>
-									<div class="info-icon">
-										<span class="fa fa-clock-o"></span>
-									</div>
-									<div class="info-text">Mon - Sat 09:00 - 17:00</div>
-								</li> -->
 							</ul>
-
 						</div>
 					</div>
 
 					<div class="col-sm-6 col-md-6 col-lg-3">
 						<div class="footer-item">
-							<div class="footer-title">
-								Practice Areas
-							</div>
-
+							<div class="footer-title">Our Parties</div>
 							<ul class="list">
-								<li><a href="practice-area.html" title="Family Law">Jazba</a></li>
-								<li><a href="practice-area.html" title="Financial Law">Khidmat</a></li>
-								<li><a href="practice-area.html" title="Sexual Offences">Ittehad</a></li>
-
+								<li><a href="practice-area.html">Jazba</a></li>
+								<li><a href="practice-area.html">Khidmat</a></li>
+								<li><a href="practice-area.html">Ittehad</a></li>
 							</ul>
-
 						</div>
 					</div>
 
 					<div class="col-sm-6 col-md-6 col-lg-3">
 						<div class="footer-item">
-							<div class="footer-title">
-								Usefull Link
-							</div>
-
+							<div class="footer-title">Useful Links</div>
 							<ul class="list">
-								<li><a href="about.html" title="About Us">About Us</a></li>
-								<li><a href="attorneys.html" title="Attorney">Members</a></li>
-								<li><a href="practice-area.html" title="Practice Areas">Our Parties</a></li>
-								<li><a href="page-faq.html" title="FAQ">FAQ</a></li>
-								<li><a href="contact.html" title="Contact Us">Contact Us</a></li>
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="attorneys.html">Members</a></li>
+								<li><a href="practice-area.html">Our Parties</a></li>
+								<li><a href="page-faq.html">FAQ</a></li>
+								<li><a href="contact.html">Contact Us</a></li>
 							</ul>
 						</div>
 					</div>
@@ -376,107 +613,212 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-12">
-						<p class="ftex">Copyright 2019 &copy; <span class="color-primary">Lawe Html Template</span>.
-							Designed by <span class="color-primary">Rometheme.</span></p>
+						<p class="ftex">Copyright © 2024 Khyber Pakhtunkhwa Youth Assembly. All rights reserved.</p>
 					</div>
 				</div>
 			</div>
 		</div>
+	</footer>
 
-	</div>
-
-	<!-- JS VENDOR -->
-	<script src="js/vendor/jquery.min.js"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-	<script src="js/vendor/owl.carousel.js"></script>
-	<script src="js/vendor/jquery.magnific-popup.min.js"></script>
-
-	<!-- SENDMAIL -->
-	<script src="js/vendor/validator.min.js"></script>
-	<script src="js/vendor/form-scripts.js"></script>
-
-	<script src="js/script.js"></script>
+	<!-- JS VENDOR - Load with defer for better performance -->
+	<script src="js/vendor/jquery.min.js" defer></script>
+	<script src="js/vendor/bootstrap.min.js" defer></script>
+	<script src="js/vendor/owl.carousel.js" defer></script>
+	<script src="js/vendor/jquery.magnific-popup.min.js" defer></script>
+	<script src="js/vendor/validator.min.js" defer></script>
+	<script src="js/vendor/form-scripts.js" defer></script>
+	<script src="js/script.js" defer></script>
 
 </body>
+
+</html>
+
+<!-- Optimized JavaScript -->
 <script>
-	// Get member ID from URL
-	function getUrlParameter(name) {
-		name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-		var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-		var results = regex.exec(location.search);
-		return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-	}
+	// Wait for DOM to be fully loaded
+	document.addEventListener('DOMContentLoaded', function () {
+		// Get member ID from URL
+		function getUrlParameter(name) {
+			const params = new URLSearchParams(window.location.search);
+			return params.get(name) || '';
+		}
 
-	const memberId = getUrlParameter('id');
+		const memberId = getUrlParameter('id');
 
-	// If no ID parameter, show default content (Chairman profile)
-	if (!memberId) {
-		// Keep the existing static content for Chairman
-		console.log('Showing default Chairman profile');
-	} else {
-		// Fetch and display specific member data
-		fetch('./js/members-list.json')
-			.then(response => response.json())
-			.then(members => {
+		// Configuration
+		const CONFIG = {
+			MEMBERS_JSON_URL: './js/members-list.json',
+			DEFAULT_IMAGE: './images/default-avatar.jpg'
+		};
+
+		// Cache DOM elements
+		const elements = {
+			loading: document.getElementById('memberLoading'),
+			error: document.getElementById('memberError'),
+			content: document.getElementById('memberContent'),
+			errorMessage: document.getElementById('errorMessage'),
+			title: document.querySelector('.title-page'),
+			breadcrumb: document.querySelector('.breadcrumb .active'),
+			image: document.getElementById('memberImage'),
+			name: document.getElementById('memberName'),
+			position: document.getElementById('memberPosition'),
+			organization: document.getElementById('memberOrganization'),
+			constituency: document.getElementById('constituencyText'),
+			description: document.getElementById('memberDescription'),
+			phone: document.querySelector('.phone-text'),
+			email: document.querySelector('.email-text')
+		};
+
+		// Party mapping
+		const PARTY_CONFIG = {
+			'independent': { class: 'text-secondary', label: 'Independent' },
+			'pti': { class: 'text-success', label: 'PTI' },
+			'pmln': { class: 'text-primary', label: 'PML-N' },
+			'ppp': { class: 'text-danger', label: 'PPP' }
+		};
+
+		// Format phone number for display
+		function formatPhoneNumber(phone) {
+			if (!phone) return '';
+			return phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+		}
+
+		// Get party styling
+		function getPartyStyle(partyName) {
+			const lowerParty = (partyName || '').toLowerCase();
+			for (const [key, value] of Object.entries(PARTY_CONFIG)) {
+				if (lowerParty.includes(key)) {
+					return value;
+				}
+			}
+			return PARTY_CONFIG.independent;
+		}
+
+		// Show/hide states
+		function showLoading() {
+			elements.loading.style.display = 'block';
+			elements.error.style.display = 'none';
+			elements.content.style.display = 'none';
+		}
+
+		function showError(message) {
+			elements.loading.style.display = 'none';
+			elements.error.style.display = 'block';
+			elements.content.style.display = 'none';
+			elements.errorMessage.textContent = message;
+		}
+
+		function showContent() {
+			elements.loading.style.display = 'none';
+			elements.error.style.display = 'none';
+			elements.content.style.display = 'block';
+		}
+
+		// Update DOM with member data
+		function updateMemberData(member) {
+			// Update page metadata
+			document.title = `${member.name} - KPYA Member`;
+
+			if (elements.title) elements.title.textContent = `${member.name} Profile`;
+			if (elements.breadcrumb) elements.breadcrumb.textContent = `${member.name} Profile`;
+
+			// Update image
+			if (elements.image && member.image) {
+				elements.image.src = member.image;
+				elements.image.alt = member.name;
+				elements.image.onerror = function () {
+					this.src = CONFIG.DEFAULT_IMAGE;
+				};
+			}
+
+			// Update basic info
+			if (elements.name) elements.name.textContent = member.name;
+			if (elements.position) elements.position.textContent = member.position || 'Member';
+			if (elements.organization) {
+				elements.organization.textContent = member.organization || 'Khyber Pakhtunkhwa Youth Assembly';
+			}
+
+			if (elements.constituency && member.constituency) {
+				elements.constituency.textContent = member.constituency;
+			}
+
+			// Update description
+			if (elements.description && member.description) {
+				elements.description.innerHTML = `<p>${member.description}</p>`;
+			}
+
+			// Update contact info
+			if (elements.phone && member.phone) {
+				const formattedPhone = formatPhoneNumber(member.phone);
+				elements.phone.innerHTML = `<a href="tel:${member.phone}">${formattedPhone}</a>`;
+			}
+
+			if (elements.email && member.email) {
+				elements.email.innerHTML = `<a href="mailto:${member.email}">${member.email}</a>`;
+			}
+
+			// Update CTA button if needed
+			const ctaButton = document.querySelector('.overlap-btn .btn-primary');
+			if (ctaButton && member.id !== 'danial') {
+				ctaButton.textContent = 'CONTACT MEMBER';
+			}
+		}
+
+		// Main function to load member data
+		async function loadMemberData() {
+			// If no ID, show default content
+			if (!memberId) {
+				showContent();
+				console.log('Showing default Chairman profile');
+				return;
+			}
+
+			showLoading();
+
+			try {
+				const response = await fetch(CONFIG.MEMBERS_JSON_URL);
+
+				if (!response.ok) {
+					throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+				}
+
+				const members = await response.json();
 				const member = members.find(m => m.id === memberId);
 
 				if (member) {
-					// Update page content with member data
-					document.title = `${member.name} - KPYA`;
-
-					// Update banner section
-					document.querySelector('.title-page').textContent = `${member.name} Profile`;
-					document.querySelector('.breadcrumb .active').textContent = `${member.name} Profile`;
-
-					// Update main content
-					const mediaBox = document.querySelector('.media-box');
-					if (mediaBox) {
-						mediaBox.innerHTML = `<img src="${member.image}" alt="${member.name}" class="img-fluid">`;
-					}
-
-					const titleElement = document.querySelector('.rs-team-single .title');
-					if (titleElement) {
-						titleElement.textContent = member.name;
-					}
-
-					const positionElements = document.querySelectorAll('.rs-team-single .position');
-					if (positionElements.length > 0) {
-						positionElements[0].textContent = member.position;
-						if (member.organization && positionElements.length > 1) {
-							positionElements[1].textContent = member.organization;
-						}
-					}
-
-					// Update description
-					const descriptionElement = document.querySelector('.rs-team-single p');
-					if (descriptionElement && member.description) {
-						descriptionElement.textContent = member.description;
-					}
-
-					// Update contact info
-					const contactElements = document.querySelectorAll('.rs-team-single p.text-primary');
-					if (contactElements.length > 0 && member.phone) {
-						contactElements[0].innerHTML = `<span class="text-primary">PHONE :</span> ${member.phone}`;
-					}
-					if (contactElements.length > 1 && member.email) {
-						contactElements[1].innerHTML = `<span class="text-primary">E-MAIL :</span> ${member.email}`;
-					}
-
-					// Update CTA button
-					const ctaButton = document.querySelector('.btn-primary');
-					if (ctaButton && member.id !== 'danial') {
-						ctaButton.textContent = 'CONTACT MEMBER';
-					}
-
+					updateMemberData(member);
+					showContent();
 				} else {
-					// Member not found - show error or redirect
-					console.log('Member not found');
+					throw new Error('Member not found in database');
 				}
-			})
-			.catch(error => {
+			} catch (error) {
 				console.error('Error loading member data:', error);
-			});
-	}
-</script>
+				showError(`Failed to load member data: ${error.message}`);
+			}
+		}
 
-</html>
+		// Initialize page
+		loadMemberData();
+
+		// Add CSS for overlay
+		const style = document.createElement('style');
+		style.textContent = `
+        .footer-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    `;
+		document.head.appendChild(style);
+	});
+
+	// Make loadMemberData globally available for retry button
+	window.loadMemberData = function () {
+		// Trigger the load function
+		const event = new Event('DOMContentLoaded');
+		document.dispatchEvent(event);
+	};
+</script>
