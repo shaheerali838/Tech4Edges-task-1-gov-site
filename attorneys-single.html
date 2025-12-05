@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=9">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Member Profile - KPYA</title>
+	<title>Suriya Bibi - KPYA Member Profile</title>
 
 	<!-- Favicons -->
 	<link rel="shortcut icon" href="./images/Kpya Logo.PNG">
@@ -70,27 +70,361 @@
 			background-color: rgba(0, 0, 0, 0.5);
 		}
 
-		/* Member profile specific styles */
-		.member-profile-card {
-			transition: transform 0.3s ease;
+		/* Member profile grid layout */
+		.member-grid {
+			display: grid;
+			grid-template-columns: repeat(5, 1fr);
+			grid-template-rows: repeat(5, auto);
+			gap: 20px;
+			margin: 30px 0;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		}
 
-		.member-profile-card:hover {
-			transform: translateY(-5px);
+		.member-grid>div {
+			padding: 25px;
+			border: 1px solid #223555;
+			border-radius: 8px;
+			background-color: white;
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+			transition: all 0.3s ease;
 		}
 
-		/* Optimized contact info */
-		.contact-info-optimized {
-			font-size: 0.9rem;
+		.member-grid>div:hover {
+			box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+			transform: translateY(-2px);
 		}
 
-		.contact-info-optimized a {
+		.photo-section {
+			grid-column: span 2 / span 2;
+			grid-row: span 2 / span 2;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+		}
+
+		.info-section {
+			grid-column: span 2 / span 2;
+			grid-row: span 2 / span 2;
+			grid-column-start: 3;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.contact-button-section {
+			grid-row: span 2 / span 2;
+			grid-column-start: 5;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: center;
+			background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
+		}
+
+		.contact-details-section {
+			grid-column: span 5 / span 5;
+			grid-row-start: 3;
+			border-left: 5px solid #223555;
+		}
+
+		.additional-info-section {
+			grid-column: span 5 / span 5;
+			grid-row-start: 4;
+			border-left: 5px solid #4CAF50;
+		}
+
+		.description-section {
+			grid-column: span 5 / span 5;
+			grid-row-start: 5;
+			border-left: 5px solid #FF9800;
+		}
+
+		/* Style elements to match image */
+		.member-photo {
+			width: 180px;
+			height: 180px;
+			background-color: #fff;
+			border: 3px solid #223555;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #666;
+			border-radius: 50%;
+			margin-bottom: 20px;
+			overflow: hidden;
+			box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+		}
+
+		.member-photo img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		.member-photo-placeholder {
+			font-size: 18px;
+			font-weight: 600;
+			color: #223555;
+		}
+
+		h1.member-name {
+			font-size: 28px;
+			margin: 0 0 15px 0;
+			color: #223555;
+			font-weight: 700;
+			border-bottom: 2px solid #223555;
+			padding-bottom: 10px;
+		}
+
+		.position {
+			font-size: 18px;
+			color: #2c3e50;
+			margin-bottom: 8px;
+			font-weight: 600;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+
+		.position::before {
+			content: "•";
+			color: #223555;
+			font-size: 24px;
+		}
+
+		.organization {
+			font-size: 16px;
+			color: #34495e;
+			margin-bottom: 25px;
+			padding: 10px 15px;
+			background-color: #f8f9fa;
+			border-radius: 6px;
+			border-left: 4px solid #3498db;
+			font-weight: 500;
+		}
+
+		.constituency {
+			margin-top: 25px;
+			font-size: 15px;
+			color: #2c3e50;
+			line-height: 1.6;
+			background: #f8f9fa;
+			padding: 15px;
+			border-radius: 6px;
+		}
+
+		.constituency strong {
+			color: #223555;
+			display: block;
+			margin-bottom: 8px;
+			font-size: 16px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+
+		.contact-button {
+			width: 100%;
+			margin-top: 15px;
+		}
+
+		.btn {
+			display: inline-block;
+			background: linear-gradient(135deg, #223555 0%, #1a2a40 100%);
+			color: white;
+			padding: 14px 25px;
 			text-decoration: none;
-			transition: color 0.3s ease;
+			border-radius: 6px;
+			font-weight: 600;
+			text-align: center;
+			width: 100%;
+			box-sizing: border-box;
+			transition: all 0.3s ease;
+			border: none;
+			font-size: 16px;
+			letter-spacing: 0.5px;
+			box-shadow: 0 4px 12px rgba(34, 53, 85, 0.2);
 		}
 
-		.contact-info-optimized a:hover {
-			color: #3498db;
+		.btn:hover {
+			background: linear-gradient(135deg, #1a2a40 0%, #223555 100%);
+			transform: translateY(-2px);
+			box-shadow: 0 6px 18px rgba(34, 53, 85, 0.3);
+			color: white;
+			text-decoration: none;
+		}
+
+		.contact-info {
+			font-size: 16px;
+			line-height: 1.8;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 25px;
+			width: 100%;
+		}
+
+		.contact-info p {
+			margin: 0;
+			padding: 12px 20px;
+			background: #f8f9fa;
+			border-radius: 6px;
+			border-left: 4px solid #3498db;
+			transition: all 0.3s ease;
+		}
+
+		.contact-info p:hover {
+			background: #e9ecef;
+			transform: translateX(5px);
+		}
+
+		.contact-info strong {
+			color: #223555;
+			display: inline-block;
+			min-width: 80px;
+		}
+
+		.social-media {
+			margin-top: 30px;
+			text-align: center;
+			width: 100%;
+		}
+
+		.additional-info h4 {
+			margin-top: 0;
+			color: #223555;
+			font-size: 20px;
+			margin-bottom: 20px;
+			padding-bottom: 10px;
+			border-bottom: 2px solid #e0e0e0;
+			font-weight: 700;
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+
+		.additional-info h4::before {
+			content: "📋";
+			font-size: 18px;
+		}
+
+		.additional-info p {
+			font-size: 16px;
+			color: #2c3e50;
+			margin: 12px 0;
+			padding-left: 20px;
+			position: relative;
+		}
+
+		.additional-info p strong {
+			color: #223555;
+			min-width: 120px;
+			display: inline-block;
+		}
+
+		.description {
+			font-size: 16px;
+			line-height: 1.8;
+			color: #2c3e50;
+			padding: 10px;
+		}
+
+		.description p {
+			margin: 15px 0;
+			padding: 15px;
+			background: #f8f9fa;
+			border-radius: 6px;
+			border-left: 4px solid #FF9800;
+		}
+
+		/* Photo section label */
+		.photo-section {
+			position: relative;
+		}
+
+		.photo-section::before {
+			content: 'Profile Photo';
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			background: #223555;
+			color: white;
+			padding: 4px 12px;
+			border-radius: 4px;
+			font-size: 12px;
+			font-weight: 600;
+		}
+
+		/* Better responsive handling */
+		@media (max-width: 992px) {
+			.member-grid {
+				grid-template-columns: 1fr;
+				grid-template-rows: auto;
+				gap: 15px;
+			}
+
+			.photo-section,
+			.info-section,
+			.contact-button-section,
+			.contact-details-section,
+			.additional-info-section,
+			.description-section {
+				grid-column: 1;
+				grid-row: auto;
+			}
+
+			.contact-info {
+				grid-template-columns: 1fr;
+				gap: 15px;
+			}
+
+			.member-photo {
+				width: 150px;
+				height: 150px;
+			}
+
+			h1.member-name {
+				font-size: 24px;
+				text-align: center;
+			}
+
+			.position,
+			.organization,
+			.constituency {
+				text-align: center;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.member-profile-section {
+				padding: 15px 0;
+			}
+
+			.member-grid>div {
+				padding: 20px 15px;
+			}
+
+			.member-photo {
+				width: 120px;
+				height: 120px;
+			}
+
+			h1.member-name {
+				font-size: 22px;
+			}
+
+			.position {
+				font-size: 16px;
+			}
+
+			.organization {
+				font-size: 14px;
+			}
+
+			.btn {
+				padding: 12px 20px;
+				font-size: 14px;
+			}
 		}
 
 		/* Loading states */
@@ -110,200 +444,50 @@
 			}
 		}
 
-		/* Optimized image loading */
-		.member-img {
-			width: 100%;
-			height: auto;
-			max-height: 400px;
-			object-fit: cover;
-		}
-
-		/* Better responsive handling */
-		@media (max-width: 768px) {
-			.member-profile-section {
-				padding: 20px 0;
-			}
-
-			.member-info-responsive {
-				text-align: center;
-			}
-		}
-
-		.parent {
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			grid-template-rows: repeat(5, 1fr);
-			gap: 8px;
-		}
-
-		.div1 {
-			grid-column: span 2 / span 2;
-			grid-row: span 2 / span 2;
-		}
-
-		.div2 {
-			grid-column: span 2 / span 2;
-			grid-row: span 2 / span 2;
-			grid-column-start: 3;
-		}
-
-		.div3 {
-			grid-row: span 2 / span 2;
-			grid-column-start: 5;
-		}
-
-		.div4 {
-			grid-column: span 5 / span 5;
-			grid-row-start: 3;
-		}
-
-		.div5 {
-			grid-column: span 5 / span 5;
-			grid-row-start: 4;
-		}
-
-		.div6 {
-			grid-column: span 5 / span 5;
-			grid-row-start: 5;
-		}
-
-		.parent {
-			display: grid;
-			grid-template-columns: repeat(5, 1fr);
-			grid-template-rows: repeat(5, 1fr);
-			gap: 8px;
-			min-height: 600px;
-			font-family: Arial, sans-serif;
-		}
-
-		.parent>div {
-			padding: 15px;
-			border: 1px solid #e0e0e0;
-			border-radius: 4px;
-			background-color: white;
-		}
-
-		.div1 {
-			grid-column: span 2 / span 2;
-			grid-row: span 2 / span 2;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-
-		.div2 {
-			grid-column: span 2 / span 2;
-			grid-row: span 2 / span 2;
-			grid-column-start: 3;
-		}
-
-		.div3 {
-			grid-row: span 2 / span 2;
-			grid-column-start: 5;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: center;
-		}
-
-		.div4 {
-			grid-column: span 5 / span 5;
-			grid-row-start: 3;
-		}
-
-		.div5 {
-			grid-column: span 5 / span 5;
-			grid-row-start: 4;
-		}
-
-		.div6 {
-			grid-column: span 5 / span 5;
-			grid-row-start: 5;
-		}
-
-		/* Style elements to match image */
-		.member-photo {
-			width: 150px;
-			height: 150px;
-			background-color: #f0f0f0;
-			border: 1px solid #ccc;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			color: #666;
-			border-radius: 4px;
-		}
-
-		h1 {
-			font-size: 24px;
-			margin: 0 0 10px 0;
-			color: #333;
-		}
-
-		.position {
-			font-size: 16px;
-			color: #555;
-			margin-bottom: 5px;
-			font-weight: bold;
-		}
-
-		.organization {
-			font-size: 14px;
-			color: #777;
-			margin-bottom: 15px;
-		}
-
-		.constituency {
-			margin-top: 20px;
-			font-size: 14px;
-			color: #666;
-			line-height: 1.4;
-		}
-
-		.contact-button {
-			margin-top: 20px;
-		}
-
-		.btn {
+		/* Status indicator */
+		.status-indicator {
 			display: inline-block;
-			background-color: #007bff;
-			color: white;
-			padding: 10px 20px;
-			text-decoration: none;
-			border-radius: 4px;
-			font-weight: bold;
-			text-align: center;
-			width: 100%;
-			box-sizing: border-box;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #4CAF50;
+			margin-left: 8px;
+			animation: pulse 2s infinite;
 		}
 
-		.contact-info {
-			font-size: 14px;
-			line-height: 1.5;
-			display: flex;
-			justify-content: space-between;
-			width: 100%;
+		@keyframes pulse {
+			0% {
+				box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+			}
+
+			70% {
+				box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+			}
+
+			100% {
+				box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+			}
 		}
 
-		.contact-info p {
-			margin: 5px 0;
+		/* Loading spinner */
+		.loading-spinner {
+			width: 50px;
+			height: 50px;
+			border: 5px solid #f3f3f3;
+			border-top: 5px solid #223555;
+			border-radius: 50%;
+			animation: spin 1s linear infinite;
+			margin: 0 auto 20px;
 		}
 
-		.social-media {
-			margin-top: 30px;
-			text-align: center;
-		}
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
 
-		.additional-info h4 {
-			margin-top: 0;
-			color: #333;
-			font-size: 16px;
-		}
-
-		.description {
-			font-size: 14px;
-			line-height: 1.5;
-			color: #555;
+			100% {
+				transform: rotate(360deg);
+			}
 		}
 	</style>
 
@@ -423,7 +607,8 @@
 							<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
 								<li class="breadcrumb-item"><a href="attorneys.html">Members</a></li>
-								<li class="breadcrumb-item active" aria-current="page">Member Profile</li>
+								<li class="breadcrumb-item active" aria-current="page" id="breadcrumbName">Loading...
+								</li>
 							</ol>
 						</nav>
 					</div>
@@ -438,9 +623,7 @@
 			<div class="container">
 				<!-- Loading State -->
 				<div id="memberLoading" class="text-center py-5">
-					<div class="spinner-border text-primary" role="status">
-						<span class="sr-only">Loading...</span>
-					</div>
+					<div class="loading-spinner"></div>
 					<p class="mt-3">Loading member information...</p>
 				</div>
 
@@ -454,65 +637,101 @@
 				<!-- Dynamic Content -->
 				<div id="memberContent" style="display: none;">
 					<div class="row">
-						<!-- Left Column: Member Info -->
-						<div class="col-lg-8 col-md-7">
-							<div class="row rs-team-single">
-								<div class="parent">
-									<div class="div1">
-										<!-- Photo placeholder -->
-										<div class="member-photo">
-											[Photo Here]
+						<!-- Main Content Column -->
+						<div class="col-lg-12 col-md-12">
+							<div class="member-grid">
+								<!-- Photo Section -->
+								<div class="photo-section">
+									<div class="member-photo" style="width: 300px; height: 300px;">
+										<img id="memberImage" src="" alt="Member Photo" style="display: none;">
+										<div id="photoPlaceholder" class="member-photo-placeholder">Photo</div>
+									</div>
+									<p style="text-align: center; color: #666; font-size: 14px; margin-top: 10px;">
+										Profile Image
+									</p>
+								</div>
+
+								<!-- Information Section -->
+								<div class="info-section">
+									<h1 class="member-name" id="memberName">Loading... <span
+											class="status-indicator"></span></h1>
+									<div class="position" id="memberPosition">Loading...</div>
+									<div class="organization" id="memberOrganization">Loading...</div>
+
+									<div class="constituency">
+										<strong>Constituency Address</strong>
+										<span id="constituencyAddress">Loading...</span>
+									</div>
+								</div>
+
+								<!-- Contact Button Section -->
+								<div class="contact-button-section">
+									<div class="contact-button">
+										<a href="#" id="contactEmail" class="btn">
+											<i class="fa fa-envelope" style="margin-right: 8px;"></i>
+											CONTACT MEMBER
+										</a>
+									</div>
+									<div class="social-media">
+										<div class="sosmed-icon icon-bg-secondary d-inline-flex">
+											<a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+											<a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+											<a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+											<a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
 										</div>
 									</div>
+								</div>
 
-									<div class="div2">
-										<h1>Suriya Bibi</h1>
-										<div class="position">PK-1 Chitral Upper Independents</div>
-										<div class="organization">Independent Candidate</div>
-
-										<div class="constituency">
-											<strong>Constituency Address:</strong><br>
-											Mundagh P/O BONI, Awi, Tehsil Mostuj, Dist Chitral
-										</div>
+								<!-- Contact Details Section -->
+								<div class="contact-details-section">
+									<div class="contact-info">
+										<p>
+											<strong><i class="fa fa-phone" style="margin-right: 8px;"></i>
+												Phone:</strong>
+											<a href="#" id="contactPhone"
+												style="color: #223555; text-decoration: none;">
+												Loading...
+											</a>
+										</p>
+										<p>
+											<strong><i class="fa fa-envelope" style="margin-right: 8px;"></i>
+												Email:</strong>
+											<a href="#" id="contactEmailText"
+												style="color: #223555; text-decoration: none;">
+												Loading...
+											</a>
+										</p>
 									</div>
+								</div>
 
-									<div class="div3">
-										<div class="contact-button">
-											<a href="#" class="btn">CONTACT MEMBER</a>
-										</div>
-										<div class="social-media">
-											<!-- Social icons would go here -->
-										</div>
+								<!-- Additional Information Section -->
+								<div class="additional-info-section">
+									<div class="additional-info">
+										<h4>Additional Information</h4>
+										<p><strong>Date of Birth:</strong> <span id="memberDOB">Loading...</span></p>
+										<p><strong>Constituency:</strong> <span
+												id="memberConstituency">Loading...</span></p>
+										<p><strong>Political Affiliation:</strong> <span
+												id="memberParty">Loading...</span></p>
+										<p><strong>Member Since:</strong> <span id="memberSince">Information not
+												available</span></p>
 									</div>
+								</div>
 
-									<div class="div4">
-										<div class="contact-info">
-											<p><strong>Phone:</strong> 03494281729</p>
-											<p><strong>Email:</strong> suriyabibib8@gmail.com</p>
-										</div>
-									</div>
-
-									<div class="div5">
-										<div class="additional-info">
-											<!-- Additional information section -->
-											<h4>Additional Information</h4>
-											<p><strong>Date of Birth:</strong> 0000.00.00</p>
-										</div>
-									</div>
-
-									<div class="div6">
-										<div class="description">
-											<!-- Member description/bio would go here -->
-											<p>Member description and background information would appear in this
-												section.</p>
-										</div>
+								<!-- Description Section -->
+								<div class="description-section">
+									<div class="description">
+										<h4 style="color: #223555; margin-bottom: 15px; font-size: 20px;">
+											<i class="fa fa-user" style="margin-right: 10px;"></i>
+											Member Profile
+										</h4>
+										<p id="memberDescription">
+											Loading member description...
+										</p>
 									</div>
 								</div>
 							</div>
 						</div>
-
-						<!-- Right Column: Additional Info (Placeholder for future tabs) -->
-
 					</div>
 				</div>
 			</div>
@@ -544,8 +763,8 @@
 						<div class="footer-item">
 							<img src="./images/Kpya Logo.PNG" alt="KPYA Logo" class="logo-bottom">
 							<div class="spacer-30"></div>
-							<p>The Khyber Pakhtunkhwa Youth Assembly empowers young leaders through civic engagement and
-								leadership development.</p>
+							<p>The Khyber Pakhtunkhwa Youth Assembly empowers young leaders through civic engagement
+								and leadership development.</p>
 							<div class="sosmed-icon icon-bg-primary d-inline-flex">
 								<a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
 								<a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
@@ -629,196 +848,138 @@
 	<script src="js/vendor/form-scripts.js" defer></script>
 	<script src="js/script.js" defer></script>
 
-</body>
-
-</html>
-
-<!-- Optimized JavaScript -->
-<script>
-	// Wait for DOM to be fully loaded
-	document.addEventListener('DOMContentLoaded', function () {
-		// Get member ID from URL
-		function getUrlParameter(name) {
-			const params = new URLSearchParams(window.location.search);
-			return params.get(name) || '';
+	<!-- Dynamic Member Data Loading -->
+	<script>
+		// Get member ID from URL parameter
+		function getMemberIdFromUrl() {
+			const urlParams = new URLSearchParams(window.location.search);
+			return urlParams.get('id');
 		}
 
-		const memberId = getUrlParameter('id');
-
-		// Configuration
-		const CONFIG = {
-			MEMBERS_JSON_URL: './js/members-list.json',
-			DEFAULT_IMAGE: './images/default-avatar.jpg'
-		};
-
-		// Cache DOM elements
-		const elements = {
-			loading: document.getElementById('memberLoading'),
-			error: document.getElementById('memberError'),
-			content: document.getElementById('memberContent'),
-			errorMessage: document.getElementById('errorMessage'),
-			title: document.querySelector('.title-page'),
-			breadcrumb: document.querySelector('.breadcrumb .active'),
-			image: document.getElementById('memberImage'),
-			name: document.getElementById('memberName'),
-			position: document.getElementById('memberPosition'),
-			organization: document.getElementById('memberOrganization'),
-			constituency: document.getElementById('constituencyText'),
-			description: document.getElementById('memberDescription'),
-			phone: document.querySelector('.phone-text'),
-			email: document.querySelector('.email-text')
-		};
-
-		// Party mapping
-		const PARTY_CONFIG = {
-			'independent': { class: 'text-secondary', label: 'Independent' },
-			'pti': { class: 'text-success', label: 'PTI' },
-			'pmln': { class: 'text-primary', label: 'PML-N' },
-			'ppp': { class: 'text-danger', label: 'PPP' }
-		};
-
-		// Format phone number for display
-		function formatPhoneNumber(phone) {
-			if (!phone) return '';
-			return phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
-		}
-
-		// Get party styling
-		function getPartyStyle(partyName) {
-			const lowerParty = (partyName || '').toLowerCase();
-			for (const [key, value] of Object.entries(PARTY_CONFIG)) {
-				if (lowerParty.includes(key)) {
-					return value;
-				}
-			}
-			return PARTY_CONFIG.independent;
-		}
-
-		// Show/hide states
-		function showLoading() {
-			elements.loading.style.display = 'block';
-			elements.error.style.display = 'none';
-			elements.content.style.display = 'none';
-		}
-
-		function showError(message) {
-			elements.loading.style.display = 'none';
-			elements.error.style.display = 'block';
-			elements.content.style.display = 'none';
-			elements.errorMessage.textContent = message;
-		}
-
-		function showContent() {
-			elements.loading.style.display = 'none';
-			elements.error.style.display = 'none';
-			elements.content.style.display = 'block';
-		}
-
-		// Update DOM with member data
-		function updateMemberData(member) {
-			// Update page metadata
-			document.title = `${member.name} - KPYA Member`;
-
-			if (elements.title) elements.title.textContent = `${member.name} Profile`;
-			if (elements.breadcrumb) elements.breadcrumb.textContent = `${member.name} Profile`;
-
-			// Update image
-			if (elements.image && member.image) {
-				elements.image.src = member.image;
-				elements.image.alt = member.name;
-				elements.image.onerror = function () {
-					this.src = CONFIG.DEFAULT_IMAGE;
-				};
-			}
-
-			// Update basic info
-			if (elements.name) elements.name.textContent = member.name;
-			if (elements.position) elements.position.textContent = member.position || 'Member';
-			if (elements.organization) {
-				elements.organization.textContent = member.organization || 'Khyber Pakhtunkhwa Youth Assembly';
-			}
-
-			if (elements.constituency && member.constituency) {
-				elements.constituency.textContent = member.constituency;
-			}
-
-			// Update description
-			if (elements.description && member.description) {
-				elements.description.innerHTML = `<p>${member.description}</p>`;
-			}
-
-			// Update contact info
-			if (elements.phone && member.phone) {
-				const formattedPhone = formatPhoneNumber(member.phone);
-				elements.phone.innerHTML = `<a href="tel:${member.phone}">${formattedPhone}</a>`;
-			}
-
-			if (elements.email && member.email) {
-				elements.email.innerHTML = `<a href="mailto:${member.email}">${member.email}</a>`;
-			}
-
-			// Update CTA button if needed
-			const ctaButton = document.querySelector('.overlap-btn .btn-primary');
-			if (ctaButton && member.id !== 'danial') {
-				ctaButton.textContent = 'CONTACT MEMBER';
-			}
-		}
-
-		// Main function to load member data
+		// Load member data from JSON
 		async function loadMemberData() {
-			// If no ID, show default content
-			if (!memberId) {
-				showContent();
-				console.log('Showing default Chairman profile');
-				return;
-			}
+			const memberId = getMemberIdFromUrl();
+			const loadingElement = document.getElementById('memberLoading');
+			const errorElement = document.getElementById('memberError');
+			const contentElement = document.getElementById('memberContent');
 
-			showLoading();
+			// Show loading state
+			loadingElement.style.display = 'block';
+			errorElement.style.display = 'none';
+			contentElement.style.display = 'none';
 
 			try {
-				const response = await fetch(CONFIG.MEMBERS_JSON_URL);
+				// Fetch members data from JSON file
+				const response = await fetch('./js/members-list.json');
 
 				if (!response.ok) {
-					throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+					throw new Error(`HTTP error! status: ${response.status}`);
 				}
 
 				const members = await response.json();
-				const member = members.find(m => m.id === memberId);
 
-				if (member) {
-					updateMemberData(member);
-					showContent();
+				// Find the member by ID (default to first member if no ID provided)
+				let member;
+				if (memberId) {
+					member = members.find(m => m.id === memberId);
 				} else {
-					throw new Error('Member not found in database');
+					// Default to Suriya Bibi if no ID provided
+					member = members.find(m => m.id === 'suriyabibi') || members[0];
 				}
+
+				if (!member) {
+					throw new Error('Member not found');
+				}
+
+				// Update page title
+				document.title = `${member.name} - KPYA Member Profile`;
+
+				// Update breadcrumb
+				const breadcrumbName = document.getElementById('breadcrumbName');
+				if (breadcrumbName) {
+					breadcrumbName.textContent = member.name;
+				}
+
+				// Update page title element
+				const pageTitle = document.querySelector('.title-page');
+				if (pageTitle) {
+					pageTitle.textContent = `${member.name} Profile`;
+				}
+
+				// Update member image
+				const memberImage = document.getElementById('memberImage');
+				const photoPlaceholder = document.getElementById('photoPlaceholder');
+				if (member.image) {
+					memberImage.src = member.image;
+					memberImage.alt = member.name;
+					memberImage.style.display = 'block';
+					photoPlaceholder.style.display = 'none';
+				} else {
+					memberImage.style.display = 'none';
+					photoPlaceholder.style.display = 'block';
+				}
+
+				// Update member information
+				document.getElementById('memberName').textContent = member.name;
+				document.getElementById('memberPosition').textContent = member.position || 'Member';
+				document.getElementById('memberOrganization').textContent = member.organization || 'Independent Candidate';
+				document.getElementById('constituencyAddress').textContent = member.constituency || 'Information not available';
+
+				// Update contact information
+				const contactPhone = document.getElementById('contactPhone');
+				const contactEmail = document.getElementById('contactEmail');
+				const contactEmailText = document.getElementById('contactEmailText');
+
+				if (member.phone) {
+					contactPhone.textContent = member.phone;
+					contactPhone.href = `tel:${member.phone}`;
+				}
+
+				if (member.email) {
+					contactEmail.href = `mailto:${member.email}`;
+					contactEmailText.textContent = member.email;
+					contactEmailText.href = `mailto:${member.email}`;
+				}
+
+				// Update additional information
+				document.getElementById('memberDOB').textContent = member.dob || 'Information not available';
+				document.getElementById('memberConstituency').textContent = member.constituencyCode || member.position || 'Information not available';
+				document.getElementById('memberParty').textContent = member.party || member.organization || 'Information not available';
+
+				// Update description
+				const descriptionElement = document.getElementById('memberDescription');
+				if (member.description) {
+					descriptionElement.textContent = member.description;
+				} else {
+					descriptionElement.innerHTML = `
+						${member.name} represents ${member.position || 'a constituency'} as ${member.organization || 'an Independent candidate'}.
+						Based in ${member.constituency || 'their constituency'}, they serve as a member of the Khyber Pakhtunkhwa Youth Assembly.
+						Additional biographical information and achievements will be updated here.
+					`;
+				}
+
+				// Hide loading and show content
+				loadingElement.style.display = 'none';
+				contentElement.style.display = 'block';
+
 			} catch (error) {
 				console.error('Error loading member data:', error);
-				showError(`Failed to load member data: ${error.message}`);
+
+				// Show error message
+				loadingElement.style.display = 'none';
+				errorElement.style.display = 'block';
+				document.getElementById('errorMessage').textContent =
+					`Unable to load member information: ${error.message}. Please try again later.`;
 			}
 		}
 
-		// Initialize page
-		loadMemberData();
+		// Load member data when page loads
+		document.addEventListener('DOMContentLoaded', loadMemberData);
 
-		// Add CSS for overlay
-		const style = document.createElement('style');
-		style.textContent = `
-        .footer-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-    `;
-		document.head.appendChild(style);
-	});
+		// Make loadMemberData available globally for retry button
+		window.loadMemberData = loadMemberData;
+	</script>
 
-	// Make loadMemberData globally available for retry button
-	window.loadMemberData = function () {
-		// Trigger the load function
-		const event = new Event('DOMContentLoaded');
-		document.dispatchEvent(event);
-	};
-</script>
+</body>
+
+</html>
