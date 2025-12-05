@@ -1,10 +1,10 @@
 Cabbinet page
 
-side bar in member page has to be removed
-
-
-copy member page from "https://www.pakp.gov.pk/members/suriya-bibi-pk-01-2024/"
-
 // our forums page
 
-map should be removed from contact page
+
+
+
+map should be removed from contact page - done
+side bar in member page has to be removed - done
+copy member page from "https://www.pakp.gov.pk/members/suriya-bibi-pk-01-2024/"  - done

@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs -->
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=9">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jazba Party - KPYA</title>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="./images/Kpya Logo.PNG">
+    <link rel="apple-touch-icon" href="./images/Kpya Logo.PNG">
+    <link rel="apple-touch-icon" sizes="72x72" href="./images/Kpya Logo.PNG">
+    <link rel="apple-touch-icon" sizes="114x114" href="./images/Kpya Logo.PNG">
+
+    <!-- CSS VENDOR -->
+    <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor/animate.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <style>
+        /* Party specific colors */
+        :root {
+            --jazba-color: #B89B5E;
+            --khidmat-color: #28a745;
+            --ittehad-color: #007bff;
+        }
+
+        .jazba-primary {
+            color: #B89B5E;
+        }
+
+        .jazba-bg {
+            background-color: #B89B5E;
+        }
+
+        .jazba-border {
+            border-color: #B89B5E;
+        }
+
+        /* Party banner */
+        .party-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('./images/d7404fa7-b4d1-4ccb-ae3a-6baa362f6ac9.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #B89B5E;
+        }
+
+        .party-header {
+            text-align: center;
+        }
+
+        .party-logo-large {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            border: 5px solid #B89B5E;
+            border-radius: 50%;
+            overflow: hidden;
+            background: white;
+        }
+
+        .party-logo-large img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .party-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            color: #B89B5E;
+        }
+
+        .party-slogan {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .party-description-box {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 5px;
+            border-left: 5px solid #B89B5E;
+            margin-bottom: 30px;
+        }
+
+        /* Party Chief Section */
+        .party-chief-section {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffeccc 100%);
+            padding: 40px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border: 2px solid #B89B5E;
+            box-shadow: 0 5px 20px rgba(184, 155, 94, 0.1);
+        }
+
+        .chief-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .chief-header h3 {
+            color: #B89B5E;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .chief-profile {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .chief-photo {
+            flex: 0 0 200px;
+        }
+
+        .chief-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid #B89B5E;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .chief-info {
+            flex: 1;
+        }
+
+        .chief-name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .chief-title {
+            font-size: 18px;
+            color: #B89B5E;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .chief-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .chief-quote {
+            font-style: italic;
+            color: #666;
+            border-left: 3px solid #B89B5E;
+            padding-left: 15px;
+            margin-top: 20px;
+        }
+
+        /* Party members grid */
+        .party-members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .party-member-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-top: 3px solid #B89B5E;
+        }
+
+        .party-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-photo-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .member-photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .party-member-card:hover .member-photo-container img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 20px;
+        }
+
+        .member-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .member-position {
+            font-size: 14px;
+            color: #B89B5E;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .member-constituency {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .view-profile-btn {
+            background: #B89B5E;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 3px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .view-profile-btn:hover {
+            background: #9c824d;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Party stats */
+        .party-stats {
+            background: #f8f9fa;
+            padding: 40px 0;
+            margin: 40px 0;
+            border-top: 1px solid #B89B5E;
+            border-bottom: 1px solid #B89B5E;
+        }
+
+        .stat-box {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: #B89B5E;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Party navigation */
+        .party-navigation {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid #ddd;
+        }
+
+        .party-nav-card {
+            background: white;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .party-nav-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .party-nav-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #ddd;
+        }
+
+        .party-nav-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .jazba-nav .party-nav-icon {
+            border-color: #B89B5E;
+        }
+
+        .khidmat-nav .party-nav-icon {
+            border-color: #28a745;
+        }
+
+        .ittehad-nav .party-nav-icon {
+            border-color: #007bff;
+        }
+
+        .party-nav-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .party-nav-btn {
+            background: transparent;
+            border: 2px solid;
+            padding: 6px 20px;
+            border-radius: 3px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .jazba-nav .party-nav-btn {
+            color: #B89B5E;
+            border-color: #B89B5E;
+        }
+
+        .jazba-nav .party-nav-btn:hover {
+            background: #B89B5E;
+            color: white;
+        }
+
+        .khidmat-nav .party-nav-btn {
+            color: #28a745;
+            border-color: #28a745;
+        }
+
+        .khidmat-nav .party-nav-btn:hover {
+            background: #28a745;
+            color: white;
+        }
+
+        .ittehad-nav .party-nav-btn {
+            color: #007bff;
+            border-color: #007bff;
+        }
+
+        .ittehad-nav .party-nav-btn:hover {
+            background: #007bff;
+            color: white;
+        }
+
+        /* Loading states */
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #B89B5E;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .party-title {
+                font-size: 32px;
+            }
+
+            .party-slogan {
+                font-size: 18px;
+            }
+
+            .party-logo-large {
+                width: 120px;
+                height: 120px;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .party-members-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .chief-profile {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .chief-photo {
+                flex: 0 0 auto;
+            }
+
+            .chief-photo img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .party-members-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .party-banner {
+                padding: 40px 0;
+            }
+
+            .party-chief-section {
+                padding: 20px;
+            }
+
+            .chief-photo img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .chief-name {
+                font-size: 24px;
+            }
+
+            .chief-title {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+    <script src="js/vendor/modernizr.min.js"></script>
+</head>
+
+<body>
+
+    <!-- LOAD PAGE -->
+    <div class="animationload">
+        <div class="loader"></div>
+    </div>
+
+    <!-- BACK TO TOP SECTION -->
+    <a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
+
+    <!-- HEADER -->
+    <div class="header header-1">
+
+        <!-- TOPBAR -->
+        <div class="topbar d-none d-md-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-sm-8 col-md-6">
+                        <div class="info">
+                            <div class="info-item">
+                                <i class="fa fa-phone"></i>091-5700041
+                            </div>
+                            <div class="info-item">
+                                <i class="fa fa-envelope-o"></i> <a href="mailto:info@kpyouthassembly.com"
+                                    title="">info@kpyouthassembly.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-6">
+                        <div class="sosmed-icon pull-right d-inline-flex">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- NAVBAR SECTION -->
+        <div class="navbar-main">
+            <div class="container">
+                <nav id="navbar-example" class="navbar navbar-expand-lg">
+                    <a class="navbar-brand" href="index.html">
+                        <img src="./images/Kpya Logo.PNG" alt="">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="about.html">ABOUT US</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    MEMBERS
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="attorneys.html">MEMBERS LIST</a>
+                                    <a class="dropdown-item" href="attorneys-single.html">Chairman Profile</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown active">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    COMMITTEES
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="practice-area-single.html">EXECUTIVE COMMITTEE</a>
+                                    <a class="dropdown-item active" href="practice-area.html">OUR PARTIES</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                    PAGES
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="page-gallery.html">GALLERY</a>
+                                    <a class="dropdown-item" href="page-testimonials.html">TESTIMONIALS</a>
+                                    <a class="dropdown-item" href="page-faq.html">FAQ</a>
+                                    <a class="dropdown-item" href="page-404.html">404 PAGE</a>
+                                    <a class="dropdown-item" href="page-news.html">NEWS</a>
+                                    <a class="dropdown-item" href="page-news-single.html">SINGLE NEWS</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">CONTACT US</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNER -->
+    <div class="section banner-page" style="position: relative;"
+        data-background="./images/d7404fa7-b4d1-4ccb-ae3a-6baa362f6ac9.jpg">
+        <div class="banner-overlay" style="background-color: rgba(0, 0, 0, 0.5);"></div>
+        <div class="content-wrap pos-relative">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex bd-highlight mb-3">
+                            <div class="title-page">Our Parties</div>
+                        </div>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="practice-area.html">Our Parties</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Jazba Party</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PARTY CONTENT -->
+    <div class="section">
+        <div class="content-wrap">
+            <div class="container">
+                <!-- Party Header -->
+                <div class="party-banner text-center">
+                    <div class="party-header">
+                        <div class="party-logo-large">
+                            <img src="./images/Jazba-logo.jpeg" alt="Jazba Party Logo">
+                        </div>
+                        <h1 class="party-title">Jazba Party</h1>
+                        <p class="party-slogan">"Passion for Progress, Commitment to Change"</p>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8">
+                                <p class="lead" style="font-size: 18px; color: #fff;">
+                                    The party of passion and energy, driving youth empowerment and progressive reforms
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Party Description -->
+                <div class="party-description-box">
+                    <h2 class="section-heading mb-4 jazba-primary">
+                        About Jazba Party
+                    </h2>
+                    <p>
+                        Jazba Party represents the passionate and energetic youth of Khyber Pakhtunkhwa. Founded on the
+                        principles of progress, innovation, and grassroots empowerment, we believe in harnessing the
+                        power of youth to drive meaningful change in our society.
+                    </p>
+                    <p>
+                        Our party focuses on education reform, employment opportunities for youth, technological
+                        advancement, and sustainable development. We advocate for transparent governance and active
+                        youth participation in political processes.
+                    </p>
+                    <p>
+                        With a commitment to social justice and economic empowerment, Jazba Party works tirelessly to
+                        create opportunities for young people and ensure their voices are heard in the corridors of
+                        power.
+                    </p>
+                </div>
+
+                <!-- Party Chief Section -->
+                <div class="party-chief-section">
+                    <div class="chief-header">
+                        <h3>Party Chief</h3>
+                        <p>Meet our dynamic leader who guides the Jazba Party with passion and vision</p>
+                    </div>
+                    <div class="chief-profile">
+                        <div class="chief-photo">
+                            <img src="./images/jazba-chief.jpeg" alt="Jazba Party Chief" id="chiefImage">
+                        </div>
+                        <div class="chief-info">
+                            <h2 class="chief-name" id="chiefName">Mr. Jazba Leader</h2>
+                            <p class="chief-title" id="chiefTitle">Chief of Jazba Party</p>
+                            <div class="chief-description" id="chiefDescription">
+                                A visionary leader with extensive experience in youth empowerment and political
+                                activism. Under his leadership, Jazba Party has grown into a formidable force for
+                                progressive change in Khyber Pakhtunkhwa. He is committed to creating opportunities for
+                                young people and ensuring their voices are heard in the political arena.
+                            </div>
+                            <div class="chief-quote" id="chiefQuote">
+                                "Our youth are not just the future; they are the present. We must empower them today to
+                                build a better tomorrow."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Party Statistics -->
+                <div class="party-stats">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <h2 class="section-heading text-center mb-4 jazba-primary">
+                                Jazba Party at a Glance
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stat-box">
+                                <div class="stat-number" id="totalMembers">25</div>
+                                <div class="stat-label">Total Members</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stat-box">
+                                <div class="stat-number" id="districts">18</div>
+                                <div class="stat-label">Districts</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stat-box">
+                                <div class="stat-number" id="committees">7</div>
+                                <div class="stat-label">Committees</div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="stat-box">
+                                <div class="stat-number" id="since">2018</div>
+                                <div class="stat-label">Established</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Party Members -->
+                <div class="party-members">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <h2 class="section-heading mb-4 jazba-primary">
+                                Jazba Party Members
+                            </h2>
+                            <p class="subheading mb-4">Meet our passionate members who are working for youth empowerment
+                                and progressive change:</p>
+                        </div>
+                    </div>
+
+                    <!-- Loading State -->
+                    <div id="membersLoading" class="text-center py-5">
+                        <div class="loading-spinner"></div>
+                        <p class="mt-3">Loading Jazba Party members...</p>
+                    </div>
+
+                    <!-- Error State -->
+                    <div id="membersError" class="alert alert-danger text-center" style="display: none;">
+                        <h4>Error Loading Members</h4>
+                        <p id="errorMessage">Unable to load party members. Please try again later.</p>
+                        <button class="btn btn-primary mt-2" onclick="loadPartyMembers()">Retry</button>
+                    </div>
+
+                    <!-- Members Grid -->
+                    <div id="membersGrid" class="party-members-grid" style="display: none;"></div>
+
+                    <div class="row mt-4">
+                        <div class="col-12 text-center">
+                            <a href="attorneys.html" class="btn btn-primary">View All Members</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Parties Navigation -->
+                <div class="party-navigation">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <h2 class="section-heading text-center mb-4">
+                                Other Political Parties
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="party-nav-card khidmat-nav">
+                                <div class="party-nav-icon">
+                                    <img src="./images/Khidmat-Logo.jpeg" alt="Khidmat Party Logo">
+                                </div>
+                                <h4 class="party-nav-title">Khidmat Party</h4>
+                                <p>Service and dedication for community welfare</p>
+                                <a href="khidmat.html" class="party-nav-btn">View Party</a>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="party-nav-card jazba-nav" style="border: 2px solid #B89B5E;">
+                                <div class="party-nav-icon">
+                                    <img src="./images/Jazba-logo.jpeg" alt="Jazba Party Logo">
+                                </div>
+                                <h4 class="party-nav-title">Jazba Party</h4>
+                                <p>Passion for progress and youth empowerment</p>
+                                <button class="party-nav-btn" style="background: #B89B5E; color: white;">Current
+                                    Party</button>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="party-nav-card ittehad-nav">
+                                <div class="party-nav-icon">
+                                    <img src="./images/Ittehad-logo.jpeg" alt="Ittehad Party Logo">
+                                </div>
+                                <h4 class="party-nav-title">Ittehad Party</h4>
+                                <p>Unity and collaboration for collective growth</p>
+                                <a href="ittehad.html" class="party-nav-btn">View Party</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="section bg-primary">
+        <div class="content-wrap py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="text-center text-white">
+                            <h3 class="mb-0">Join Jazba Party: Be the Change!</h3>
+                            <a href="contact.html" class="btn btn-light btn-lg mt-3">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <div class="footer" style="position: relative;" data-background="./images/download4.jpg">
+        <div class="footer-overlay" style="background-color: rgba(0, 0, 0, 0.7);"></div>
+        <div class="content-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-item text-white">
+                            <img src="./images/Kpya Logo.PNG" alt="logo bottom" class="logo-bottom">
+                            <div class="spacer-30"></div>
+                            <p>The Khyber Pakhtunkhwa Youth Assembly empowers young leaders through civic engagement and
+                                leadership development.</p>
+                            <div class="sosmed-icon icon-bg-primary d-inline-flex">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-pinterest"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                Contact Info
+                            </div>
+                            <ul class="list-info">
+                                <li>
+                                    <div class="info-icon">
+                                        <span class="fa fa-map-marker"></span>
+                                    </div>
+                                    <div class="info-text">Secretariat, University Road Peshawar</div>
+                                </li>
+                                <li>
+                                    <div class="info-icon">
+                                        <span class="fa fa-phone"></span>
+                                    </div>
+                                    <div class="info-text">091-5700041</div>
+                                </li>
+                                <li>
+                                    <div class="info-icon">
+                                        <span class="fa fa-envelope"></span>
+                                    </div>
+                                    <div class="info-text">info@kpyouthassembly.com</div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                Our Parties
+                            </div>
+                            <ul class="list">
+                                <li><a href="jazba.html" class="text-warning">Jazba Party</a></li>
+                                <li><a href="khidmat.html">Khidmat Party</a></li>
+                                <li><a href="ittehad.html">Ittehad Party</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 col-lg-3">
+                        <div class="footer-item">
+                            <div class="footer-title">
+                                Useful Links
+                            </div>
+                            <ul class="list">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="attorneys.html">Members</a></li>
+                                <li><a href="practice-area.html">Our Parties</a></li>
+                                <li><a href="page-faq.html">FAQ</a></li>
+                                <li><a href="contact.html">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fcopy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <p class="ftex text-white">Copyright © 2024 Khyber Pakhtunkhwa Youth Assembly. All rights
+                            reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS VENDOR -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/owl.carousel.js"></script>
+    <script src="js/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="js/vendor/validator.min.js"></script>
+    <script src="js/vendor/form-scripts.js"></script>
+    <script src="js/script.js"></script>
+
+    <!-- Dynamic Party Members Loading -->
+    <script>
+        // Load party members from JSON
+        async function loadPartyMembers() {
+            const loadingElement = document.getElementById('membersLoading');
+            const errorElement = document.getElementById('membersError');
+            const membersGrid = document.getElementById('membersGrid');
+            const partyName = 'jazba';
+
+            // Show loading state
+            loadingElement.style.display = 'block';
+            errorElement.style.display = 'none';
+            membersGrid.style.display = 'none';
+
+            try {
+                // Fetch members data from JSON file
+                const response = await fetch('./js/members-list.json');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const allMembers = await response.json();
+
+                // Filter members by party
+                const partyMembers = allMembers.filter(member =>
+                    member.party && member.party.toLowerCase() === partyName
+                );
+
+                // Update statistics
+                document.getElementById('totalMembers').textContent = partyMembers.length;
+
+                if (partyMembers.length === 0) {
+                    membersGrid.innerHTML = `
+						<div class="col-12">
+							<div class="alert alert-info text-center">
+								<h4>No Members Found</h4>
+								<p>No members found for Jazba Party. Check back soon for updates.</p>
+							</div>
+						</div>
+					`;
+                } else {
+                    // Generate members grid
+                    let membersHTML = '';
+                    partyMembers.forEach(member => {
+                        membersHTML += `
+							<div class="party-member-card">
+								<div class="member-photo-container">
+									${member.image ?
+                                `<img src="${member.image}" alt="${member.name}" class="img-fluid">` :
+                                '<div style="background: #f0f0f0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">No Photo</div>'
+                            }
+								</div>
+								<div class="member-info">
+									<h4 class="member-name">${member.name}</h4>
+									<p class="member-position">${member.position || 'Member'}</p>
+									<p class="member-constituency">${member.constituency || 'Constituency information not available'}</p>
+									<a href="attorneys-single.html?id=${member.id}" class="view-profile-btn">
+										View Profile
+									</a>
+								</div>
+							</div>
+						`;
+                    });
+                    membersGrid.innerHTML = membersHTML;
+                }
+
+                // Hide loading and show content
+                loadingElement.style.display = 'none';
+                membersGrid.style.display = 'grid';
+
+            } catch (error) {
+                console.error('Error loading party members:', error);
+
+                // Show error message
+                loadingElement.style.display = 'none';
+                errorElement.style.display = 'block';
+                document.getElementById('errorMessage').textContent =
+                    `Unable to load party members: ${error.message}. Please try again later.`;
+            }
+        }
+
+        // Load party members when page loads
+        document.addEventListener('DOMContentLoaded', loadPartyMembers);
+
+        // Make function available globally for retry button
+        window.loadPartyMembers = loadPartyMembers;
+
+        // Party Chief Data
+        const partyChiefs = {
+            'jazba': {
+                name: 'Mr. Shabir Ahmad ',
+                title: 'Chief of Jazba Party',
+                image: './images/jazba-chief.jpeg',
+                description: 'A visionary leader with extensive experience in youth empowerment and political activism. Under his leadership, Jazba Party has grown into a formidable force for progressive change in Khyber Pakhtunkhwa. He is committed to creating opportunities for young people and ensuring their voices are heard in the political arena.',
+                quote: '"Our youth are not just the future; they are the present. We must empower them today to build a better tomorrow."'
+            },
+            'khidmat': {
+                name: 'Mr. Khidmat Leader',
+                title: 'Chief of Khidmat Party',
+                image: './images/khidmat-chief.jpg',
+                description: 'A dedicated social worker with decades of experience in community service and development. Under his guidance, Khidmat Party has initiated numerous welfare projects across Khyber Pakhtunkhwa. His commitment to serving the underprivileged has earned him respect across party lines.',
+                quote: '"True leadership is measured by service to others. We must always put the community first in everything we do."'
+            },
+            'ittehad': {
+                name: 'Mr. Ittehad Leader',
+                title: 'Chief of Ittehad Party',
+                image: './images/ittehad-chief.jpg',
+                description: 'A seasoned politician known for his bridge-building abilities and commitment to national unity. He has successfully brought together diverse groups to work for common goals. Under his leadership, Ittehad Party has become a symbol of cooperation and consensus politics.',
+                quote: '"In unity lies strength. When we work together, there is no challenge we cannot overcome."'
+            }
+        };
+
+        // Load party chief information
+        document.addEventListener('DOMContentLoaded', function () {
+            const party = 'jazba'; // This should be set based on the page
+            const chief = partyChiefs[party];
+
+            if (chief) {
+                // Set chief image with fallback
+                const chiefImage = document.getElementById('chiefImage');
+                chiefImage.src = chief.image;
+                chiefImage.onerror = function () {
+                    this.src = './images/default-chief.jpg';
+                };
+
+                // Set chief details
+                document.getElementById('chiefName').textContent = chief.name;
+                document.getElementById('chiefTitle').textContent = chief.title;
+                document.getElementById('chiefDescription').textContent = chief.description;
+                document.getElementById('chiefQuote').textContent = chief.quote;
+            }
+        });
+    </script>
+</body>
+
+</html>
