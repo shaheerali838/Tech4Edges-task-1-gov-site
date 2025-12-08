@@ -11,7 +11,7 @@
   },
   {
     "id": "usama",
-    "name": "Muhammad Usama Hamayoun",
+    "name": "M. Usama Hamayoun",
     "position": "Secretary General",
     "image": "../images/IMG_6083.jpg",
     "organization": "Khyber Pakhtunkhwa Youth Assembly",
@@ -24,6 +24,16 @@
     "name": "Nizar Ahmad Jadoon",
     "position": "Spokesperson",
     "image": "../images/Nizaar.jpeg",
+    "organization": "Khyber Pakhtunkhwa Youth Assembly",
+    "description": "Official Spokesperson of Khyber Pakhtunkhwa Youth Assembly, representing the organization's vision and activities.",
+    "phone": "091-5700041",
+    "email": "nizar@kpyouthassembly.com"
+  },
+  {
+    "id": "aizaz",
+    "name": "Dr Aizaz Ali Shah",
+    "position": "Governor",
+    "image": "../images/aizaz.jpeg",
     "organization": "Khyber Pakhtunkhwa Youth Assembly",
     "description": "Official Spokesperson of Khyber Pakhtunkhwa Youth Assembly, representing the organization's vision and activities.",
     "phone": "091-5700041",

@@ -90,11 +90,14 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarNavDropdown">
 						<ul class="navbar-nav ml-auto">
-							<li class="nav-item">
+							<li class="nav-item active">
 								<a class="nav-link" href="index.html">HOME</a>
 							</li>
-							<li class="nav-item active">
+							<li class="nav-item">
 								<a class="nav-link" href="about.html">ABOUT US</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">CABINET</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
@@ -416,12 +419,12 @@
 			let membersList = "";
 
 			// Show the first 4 executive members or first 4 members
-			const executiveMemberIds = ['danial', 'fatima', 'sania', 'usama'];
+			const executiveMemberIds = ['danial', 'fatima', 'sania', 'usama', 'aizaz'];
 			const executiveMembers = data.filter(member =>
 				executiveMemberIds.includes(member.id)
 			);
 
-			const featuredMembers = executiveMembers.length > 0 ? executiveMembers : data.slice(0, 4);
+			const featuredMembers = executiveMembers.length > 0 ? executiveMembers : data.slice(0, 5);
 
 			featuredMembers.forEach(member => {
 				membersList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
