@@ -95,6 +95,9 @@
 							<li class="nav-item">
 								<a class="nav-link" href="about.html">ABOUT US</a>
 							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="cabinet.html">CABINET</a>
+							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
 									aria-haspopup="true" aria-expanded="false">
@@ -329,7 +332,7 @@
 				let committeeList = "";
 
 				// Define executive committee member IDs (update these based on your JSON)
-				const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'sania', 'aizaz'];
+				const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz'];
 
 				// Filter executive members
 				const executiveMembers = data.filter(member =>
@@ -348,12 +351,7 @@
 								<div class="body">
 									<div class="title"><a href="memberPage.html?id=${member.id}">${member.name}</a></div>
 									<div class="position">${member.position}</div>
-									<div class="sosmed-icon icon-bg-secondary d-inline-flex">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-										<a href="#"><i class="fa fa-twitter"></i></a>
-										<a href="#"><i class="fa fa-instagram"></i></a>
-										<a href="#"><i class="fa fa-linkedin"></i></a>
-									</div>
+									
 								</div>
 							</div>
 						</div>`;
