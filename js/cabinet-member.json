@@ -173,5 +173,12 @@
     "position": "Minister",
     "organization": "Ministry of Agriculture, Livestock, Fisheries & Cooperatives",
     "image": "/images/members/aamir-hamza.jpg"
+  },
+  {
+    "id": "saeed",
+    "name": "Saeed Ullah Wazir",
+    "position": "Minister",
+    "organization": "Ministry of Auqaf, Hajj & Religious Affairs",
+    "image": "/images/members/aamir-hamza.jpg"
   }
 ]

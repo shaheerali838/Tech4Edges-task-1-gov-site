@@ -2,19 +2,16 @@
 <html lang="en">
 
 <head>
-    <!-- Basic Page Needs -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="IE=9">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jazba Party - KPYA</title>
 
-    <!-- Favicons -->
     <link rel="shortcut icon" href="./images/Kpya Logo.PNG">
     <link rel="apple-touch-icon" href="./images/Kpya Logo.PNG">
     <link rel="apple-touch-icon" sizes="72x72" href="./images/Kpya Logo.PNG">
     <link rel="apple-touch-icon" sizes="114x114" href="./images/Kpya Logo.PNG">
 
-    <!-- CSS VENDOR -->
     <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
@@ -22,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="css/vendor/animate.min.css">
 
-    <!-- Custom Stylesheet -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <style>
@@ -61,6 +57,7 @@
             text-align: center;
         }
 
+        /* UPDATED LOGO CSS FOR CIRCULAR FIT */
         .party-logo-large {
             width: 150px;
             height: 150px;
@@ -69,12 +66,16 @@
             border-radius: 50%;
             overflow: hidden;
             background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .party-logo-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            /* Prevents cutting off */
         }
 
         .party-title {
@@ -309,6 +310,7 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
         }
 
+        /* Updated to match header logo style */
         .party-nav-icon {
             width: 80px;
             height: 80px;
@@ -316,12 +318,16 @@
             border-radius: 50%;
             overflow: hidden;
             border: 3px solid #ddd;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .party-nav-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
         }
 
         .jazba-nav .party-nav-icon {
@@ -476,18 +482,14 @@
 
 <body>
 
-    <!-- LOAD PAGE -->
     <div class="animationload">
         <div class="loader"></div>
     </div>
 
-    <!-- BACK TO TOP SECTION -->
     <a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
 
-    <!-- HEADER -->
     <div class="header header-1">
 
-        <!-- TOPBAR -->
         <div class="topbar d-none d-md-block">
             <div class="container">
                 <div class="row align-items-center">
@@ -514,7 +516,6 @@
             </div>
         </div>
 
-        <!-- NAVBAR SECTION -->
         <div class="navbar-main">
             <div class="container">
                 <nav id="navbar-example" class="navbar navbar-expand-lg">
@@ -527,7 +528,7 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="index.html">HOME</a>
                             </li>
                             <li class="nav-item">
@@ -546,7 +547,7 @@
                                     <a class="dropdown-item" href="memberPage.html">Chairman Profile</a>
                                 </div>
                             </li>
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown active">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">
                                     COMMITTEES
@@ -575,14 +576,12 @@
                             </li>
                         </ul>
                     </div>
-                </nav> <!-- -->
-
+                </nav>
             </div>
         </div>
 
     </div>
 
-    <!-- BANNER -->
     <div class="section banner-page" style="position: relative;"
         data-background="./images/d7404fa7-b4d1-4ccb-ae3a-6baa362f6ac9.jpg">
         <div class="banner-overlay" style="background-color: rgba(0, 0, 0, 0.5);"></div>
@@ -606,11 +605,9 @@
         </div>
     </div>
 
-    <!-- PARTY CONTENT -->
     <div class="section">
         <div class="content-wrap">
             <div class="container">
-                <!-- Party Header -->
                 <div class="party-banner text-center">
                     <div class="party-header">
                         <div class="party-logo-large">
@@ -628,7 +625,6 @@
                     </div>
                 </div>
 
-                <!-- Party Description -->
                 <div class="party-description-box">
                     <h2 class="section-heading mb-4 jazba-primary">
                         About Jazba Party
@@ -650,7 +646,6 @@
                     </p>
                 </div>
 
-                <!-- Party Chief Section -->
                 <div class="party-chief-section">
                     <div class="chief-header">
                         <h3>Party Chief</h3>
@@ -677,7 +672,6 @@
                     </div>
                 </div>
 
-                <!-- Party Statistics -->
                 <div class="party-stats">
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
@@ -714,7 +708,6 @@
                     </div>
                 </div>
 
-                <!-- Party Members -->
                 <div class="party-members">
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
@@ -726,20 +719,17 @@
                         </div>
                     </div>
 
-                    <!-- Loading State -->
                     <div id="membersLoading" class="text-center py-5">
                         <div class="loading-spinner"></div>
                         <p class="mt-3">Loading Jazba Party members...</p>
                     </div>
 
-                    <!-- Error State -->
                     <div id="membersError" class="alert alert-danger text-center" style="display: none;">
                         <h4>Error Loading Members</h4>
                         <p id="errorMessage">Unable to load party members. Please try again later.</p>
                         <button class="btn btn-primary mt-2" onclick="loadPartyMembers()">Retry</button>
                     </div>
 
-                    <!-- Members Grid -->
                     <div id="membersGrid" class="party-members-grid" style="display: none;"></div>
 
                     <div class="row mt-4">
@@ -749,7 +739,6 @@
                     </div>
                 </div>
 
-                <!-- Other Parties Navigation -->
                 <div class="party-navigation">
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
@@ -796,7 +785,6 @@
         </div>
     </div>
 
-    <!-- CTA -->
     <div class="section bg-primary">
         <div class="content-wrap py-3">
             <div class="container">
@@ -812,7 +800,6 @@
         </div>
     </div>
 
-    <!-- FOOTER SECTION -->
     <div class="footer" style="position: relative;" data-background="./images/download4.jpg">
         <div class="footer-overlay" style="background-color: rgba(0, 0, 0, 0.7);"></div>
         <div class="content-wrap">
@@ -905,7 +892,6 @@
         </div>
     </div>
 
-    <!-- JS VENDOR -->
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/owl.carousel.js"></script>
@@ -914,7 +900,6 @@
     <script src="js/vendor/form-scripts.js"></script>
     <script src="js/script.js"></script>
 
-    <!-- Dynamic Party Members Loading -->
     <script>
         // Load party members from JSON
         async function loadPartyMembers() {
@@ -948,35 +933,34 @@
 
                 if (partyMembers.length === 0) {
                     membersGrid.innerHTML = `
-						<div class="col-12">
-							<div class="alert alert-info text-center">
-								<h4>No Members Found</h4>
-								<p>No members found for Jazba Party. Check back soon for updates.</p>
-							</div>
-						</div>
-					`;
+                        <div class="col-12">
+                            <div class="alert alert-info text-center">
+                                <h4>No Members Found</h4>
+                                <p>No members found for Jazba Party. Check back soon for updates.</p>
+                            </div>
+                        </div>
+                    `;
                 } else {
                     // Generate members grid
                     let membersHTML = '';
                     partyMembers.forEach(member => {
                         membersHTML += `
-							<div class="party-member-card">
-								<div class="member-photo-container">
-									${member.image ?
-                                `<img src="${member.image}" alt="${member.name}" class="img-fluid">` :
-                                '<div style="background: #f0f0f0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #666;">No Photo</div>'
-                            }
-								</div>
-								<div class="member-info">
-									<h4 class="member-name">${member.name}</h4>
-									<p class="member-position">${member.position || 'Member'}</p>
-									<p class="member-constituency">${member.constituency || 'Constituency information not available'}</p>
+                            <div class="party-member-card">
+                                <div class="member-photo-container">
+                                    <a href="memberPage.html?id=${member.id}">
+                                        <img src="${member.image}" alt="${member.name}" class="img-fluid" onerror="this.src='./images/default-user.png'">
+                                    </a>
+                                </div>
+                                <div class="member-info">
+                                    <h4 class="member-name">${member.name}</h4>
+                                    <p class="member-position">${member.position || 'Member'}</p>
+                                    <p class="member-constituency">${member.constituency || 'Constituency information not available'}</p>
                                     <a href="memberPage.html?id=${member.id}" class="view-profile-btn">
-										View Profile
-									</a>
-								</div>
-							</div>
-						`;
+                                        View Profile
+                                    </a>
+                                </div>
+                            </div>
+                        `;
                     });
                     membersGrid.innerHTML = membersHTML;
                 }
