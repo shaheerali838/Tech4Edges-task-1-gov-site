@@ -2,19 +2,16 @@
 <html lang="en">
 
 <head>
-	<!-- Basic Page Needs -->
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="IE=9">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Suriya Bibi - KPYA Member Profile</title>
+	<title>KPYA Member Profile</title>
 
-	<!-- Favicons -->
 	<link rel="shortcut icon" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" sizes="72x72" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" sizes="114x114" href="./images/Kpya Logo.PNG">
 
-	<!-- CSS VENDOR -->
 	<link rel="stylesheet" href="css/vendor/bootstrap.min.css">
 	<link rel="stylesheet" href="css/vendor/font-awesome.min.css">
 	<link rel="stylesheet" href="css/vendor/owl.carousel.min.css">
@@ -22,10 +19,8 @@
 	<link rel="stylesheet" href="css/vendor/magnific-popup.css">
 	<link rel="stylesheet" href="css/vendor/animate.min.css">
 
-	<!-- Custom Stylesheet -->
 	<link rel="stylesheet" href="css/style.css">
 
-	<!-- Inline Critical CSS -->
 	<style>
 		/* Critical loading styles */
 		.animationload {
@@ -74,7 +69,8 @@
 		.member-grid {
 			display: grid;
 			grid-template-columns: repeat(5, 1fr);
-			grid-template-rows: repeat(5, auto);
+			/* Simplified grid */
+			grid-template-rows: auto;
 			gap: 20px;
 			margin: 30px 0;
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -97,30 +93,22 @@
 		.photo-section {
 			grid-column: span 2 / span 2;
 			grid-row: span 2 / span 2;
+			/* Span 2 rows to match info height */
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
 			background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+			position: relative;
 		}
 
 		.info-section {
-			grid-column: span 2 / span 2;
+			grid-column: span 3 / span 3;
+			/* Take up the rest of the width */
 			grid-row: span 2 / span 2;
-			grid-column-start: 3;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-		}
-
-		.contact-button-section {
-			grid-row: span 2 / span 2;
-			grid-column-start: 5;
-			display: flex;
-			flex-direction: column;
-			justify-content: flex-start;
-			align-items: center;
-			background: linear-gradient(135deg, #f1f8ff 0%, #e3f2fd 100%);
 		}
 
 		.contact-details-section {
@@ -129,15 +117,10 @@
 			border-left: 5px solid #223555;
 		}
 
-		.additional-info-section {
-			grid-column: span 5 / span 5;
-			grid-row-start: 4;
-			border-left: 5px solid #4CAF50;
-		}
-
 		.description-section {
 			grid-column: span 5 / span 5;
-			grid-row-start: 5;
+			grid-row-start: 4;
+			/* Moved up */
 			border-left: 5px solid #FF9800;
 		}
 
@@ -224,37 +207,6 @@
 			letter-spacing: 0.5px;
 		}
 
-		.contact-button {
-			width: 100%;
-			margin-top: 15px;
-		}
-
-		.btn {
-			display: inline-block;
-			background: linear-gradient(135deg, #223555 0%, #1a2a40 100%);
-			color: white;
-			padding: 14px 25px;
-			text-decoration: none;
-			border-radius: 6px;
-			font-weight: 600;
-			text-align: center;
-			width: 100%;
-			box-sizing: border-box;
-			transition: all 0.3s ease;
-			border: none;
-			font-size: 16px;
-			letter-spacing: 0.5px;
-			box-shadow: 0 4px 12px rgba(34, 53, 85, 0.2);
-		}
-
-		.btn:hover {
-			background: linear-gradient(135deg, #1a2a40 0%, #223555 100%);
-			transform: translateY(-2px);
-			box-shadow: 0 6px 18px rgba(34, 53, 85, 0.3);
-			color: white;
-			text-decoration: none;
-		}
-
 		.contact-info {
 			font-size: 16px;
 			line-height: 1.8;
@@ -284,44 +236,6 @@
 			min-width: 80px;
 		}
 
-		.social-media {
-			margin-top: 30px;
-			text-align: center;
-			width: 100%;
-		}
-
-		.additional-info h4 {
-			margin-top: 0;
-			color: #223555;
-			font-size: 20px;
-			margin-bottom: 20px;
-			padding-bottom: 10px;
-			border-bottom: 2px solid #e0e0e0;
-			font-weight: 700;
-			display: flex;
-			align-items: center;
-			gap: 10px;
-		}
-
-		.additional-info h4::before {
-			content: "📋";
-			font-size: 18px;
-		}
-
-		.additional-info p {
-			font-size: 16px;
-			color: #2c3e50;
-			margin: 12px 0;
-			padding-left: 20px;
-			position: relative;
-		}
-
-		.additional-info p strong {
-			color: #223555;
-			min-width: 120px;
-			display: inline-block;
-		}
-
 		.description {
 			font-size: 16px;
 			line-height: 1.8;
@@ -335,11 +249,6 @@
 			background: #f8f9fa;
 			border-radius: 6px;
 			border-left: 4px solid #FF9800;
-		}
-
-		/* Photo section label */
-		.photo-section {
-			position: relative;
 		}
 
 		.photo-section::before {
@@ -365,9 +274,7 @@
 
 			.photo-section,
 			.info-section,
-			.contact-button-section,
 			.contact-details-section,
-			.additional-info-section,
 			.description-section {
 				grid-column: 1;
 				grid-row: auto;
@@ -420,53 +327,6 @@
 			.organization {
 				font-size: 14px;
 			}
-
-			.btn {
-				padding: 12px 20px;
-				font-size: 14px;
-			}
-		}
-
-		/* Loading states */
-		.loading-placeholder {
-			background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-			background-size: 200% 100%;
-			animation: loading 1.5s infinite;
-		}
-
-		@keyframes loading {
-			0% {
-				background-position: 200% 0;
-			}
-
-			100% {
-				background-position: -200% 0;
-			}
-		}
-
-		/* Status indicator */
-		.status-indicator {
-			display: inline-block;
-			width: 10px;
-			height: 10px;
-			border-radius: 50%;
-			background-color: #4CAF50;
-			margin-left: 8px;
-			animation: pulse 2s infinite;
-		}
-
-		@keyframes pulse {
-			0% {
-				box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
-			}
-
-			70% {
-				box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
-			}
-
-			100% {
-				box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
-			}
 		}
 
 		/* Loading spinner */
@@ -479,34 +339,20 @@
 			animation: spin 1s linear infinite;
 			margin: 0 auto 20px;
 		}
-
-		@keyframes spin {
-			0% {
-				transform: rotate(0deg);
-			}
-
-			100% {
-				transform: rotate(360deg);
-			}
-		}
 	</style>
 
 	<script src="js/vendor/modernizr.min.js" defer></script>
 </head>
 
 <body>
-	<!-- LOAD PAGE -->
 	<div class="animationload">
 		<div class="loader"></div>
 	</div>
 
-	<!-- BACK TO TOP SECTION -->
 	<a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
 
-	<!-- HEADER -->
 	<div class="header header-1">
 
-		<!-- TOPBAR -->
 		<div class="topbar d-none d-md-block">
 			<div class="container">
 				<div class="row align-items-center">
@@ -533,7 +379,6 @@
 			</div>
 		</div>
 
-		<!-- NAVBAR SECTION -->
 		<div class="navbar-main">
 			<div class="container">
 				<nav id="navbar-example" class="navbar navbar-expand-lg">
@@ -594,14 +439,12 @@
 							</li>
 						</ul>
 					</div>
-				</nav> <!-- -->
-
+				</nav>
 			</div>
 		</div>
 
 	</div>
 
-	<!-- BANNER -->
 	<div class="section banner-page" style="position: relative;"
 		data-background="./images/ad7404fa7-b4d1-4ccb-ae3a-6baa362f6ac9.jpg">
 		<div class="banner-overlay"></div>
@@ -626,33 +469,28 @@
 		</div>
 	</div>
 
-	<!-- MEMBER PROFILE CONTENT -->
 	<div class="section member-profile-section">
 		<div class="content-wrap">
 			<div class="container">
-				<!-- Loading State -->
 				<div id="memberLoading" class="text-center py-5">
 					<div class="loading-spinner"></div>
 					<p class="mt-3">Loading member information...</p>
 				</div>
 
-				<!-- Error State -->
 				<div id="memberError" class="alert alert-danger text-center" style="display: none;">
 					<h4>Error Loading Member Data</h4>
 					<p id="errorMessage">Unable to load member information. Please try again later.</p>
 					<button class="btn btn-primary mt-2" onclick="loadMemberData()">Retry</button>
 				</div>
 
-				<!-- Dynamic Content -->
 				<div id="memberContent" style="display: none;">
 					<div class="row">
-						<!-- Main Content Column -->
 						<div class="col-lg-12 col-md-12">
 							<div class="member-grid">
-								<!-- Photo Section -->
 								<div class="photo-section">
 									<div class="member-photo" style="width: 300px; height: 300px;">
-										<img id="memberImage" src="" alt="Member Photo" style="display: none;">
+										<img id="memberImage" src="" alt="Member Photo" style="display: none;"
+											onerror="this.onerror=null; this.src='./images/default-user.png';">
 										<div id="photoPlaceholder" class="member-photo-placeholder">Photo</div>
 									</div>
 									<p style="text-align: center; color: #666; font-size: 14px; margin-top: 10px;">
@@ -660,7 +498,6 @@
 									</p>
 								</div>
 
-								<!-- Information Section -->
 								<div class="info-section">
 									<h1 class="member-name" id="memberName">Loading... <span
 											class="status-indicator"></span></h1>
@@ -673,25 +510,6 @@
 									</div>
 								</div>
 
-								<!-- Contact Button Section -->
-								<div class="contact-button-section">
-									<div class="contact-button">
-										<a href="#" id="contactEmail" class="btn">
-											<i class="fa fa-envelope" style="margin-right: 8px;"></i>
-											CONTACT MEMBER
-										</a>
-									</div>
-									<div class="social-media">
-										<div class="sosmed-icon icon-bg-secondary d-inline-flex">
-											<a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-											<a href="#" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-											<a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-											<a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
-										</div>
-									</div>
-								</div>
-
-								<!-- Contact Details Section -->
 								<div class="contact-details-section">
 									<div class="contact-info">
 										<p>
@@ -713,21 +531,6 @@
 									</div>
 								</div>
 
-								<!-- Additional Information Section -->
-								<div class="additional-info-section">
-									<div class="additional-info">
-										<h4>Additional Information</h4>
-										<p><strong>Date of Birth:</strong> <span id="memberDOB">Loading...</span></p>
-										<p><strong>Constituency:</strong> <span
-												id="memberConstituency">Loading...</span></p>
-										<p><strong>Political Affiliation:</strong> <span
-												id="memberParty">Loading...</span></p>
-										<p><strong>Member Since:</strong> <span id="memberSince">Information not
-												available</span></p>
-									</div>
-								</div>
-
-								<!-- Description Section -->
 								<div class="description-section">
 									<div class="description">
 										<h4 style="color: #223555; margin-bottom: 15px; font-size: 20px;">
@@ -747,7 +550,6 @@
 		</div>
 	</div>
 
-	<!-- CTA -->
 	<div class="section bg-primary">
 		<div class="content-wrap py-3">
 			<div class="container">
@@ -762,7 +564,6 @@
 		</div>
 	</div>
 
-	<!-- FOOTER SECTION -->
 	<footer class="footer" style="position: relative;" data-background="./images/download4.jpg">
 		<div class="footer-overlay"></div>
 		<div class="content-wrap">
@@ -848,7 +649,6 @@
 		</div>
 	</footer>
 
-	<!-- JS VENDOR - Load with defer for better performance -->
 	<script src="js/vendor/jquery.min.js" defer></script>
 	<script src="js/vendor/bootstrap.min.js" defer></script>
 	<script src="js/vendor/owl.carousel.js" defer></script>
@@ -857,7 +657,6 @@
 	<script src="js/vendor/form-scripts.js" defer></script>
 	<script src="js/script.js" defer></script>
 
-	<!-- Dynamic Member Data Loading -->
 	<script>
 		// Get member ID from URL parameter
 		function getMemberIdFromUrl() {
@@ -892,8 +691,8 @@
 				if (memberId) {
 					member = members.find(m => m.id === memberId);
 				} else {
-					// Default to Suriya Bibi if no ID provided
-					member = members.find(m => m.id === 'suriyabibi') || members[0];
+					// Default to first member
+					member = members[0];
 				}
 
 				if (!member) {
@@ -936,24 +735,23 @@
 
 				// Update contact information
 				const contactPhone = document.getElementById('contactPhone');
-				const contactEmail = document.getElementById('contactEmail');
 				const contactEmailText = document.getElementById('contactEmailText');
 
 				if (member.phone) {
 					contactPhone.textContent = member.phone;
 					contactPhone.href = `tel:${member.phone}`;
+				} else {
+					contactPhone.textContent = 'Not Available';
+					contactPhone.removeAttribute('href');
 				}
 
 				if (member.email) {
-					contactEmail.href = `mailto:${member.email}`;
 					contactEmailText.textContent = member.email;
 					contactEmailText.href = `mailto:${member.email}`;
+				} else {
+					contactEmailText.textContent = 'Not Available';
+					contactEmailText.removeAttribute('href');
 				}
-
-				// Update additional information
-				document.getElementById('memberDOB').textContent = member.dob || 'Information not available';
-				document.getElementById('memberConstituency').textContent = member.constituencyCode || member.position || 'Information not available';
-				document.getElementById('memberParty').textContent = member.party || member.organization || 'Information not available';
 
 				// Update description
 				const descriptionElement = document.getElementById('memberDescription');
@@ -961,10 +759,10 @@
 					descriptionElement.textContent = member.description;
 				} else {
 					descriptionElement.innerHTML = `
-						${member.name} represents ${member.position || 'a constituency'} as ${member.organization || 'an Independent candidate'}.
-						Based in ${member.constituency || 'their constituency'}, they serve as a member of the Khyber Pakhtunkhwa Youth Assembly.
-						Additional biographical information and achievements will be updated here.
-					`;
+                        ${member.name} represents ${member.position || 'a constituency'} as ${member.organization || 'an Independent candidate'}.
+                        Based in ${member.constituency || 'their constituency'}, they serve as a member of the Khyber Pakhtunkhwa Youth Assembly.
+                        Additional biographical information and achievements will be updated here.
+                    `;
 				}
 
 				// Hide loading and show content
