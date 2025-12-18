@@ -328,28 +328,28 @@
 			let attorneys = document.getElementById("attorneys");
 			let attorneysList = "";
 
-			// IDs to exclude from the list
-			const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
+			// IDs to exclude from the list (Executive Committee members)
+			const executiveMemberIds = ['Danial', 'Nizar', 'Usama', 'Fatima', 'Aizaz', 'Sania'];
 
 			// Filter data to exclude the IDs above
-			const filteredData = data.filter(member => !executiveMemberIds.includes(member.id));
+			const filteredData = data.filter(member => !executiveMemberIds.includes(member.Id));
 
 			filteredData.forEach(member => {
 				attorneysList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
                     <div class="rs-team-1">
                         <div class="media-box">
-                            <a href="memberPage.html?id=${member.id}">
+                            <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">
                                 <img 
-                                    src="${member.image}" 
-                                    alt="${member.name}" 
+                                    src="${member.Image}" 
+                                    alt="${member.Name}" 
                                     class="img-fluid" 
                                     onerror="this.onerror=null; this.src='./images/default-user.png';"
                                 >
                             </a>
                         </div>
                         <div class="body">
-                            <div class="title"><a href="member-profile.html?id=${member.id}">${member.name}</a></div>
-                            <div class="position">${member.position}</div>
+                            <div class="title"><a href="memberPage.html?id=${encodeURIComponent(member.Id)}">${member.Name}</a></div>
+                            <div class="position">${member.Position}</div>
                         </div>
                     </div>
                 </div>`;

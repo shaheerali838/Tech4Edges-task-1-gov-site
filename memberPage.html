@@ -667,120 +667,360 @@
 		}
 
 		// Load member data from JSON
+		// In memberPage.html, replace the loadMemberData function with this:
+
 		async function loadMemberData() {
 			const memberId = getMemberIdFromUrl();
 			const loadingElement = document.getElementById('memberLoading');
 			const errorElement = document.getElementById('memberError');
 			const contentElement = document.getElementById('memberContent');
 
-			// Show loading state
 			loadingElement.style.display = 'block';
 			errorElement.style.display = 'none';
 			contentElement.style.display = 'none';
 
 			try {
-				// Fetch members data from JSON file
 				const response = await fetch('./js/members-list.json');
 
 				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
+					throw new Error(`Failed to load data: ${response.status}`);
 				}
 
 				const members = await response.json();
 
-				// Find the member by ID (default to first member if no ID provided)
+				// Find member by ID
 				let member;
 				if (memberId) {
-					member = members.find(m => m.id === memberId);
+					// Try exact match
+					member = members.find(m => m.Id === memberId);
+
+					// Try case-insensitive match
+					if (!member) {
+						member = members.find(m => m.Id.toLowerCase() === memberId.toLowerCase());
+					}
+
+					// Try by name
+					if (!member) {
+						const searchName = memberId.toLowerCase().replace(/_/g, ' ');
+						member = members.find(m => m.Name.toLowerCase().includes(searchName));
+					}
 				} else {
-					// Default to first member
 					member = members[0];
 				}
 
 				if (!member) {
-					throw new Error('Member not found');
+					throw new Error('Member not found in the database.');
 				}
 
-				// Update page title
-				document.title = `${member.name} - KPYA Member Profile`;
+				console.log('Loaded member data:', member);
 
-				// Update breadcrumb
+				// ===== UPDATE PAGE ELEMENTS =====
+
+				// 1. Update page title and breadcrumb
+				document.title = `${member.Name} | KPYA Member Profile`;
+
 				const breadcrumbName = document.getElementById('breadcrumbName');
 				if (breadcrumbName) {
-					breadcrumbName.textContent = member.name;
+					breadcrumbName.textContent = member.Name;
 				}
 
-				// Update page title element
 				const pageTitle = document.querySelector('.title-page');
 				if (pageTitle) {
-					pageTitle.textContent = `${member.name} Profile`;
+					pageTitle.textContent = `${member.Name}`;
 				}
 
-				// Update member image
+				// 2. Handle member image
 				const memberImage = document.getElementById('memberImage');
 				const photoPlaceholder = document.getElementById('photoPlaceholder');
-				if (member.image) {
-					memberImage.src = member.image;
-					memberImage.alt = member.name;
-					memberImage.style.display = 'block';
-					photoPlaceholder.style.display = 'none';
+
+				// Clear any previous error handlers
+				memberImage.onerror = null;
+
+				// Check if we have a valid image path
+				if (member.Image && member.Image.trim() !== '') {
+					let imagePath = member.Image.trim();
+
+					// If it's a directory path, try to find the image
+					if (imagePath.endsWith('/')) {
+						// Try common image formats with member ID
+						imagePath = imagePath + member.Id + '.jpg';
+					}
+
+					console.log('Setting image path:', imagePath);
+					memberImage.src = imagePath;
+					memberImage.alt = `${member.Name} - KPYA Member`;
+
+					// Set up error handling for image
+					memberImage.onerror = function () {
+						console.log('Image failed to load, showing placeholder');
+						this.style.display = 'none';
+						photoPlaceholder.style.display = 'flex';
+
+						// Generate initials for placeholder
+						const initials = member.Name
+							.split(' ')
+							.map(word => word[0])
+							.join('')
+							.toUpperCase()
+							.substring(0, 2);
+						photoPlaceholder.textContent = initials || 'KPYA';
+						photoPlaceholder.style.fontSize = '60px';
+						photoPlaceholder.style.fontWeight = 'bold';
+					};
+
+					// When image loads successfully
+					memberImage.onload = function () {
+						photoPlaceholder.style.display = 'none';
+						this.style.display = 'block';
+					};
+
+					memberImage.style.display = 'none'; // Hide initially
+					photoPlaceholder.style.display = 'flex'; // Show placeholder while loading
+
+					// Generate initials for placeholder (shown while image loads)
+					const initials = member.Name
+						.split(' ')
+						.map(word => word[0])
+						.join('')
+						.toUpperCase()
+						.substring(0, 2);
+					photoPlaceholder.textContent = initials || 'KPYA';
+					photoPlaceholder.style.fontSize = '60px';
+					photoPlaceholder.style.fontWeight = 'bold';
+
 				} else {
+					// No image path - show placeholder with initials
 					memberImage.style.display = 'none';
-					photoPlaceholder.style.display = 'block';
+					photoPlaceholder.style.display = 'flex';
+
+					const initials = member.Name
+						.split(' ')
+						.map(word => word[0])
+						.join('')
+						.toUpperCase()
+						.substring(0, 2);
+					photoPlaceholder.textContent = initials || 'KPYA';
+					photoPlaceholder.style.fontSize = '60px';
+					photoPlaceholder.style.fontWeight = 'bold';
 				}
 
-				// Update member information
-				document.getElementById('memberName').textContent = member.name;
-				document.getElementById('memberPosition').textContent = member.position || 'Member';
-				document.getElementById('memberOrganization').textContent = member.organization || 'Independent Candidate';
-				document.getElementById('constituencyAddress').textContent = member.constituency || 'Information not available';
+				// 3. Update member information
+				document.getElementById('memberName').textContent = member.Name || 'KPYA Member';
+				document.getElementById('memberPosition').textContent = member.Position || 'Youth Member';
 
-				// Update contact information
+				// Show District if available, otherwise hide the organization section
+				const orgElement = document.getElementById('memberOrganization');
+				if (member.District && member.District !== null && member.District !== 'null') {
+					orgElement.textContent = member.District;
+					orgElement.style.display = 'block';
+				} else {
+					orgElement.style.display = 'none';
+				}
+
+				// Remove the entire constituency section since we don't have this data
+				const constituencySection = document.querySelector('.constituency');
+				if (constituencySection) {
+					constituencySection.style.display = 'none';
+				}
+
+				// 4. Update contact information
 				const contactPhone = document.getElementById('contactPhone');
 				const contactEmailText = document.getElementById('contactEmailText');
+				const emailLabel = document.querySelector('.contact-info p:nth-child(2) strong');
 
-				if (member.phone) {
-					contactPhone.textContent = member.phone;
-					contactPhone.href = `tel:${member.phone}`;
+				// Phone number
+				if (member.Contact_no && member.Contact_no.trim() !== '') {
+					const phoneNumber = member.Contact_no.trim();
+					contactPhone.textContent = phoneNumber;
+					contactPhone.href = `tel:${phoneNumber.replace(/\s+/g, '')}`;
+					contactPhone.style.color = '#223555';
+					contactPhone.style.textDecoration = 'none';
+					contactPhone.style.fontWeight = '500';
 				} else {
 					contactPhone.textContent = 'Not Available';
 					contactPhone.removeAttribute('href');
+					contactPhone.style.color = '#666';
 				}
 
-				if (member.email) {
-					contactEmailText.textContent = member.email;
-					contactEmailText.href = `mailto:${member.email}`;
+				// Change the label from "Email" to "Membership ID"
+				if (emailLabel) {
+					emailLabel.innerHTML = '<i class="fa fa-id-card" style="margin-right: 8px;"></i> Membership ID:';
+				}
+
+				// Show Membership ID instead of email
+				if (member.Membership_no) {
+					contactEmailText.textContent = member.Membership_no;
+					contactEmailText.removeAttribute('href');
+					contactEmailText.style.color = '#223555';
+					contactEmailText.style.textDecoration = 'none';
+					contactEmailText.style.fontWeight = '500';
 				} else {
 					contactEmailText.textContent = 'Not Available';
 					contactEmailText.removeAttribute('href');
+					contactEmailText.style.color = '#666';
 				}
 
-				// Update description
+				// 5. Update description section with all available info
 				const descriptionElement = document.getElementById('memberDescription');
-				if (member.description) {
-					descriptionElement.textContent = member.description;
-				} else {
-					descriptionElement.innerHTML = `
-                        ${member.name} represents ${member.position || 'a constituency'} as ${member.organization || 'an Independent candidate'}.
-                        Based in ${member.constituency || 'their constituency'}, they serve as a member of the Khyber Pakhtunkhwa Youth Assembly.
-                        Additional biographical information and achievements will be updated here.
-                    `;
+				let descriptionHTML = '<div class="member-details-grid">';
+
+				// Add all available information in a clean grid format
+				if (member.Name) {
+					descriptionHTML += `<div class="detail-item">
+                <div class="detail-label">Full Name:</div>
+                <div class="detail-value">${member.Name}</div>
+            </div>`;
 				}
 
-				// Hide loading and show content
+				if (member.Father_name && member.Father_name.trim() !== '') {
+					descriptionHTML += `<div class="detail-item">
+                <div class="detail-label">Father's Name:</div>
+                <div class="detail-value">${member.Father_name.trim()}</div>
+            </div>`;
+				}
+
+				if (member.Cnic) {
+					descriptionHTML += `<div class="detail-item">
+                <div class="detail-label">CNIC:</div>
+                <div class="detail-value">${member.Cnic}</div>
+            </div>`;
+				}
+
+				if (member.Membership_no) {
+					descriptionHTML += `<div class="detail-item">
+                <div class="detail-label">Membership ID:</div>
+                <div class="detail-value">${member.Membership_no}</div>
+            </div>`;
+				}
+
+				if (member.Position) {
+					descriptionHTML += `<div class="detail-item">
+                <div class="detail-label">Position:</div>
+                <div class="detail-value">${member.Position}</div>
+            </div>`;
+				}
+
+				if (member.District && member.District !== null && member.District !== 'null') {
+					descriptionHTML += `<div class="detail-item">
+                <div class="detail-label">District:</div>
+                <div class="detail-value">${member.District}</div>
+            </div>`;
+				}
+
+				if (member.Contact_no) {
+					descriptionHTML += `<div class="detail-item">
+                <div class="detail-label">Contact Number:</div>
+                <div class="detail-value">${member.Contact_no}</div>
+            </div>`;
+				}
+
+				descriptionHTML += '</div>';
+
+				// Add CSS for the grid layout
+				const style = document.createElement('style');
+				style.textContent = `
+            .member-details-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 15px;
+                margin-top: 10px;
+            }
+            .detail-item {
+                background: #f8f9fa;
+                padding: 15px;
+                border-radius: 8px;
+                border-left: 4px solid #223555;
+                transition: all 0.3s ease;
+            }
+            .detail-item:hover {
+                background: #e9ecef;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+            .detail-label {
+                font-weight: 600;
+                color: #223555;
+                font-size: 14px;
+                margin-bottom: 5px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .detail-value {
+                color: #2c3e50;
+                font-size: 16px;
+                font-weight: 500;
+            }
+            @media (max-width: 768px) {
+                .member-details-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+        `;
+				document.head.appendChild(style);
+
+				descriptionElement.innerHTML = descriptionHTML;
+
+				// 6. Show content
 				loadingElement.style.display = 'none';
 				contentElement.style.display = 'block';
 
 			} catch (error) {
 				console.error('Error loading member data:', error);
 
-				// Show error message
 				loadingElement.style.display = 'none';
 				errorElement.style.display = 'block';
-				document.getElementById('errorMessage').textContent =
-					`Unable to load member information: ${error.message}. Please try again later.`;
+
+				let errorMsg = '';
+				if (error.message.includes('not found')) {
+					errorMsg = `Member "${memberId}" was not found in our database.`;
+				} else if (error.message.includes('Failed to load')) {
+					errorMsg = 'Unable to load member data. Please check your internet connection.';
+				} else {
+					errorMsg = `Error: ${error.message}`;
+				}
+
+				document.getElementById('errorMessage').textContent = errorMsg;
 			}
 		}
+
+		// Update the getMemberIdFromUrl function
+		function getMemberIdFromUrl() {
+			const urlParams = new URLSearchParams(window.location.search);
+			let id = urlParams.get('id');
+			if (id) {
+				id = decodeURIComponent(id).trim();
+			}
+			return id;
+		}
+
+		// Initialize when page loads
+		document.addEventListener('DOMContentLoaded', function () {
+			loadMemberData();
+			window.loadMemberData = loadMemberData;
+		});
+
+
+
+		// Update the getMemberIdFromUrl function to handle decoding
+		function getMemberIdFromUrl() {
+			const urlParams = new URLSearchParams(window.location.search);
+			let id = urlParams.get('id');
+			// Decode URL and remove any extra spaces
+			if (id) {
+				id = decodeURIComponent(id).trim();
+			}
+			return id;
+		}
+
+		// Initialize when page loads
+		document.addEventListener('DOMContentLoaded', function () {
+			// Load member data
+			loadMemberData();
+
+			// Add retry button functionality
+			window.loadMemberData = loadMemberData;
+		});
+
 
 		// Load member data when page loads
 		document.addEventListener('DOMContentLoaded', loadMemberData);
