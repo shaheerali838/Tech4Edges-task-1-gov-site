@@ -65,39 +65,7 @@
     "Contact_no": "091-5700041",
     "Image": "../images/Fatima.jpeg"
   },
-  {
-    "Id": "NasrullahHassrat",
-    "Membership_no": "N/A",
-    "Name": "Nasrullah Hassrat",
-    "Position": "Chief of Khidmat Party",
-    "Father_name": "N/A",
-    "Cnic": "N/A",
-    "District": null,
-    "Contact_no": "091-5700041",
-    "Image": "../images/nasrullah.jpeg"
-  },
-  {
-    "Id": "ShabirAhmad",
-    "Membership_no": "N/A",
-    "Name": "Shabir Ahmad",
-    "Position": "Chief of Jazba Party",
-    "Father_name": "N/A",
-    "Cnic": "N/A",
-    "District": null,
-    "Contact_no": "091-5700041",
-    "Image": "../images/jazba-chief.jpeg"
-  },
-  {
-    "Id": "AbidJadoon",
-    "Membership_no": "N/A",
-    "Name": "Abid Jadoon",
-    "Position": "Chief of Ittehad Party",
-    "Father_name": "N/A",
-    "Cnic": "N/A",
-    "District": null,
-    "Contact_no": "091-5700041",
-    "Image": "../images/ittehad-chief.jpeg"
-  },
+
   {
     "Id": "AamirNiaz",
     "Membership_no": "KPYA-25-00501",
@@ -217,7 +185,7 @@
     "Cnic": "16202-6188304-1",
     "District": null,
     "Contact_no": "03462257522",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/ittehad-chief.jpeg"
   },
   {
     "Id": "AbubakarAhmad",
@@ -1900,7 +1868,7 @@
     "Cnic": "16102-2073531-9",
     "District": null,
     "Contact_no": "03149090023",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/nasrullah.jpeg"
   },
   {
     "Id": "NazifAli",
@@ -2362,7 +2330,7 @@
     "Cnic": "13503-9966886-9",
     "District": null,
     "Contact_no": "0313-5807554",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/jazba-chief.jpeg"
   },
   {
     "Id": "Taimoorkhan",
