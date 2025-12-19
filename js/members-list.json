@@ -1518,7 +1518,17 @@
     "Contact_no": "03468297949",
     "Image": "./images/Members Pic/"
   },
-
+  {
+    "Id": "MuhammadJunaid",
+    "Membership_no": "KPYA-25-00633",
+    "Name": "Muhammad Junaid",
+    "Position": "YOUTH MPA",
+    "Father_name": "Zahir Muhammad",
+    "Cnic": "17202-0347220-7",
+    "District": null,
+    "Contact_no": "03409038950",
+    "Image": "./images/Members Pic/Muhammad Junaid.jpeg"
+  },
   {
     "Id": "MuhammadJunaid",
     "Membership_no": "KPYA-25-00634",
@@ -1528,7 +1538,7 @@
     "Cnic": "17301-0875754-5",
     "District": null,
     "Contact_no": "03169060802",
-    "Image": "./images/Members Pic/Muhammad Junaid.jpeg"
+    "Image": "./images/Members Pic/Muhammad Junai.jpeg"
   },
   {
     "Id": "MuhammadMaaz",
