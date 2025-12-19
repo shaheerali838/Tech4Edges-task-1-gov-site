@@ -66,6 +66,39 @@
     "Image": "../images/Fatima.jpeg"
   },
   {
+    "Id": "NasrullahHassrat",
+    "Membership_no": "N/A",
+    "Name": "Nasrullah Hassrat",
+    "Position": "Chief of Khidmat Party",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/nasrullah.jpeg"
+  },
+  {
+    "Id": "ShabirAhmad",
+    "Membership_no": "N/A",
+    "Name": "Shabir Ahmad",
+    "Position": "Chief of Jazba Party",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/jazba-chief.jpeg"
+  },
+  {
+    "Id": "AbidJadoon",
+    "Membership_no": "N/A",
+    "Name": "Abid Jadoon",
+    "Position": "Chief of Ittehad Party",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/ittehad-chief.jpeg"
+  },
+  {
     "Id": "AamirNiaz",
     "Membership_no": "KPYA-25-00501",
     "Name": "Aamir Niaz",
