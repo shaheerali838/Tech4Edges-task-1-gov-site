@@ -660,103 +660,188 @@
 	<script src="js/script.js" defer></script>
 
 	<script>
-		// Get member ID from URL parameter
-		function getMemberIdFromUrl() {
-			const urlParams = new URLSearchParams(window.location.search);
-			return urlParams.get('id');
-		}
-
-		// Load member data from JSON
-		// In memberPage.html, replace the loadMemberData function with this:
-
-		async function loadMemberData() {
-			const memberId = getMemberIdFromUrl();
-			const loadingElement = document.getElementById('memberLoading');
-			const errorElement = document.getElementById('memberError');
-			const contentElement = document.getElementById('memberContent');
-
-			loadingElement.style.display = 'block';
-			errorElement.style.display = 'none';
-			contentElement.style.display = 'none';
-
-			try {
-				const response = await fetch('./js/members-list.json');
-
-				if (!response.ok) {
-					throw new Error(`Failed to load data: ${response.status}`);
+		// Simple, clean script for member page
+		document.addEventListener('DOMContentLoaded', function () {
+			// Get member ID from URL
+			function getMemberId() {
+				const urlParams = new URLSearchParams(window.location.search);
+				let id = urlParams.get('id');
+				if (id) {
+					// Decode and clean the ID
+					id = decodeURIComponent(id).trim();
+					// Remove any path components, keep only the filename/id
+					if (id.includes('/')) {
+						id = id.split('/').pop().replace('.jpg', '').replace('.png', '');
+					}
 				}
+				return id;
+			}
 
-				const members = await response.json();
+			// Load and display member data
+			async function loadMemberData() {
+				const memberId = getMemberId();
+				const loadingElement = document.getElementById('memberLoading');
+				const errorElement = document.getElementById('memberError');
+				const contentElement = document.getElementById('memberContent');
 
-				// Find member by ID
-				let member;
-				if (memberId) {
-					// Try exact match
-					member = members.find(m => m.Id === memberId);
+				console.log('Loading member with ID:', memberId);
 
-					// Try case-insensitive match
+				try {
+					// Try to load the JSON file
+					const response = await fetch('./js/members-list.json');
+
+					if (!response.ok) {
+						throw new Error(`Failed to load JSON: ${response.status}`);
+					}
+
+					const members = await response.json();
+					console.log('Total members loaded:', members.length);
+
+					// Find the member by ID
+					let member = null;
+
+					if (memberId) {
+						// Try exact match first
+						member = members.find(m => m.Id === memberId);
+
+						// Try case-insensitive match
+						if (!member) {
+							member = members.find(m =>
+								m.Id && m.Id.toLowerCase() === memberId.toLowerCase()
+							);
+						}
+
+						// Try by name as last resort
+						if (!member) {
+							const searchName = memberId.toLowerCase();
+							member = members.find(m =>
+								m.Name && m.Name.toLowerCase().includes(searchName)
+							);
+						}
+					}
+
 					if (!member) {
-						member = members.find(m => m.Id.toLowerCase() === memberId.toLowerCase());
+						throw new Error(`Member "${memberId}" not found in database.`);
 					}
 
-					// Try by name
-					if (!member) {
-						const searchName = memberId.toLowerCase().replace(/_/g, ' ');
-						member = members.find(m => m.Name.toLowerCase().includes(searchName));
-					}
-				} else {
-					member = members[0];
-				}
+					console.log('Found member:', member);
 
-				if (!member) {
-					throw new Error('Member not found in the database.');
-				}
+					// Update page content
+					document.title = `${member.Name} | KPYA Member Profile`;
 
-				console.log('Loaded member data:', member);
-
-				// ===== UPDATE PAGE ELEMENTS =====
-
-				// 1. Update page title and breadcrumb
-				document.title = `${member.Name} | KPYA Member Profile`;
-
-				const breadcrumbName = document.getElementById('breadcrumbName');
-				if (breadcrumbName) {
-					breadcrumbName.textContent = member.Name;
-				}
-
-				const pageTitle = document.querySelector('.title-page');
-				if (pageTitle) {
-					pageTitle.textContent = `${member.Name}`;
-				}
-
-				// 2. Handle member image
-				const memberImage = document.getElementById('memberImage');
-				const photoPlaceholder = document.getElementById('photoPlaceholder');
-
-				// Clear any previous error handlers
-				memberImage.onerror = null;
-
-				// Check if we have a valid image path
-				if (member.Image && member.Image.trim() !== '') {
-					let imagePath = member.Image.trim();
-
-					// If it's a directory path, try to find the image
-					if (imagePath.endsWith('/')) {
-						// Try common image formats with member ID
-						imagePath = imagePath + member.Id + '.jpg';
+					// Update breadcrumb
+					const breadcrumbName = document.getElementById('breadcrumbName');
+					if (breadcrumbName) {
+						breadcrumbName.textContent = member.Name;
 					}
 
-					console.log('Setting image path:', imagePath);
-					memberImage.src = imagePath;
-					memberImage.alt = `${member.Name} - KPYA Member`;
+					// Update page title
+					const pageTitle = document.querySelector('.title-page');
+					if (pageTitle) {
+						pageTitle.textContent = member.Name;
+					}
 
-					// Set up error handling for image
-					memberImage.onerror = function () {
-						console.log('Image failed to load, showing placeholder');
-						this.style.display = 'none';
+					// Update name
+					const memberName = document.getElementById('memberName');
+					if (memberName) {
+						memberName.textContent = member.Name;
+					}
+
+					// Update position
+					const memberPosition = document.getElementById('memberPosition');
+					if (memberPosition) {
+						memberPosition.textContent = member.Position || 'Youth Member';
+					}
+
+					// Update district/organization
+					const memberOrganization = document.getElementById('memberOrganization');
+					if (memberOrganization) {
+						if (member.District && member.District !== 'null' && member.District !== null) {
+							memberOrganization.textContent = `District: ${member.District}`;
+							memberOrganization.style.display = 'block';
+						} else {
+							memberOrganization.style.display = 'none';
+						}
+					}
+
+					// Hide constituency section if no data
+					const constituencySection = document.querySelector('.constituency');
+					if (constituencySection) {
+						constituencySection.style.display = 'none';
+					}
+
+					// Update contact phone
+					const contactPhone = document.getElementById('contactPhone');
+					if (contactPhone && member.Contact_no && member.Contact_no !== 'N/A') {
+						const phoneNumber = member.Contact_no.trim();
+						contactPhone.textContent = phoneNumber;
+						contactPhone.href = `tel:${phoneNumber.replace(/\D/g, '')}`;
+						contactPhone.style.color = '#223555';
+					} else {
+						contactPhone.textContent = 'Not Available';
+						contactPhone.removeAttribute('href');
+						contactPhone.style.color = '#666';
+					}
+
+					// Update membership ID (replacing email field)
+					const contactEmailText = document.getElementById('contactEmailText');
+					const emailLabel = document.querySelector('.contact-info p:nth-child(2) strong');
+
+					if (emailLabel) {
+						emailLabel.innerHTML = '<i class="fa fa-id-card" style="margin-right: 8px;"></i> Membership ID:';
+					}
+
+					if (contactEmailText) {
+						if (member.Membership_no && member.Membership_no !== 'N/A') {
+							contactEmailText.textContent = member.Membership_no;
+							contactEmailText.style.color = '#223555';
+						} else {
+							contactEmailText.textContent = 'Not Available';
+							contactEmailText.style.color = '#666';
+						}
+						contactEmailText.removeAttribute('href');
+					}
+
+					// Load member image
+					const memberImage = document.getElementById('memberImage');
+					const photoPlaceholder = document.getElementById('photoPlaceholder');
+
+					if (member.Image && member.Image !== 'N/A') {
+						let imagePath = member.Image.trim();
+
+						// Ensure proper image path
+						if (!imagePath.includes('http') && !imagePath.startsWith('./')) {
+							imagePath = './images/' + imagePath;
+						}
+
+						console.log('Loading image from:', imagePath);
+
+						memberImage.src = imagePath;
+						memberImage.alt = member.Name;
+						memberImage.style.display = 'block';
+						photoPlaceholder.style.display = 'none';
+
+						// Handle image load error
+						memberImage.onerror = function () {
+							console.log('Image failed to load, showing placeholder');
+							this.style.display = 'none';
+							photoPlaceholder.style.display = 'flex';
+
+							// Show initials in placeholder
+							const initials = member.Name
+								.split(' ')
+								.map(word => word[0])
+								.join('')
+								.toUpperCase()
+								.substring(0, 2);
+							photoPlaceholder.textContent = initials || 'KPYA';
+							photoPlaceholder.style.fontSize = '60px';
+						};
+					} else {
+						// No image - show placeholder with initials
+						memberImage.style.display = 'none';
 						photoPlaceholder.style.display = 'flex';
 
-						// Generate initials for placeholder
 						const initials = member.Name
 							.split(' ')
 							.map(word => word[0])
@@ -765,268 +850,143 @@
 							.substring(0, 2);
 						photoPlaceholder.textContent = initials || 'KPYA';
 						photoPlaceholder.style.fontSize = '60px';
-						photoPlaceholder.style.fontWeight = 'bold';
-					};
+					}
 
-					// When image loads successfully
-					memberImage.onload = function () {
-						photoPlaceholder.style.display = 'none';
-						this.style.display = 'block';
-					};
+					// Create member details in description section
+					const descriptionElement = document.getElementById('memberDescription');
+					if (descriptionElement) {
+						let detailsHTML = '<div class="member-details-grid">';
 
-					memberImage.style.display = 'none'; // Hide initially
-					photoPlaceholder.style.display = 'flex'; // Show placeholder while loading
+						// Add all available details
+						if (member.Name) {
+							detailsHTML += `
+                        <div class="detail-item">
+                            <div class="detail-label">Full Name:</div>
+                            <div class="detail-value">${member.Name}</div>
+                        </div>`;
+						}
 
-					// Generate initials for placeholder (shown while image loads)
-					const initials = member.Name
-						.split(' ')
-						.map(word => word[0])
-						.join('')
-						.toUpperCase()
-						.substring(0, 2);
-					photoPlaceholder.textContent = initials || 'KPYA';
-					photoPlaceholder.style.fontSize = '60px';
-					photoPlaceholder.style.fontWeight = 'bold';
+						if (member.Father_name && member.Father_name !== 'N/A') {
+							detailsHTML += `
+                        <div class="detail-item">
+                            <div class="detail-label">Father's Name:</div>
+                            <div class="detail-value">${member.Father_name}</div>
+                        </div>`;
+						}
 
-				} else {
-					// No image path - show placeholder with initials
-					memberImage.style.display = 'none';
-					photoPlaceholder.style.display = 'flex';
+						if (member.Cnic && member.Cnic !== 'N/A') {
+							detailsHTML += `
+                        <div class="detail-item">
+                            <div class="detail-label">CNIC:</div>
+                            <div class="detail-value">${member.Cnic}</div>
+                        </div>`;
+						}
 
-					const initials = member.Name
-						.split(' ')
-						.map(word => word[0])
-						.join('')
-						.toUpperCase()
-						.substring(0, 2);
-					photoPlaceholder.textContent = initials || 'KPYA';
-					photoPlaceholder.style.fontSize = '60px';
-					photoPlaceholder.style.fontWeight = 'bold';
+						if (member.Membership_no && member.Membership_no !== 'N/A') {
+							detailsHTML += `
+                        <div class="detail-item">
+                            <div class="detail-label">Membership ID:</div>
+                            <div class="detail-value">${member.Membership_no}</div>
+                        </div>`;
+						}
+
+						if (member.Position) {
+							detailsHTML += `
+                        <div class="detail-item">
+                            <div class="detail-label">Position:</div>
+                            <div class="detail-value">${member.Position}</div>
+                        </div>`;
+						}
+
+						if (member.District && member.District !== 'null' && member.District !== null) {
+							detailsHTML += `
+                        <div class="detail-item">
+                            <div class="detail-label">District:</div>
+                            <div class="detail-value">${member.District}</div>
+                        </div>`;
+						}
+
+						if (member.Contact_no && member.Contact_no !== 'N/A') {
+							detailsHTML += `
+                        <div class="detail-item">
+                            <div class="detail-label">Contact Number:</div>
+                            <div class="detail-value">${member.Contact_no}</div>
+                        </div>`;
+						}
+
+						detailsHTML += '</div>';
+
+						// Add CSS for the grid
+						const style = document.createElement('style');
+						style.textContent = `
+                    .member-details-grid {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                        gap: 15px;
+                        margin-top: 10px;
+                    }
+                    .detail-item {
+                        background: #f8f9fa;
+                        padding: 15px;
+                        border-radius: 8px;
+                        border-left: 4px solid #223555;
+                        transition: all 0.3s ease;
+                    }
+                    .detail-item:hover {
+                        background: #e9ecef;
+                        transform: translateY(-2px);
+                        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    }
+                    .detail-label {
+                        font-weight: 600;
+                        color: #223555;
+                        font-size: 14px;
+                        margin-bottom: 5px;
+                        text-transform: uppercase;
+                        letter-spacing: 0.5px;
+                    }
+                    .detail-value {
+                        color: #2c3e50;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+                    @media (max-width: 768px) {
+                        .member-details-grid {
+                            grid-template-columns: 1fr;
+                        }
+                    }
+                `;
+						document.head.appendChild(style);
+
+						descriptionElement.innerHTML = detailsHTML;
+					}
+
+					// Show content
+					loadingElement.style.display = 'none';
+					contentElement.style.display = 'block';
+
+				} catch (error) {
+					console.error('Error loading member data:', error);
+
+					loadingElement.style.display = 'none';
+					errorElement.style.display = 'block';
+
+					const errorMessage = document.getElementById('errorMessage');
+					if (errorMessage) {
+						errorMessage.textContent = error.message || 'Failed to load member data. Please try again.';
+					}
+
+					// Log the full error for debugging
+					console.error('Full error details:', error);
 				}
-
-				// 3. Update member information
-				document.getElementById('memberName').textContent = member.Name || 'KPYA Member';
-				document.getElementById('memberPosition').textContent = member.Position || 'Youth Member';
-
-				// Show District if available, otherwise hide the organization section
-				const orgElement = document.getElementById('memberOrganization');
-				if (member.District && member.District !== null && member.District !== 'null') {
-					orgElement.textContent = member.District;
-					orgElement.style.display = 'block';
-				} else {
-					orgElement.style.display = 'none';
-				}
-
-				// Remove the entire constituency section since we don't have this data
-				const constituencySection = document.querySelector('.constituency');
-				if (constituencySection) {
-					constituencySection.style.display = 'none';
-				}
-
-				// 4. Update contact information
-				const contactPhone = document.getElementById('contactPhone');
-				const contactEmailText = document.getElementById('contactEmailText');
-				const emailLabel = document.querySelector('.contact-info p:nth-child(2) strong');
-
-				// Phone number
-				if (member.Contact_no && member.Contact_no.trim() !== '') {
-					const phoneNumber = member.Contact_no.trim();
-					contactPhone.textContent = phoneNumber;
-					contactPhone.href = `tel:${phoneNumber.replace(/\s+/g, '')}`;
-					contactPhone.style.color = '#223555';
-					contactPhone.style.textDecoration = 'none';
-					contactPhone.style.fontWeight = '500';
-				} else {
-					contactPhone.textContent = 'Not Available';
-					contactPhone.removeAttribute('href');
-					contactPhone.style.color = '#666';
-				}
-
-				// Change the label from "Email" to "Membership ID"
-				if (emailLabel) {
-					emailLabel.innerHTML = '<i class="fa fa-id-card" style="margin-right: 8px;"></i> Membership ID:';
-				}
-
-				// Show Membership ID instead of email
-				if (member.Membership_no) {
-					contactEmailText.textContent = member.Membership_no;
-					contactEmailText.removeAttribute('href');
-					contactEmailText.style.color = '#223555';
-					contactEmailText.style.textDecoration = 'none';
-					contactEmailText.style.fontWeight = '500';
-				} else {
-					contactEmailText.textContent = 'Not Available';
-					contactEmailText.removeAttribute('href');
-					contactEmailText.style.color = '#666';
-				}
-
-				// 5. Update description section with all available info
-				const descriptionElement = document.getElementById('memberDescription');
-				let descriptionHTML = '<div class="member-details-grid">';
-
-				// Add all available information in a clean grid format
-				if (member.Name) {
-					descriptionHTML += `<div class="detail-item">
-                <div class="detail-label">Full Name:</div>
-                <div class="detail-value">${member.Name}</div>
-            </div>`;
-				}
-
-				if (member.Father_name && member.Father_name.trim() !== '') {
-					descriptionHTML += `<div class="detail-item">
-                <div class="detail-label">Father's Name:</div>
-                <div class="detail-value">${member.Father_name.trim()}</div>
-            </div>`;
-				}
-
-				if (member.Cnic) {
-					descriptionHTML += `<div class="detail-item">
-                <div class="detail-label">CNIC:</div>
-                <div class="detail-value">${member.Cnic}</div>
-            </div>`;
-				}
-
-				if (member.Membership_no) {
-					descriptionHTML += `<div class="detail-item">
-                <div class="detail-label">Membership ID:</div>
-                <div class="detail-value">${member.Membership_no}</div>
-            </div>`;
-				}
-
-				if (member.Position) {
-					descriptionHTML += `<div class="detail-item">
-                <div class="detail-label">Position:</div>
-                <div class="detail-value">${member.Position}</div>
-            </div>`;
-				}
-
-				if (member.District && member.District !== null && member.District !== 'null') {
-					descriptionHTML += `<div class="detail-item">
-                <div class="detail-label">District:</div>
-                <div class="detail-value">${member.District}</div>
-            </div>`;
-				}
-
-				if (member.Contact_no) {
-					descriptionHTML += `<div class="detail-item">
-                <div class="detail-label">Contact Number:</div>
-                <div class="detail-value">${member.Contact_no}</div>
-            </div>`;
-				}
-
-				descriptionHTML += '</div>';
-
-				// Add CSS for the grid layout
-				const style = document.createElement('style');
-				style.textContent = `
-            .member-details-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 15px;
-                margin-top: 10px;
-            }
-            .detail-item {
-                background: #f8f9fa;
-                padding: 15px;
-                border-radius: 8px;
-                border-left: 4px solid #223555;
-                transition: all 0.3s ease;
-            }
-            .detail-item:hover {
-                background: #e9ecef;
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            }
-            .detail-label {
-                font-weight: 600;
-                color: #223555;
-                font-size: 14px;
-                margin-bottom: 5px;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-            .detail-value {
-                color: #2c3e50;
-                font-size: 16px;
-                font-weight: 500;
-            }
-            @media (max-width: 768px) {
-                .member-details-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
-        `;
-				document.head.appendChild(style);
-
-				descriptionElement.innerHTML = descriptionHTML;
-
-				// 6. Show content
-				loadingElement.style.display = 'none';
-				contentElement.style.display = 'block';
-
-			} catch (error) {
-				console.error('Error loading member data:', error);
-
-				loadingElement.style.display = 'none';
-				errorElement.style.display = 'block';
-
-				let errorMsg = '';
-				if (error.message.includes('not found')) {
-					errorMsg = `Member "${memberId}" was not found in our database.`;
-				} else if (error.message.includes('Failed to load')) {
-					errorMsg = 'Unable to load member data. Please check your internet connection.';
-				} else {
-					errorMsg = `Error: ${error.message}`;
-				}
-
-				document.getElementById('errorMessage').textContent = errorMsg;
 			}
-		}
-
-		// Update the getMemberIdFromUrl function
-		function getMemberIdFromUrl() {
-			const urlParams = new URLSearchParams(window.location.search);
-			let id = urlParams.get('id');
-			if (id) {
-				id = decodeURIComponent(id).trim();
-			}
-			return id;
-		}
-
-		// Initialize when page loads
-		document.addEventListener('DOMContentLoaded', function () {
-			loadMemberData();
-			window.loadMemberData = loadMemberData;
-		});
-
-
-
-		// Update the getMemberIdFromUrl function to handle decoding
-		function getMemberIdFromUrl() {
-			const urlParams = new URLSearchParams(window.location.search);
-			let id = urlParams.get('id');
-			// Decode URL and remove any extra spaces
-			if (id) {
-				id = decodeURIComponent(id).trim();
-			}
-			return id;
-		}
-
-		// Initialize when page loads
-		document.addEventListener('DOMContentLoaded', function () {
-			// Load member data
-			loadMemberData();
 
 			// Add retry button functionality
 			window.loadMemberData = loadMemberData;
+
+			// Start loading data
+			loadMemberData();
 		});
-
-
-		// Load member data when page loads
-		document.addEventListener('DOMContentLoaded', loadMemberData);
-
-		// Make loadMemberData available globally for retry button
-		window.loadMemberData = loadMemberData;
 	</script>
 
 </body>

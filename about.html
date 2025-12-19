@@ -410,51 +410,66 @@
 </body>
 
 <script>
-	// Load featured members for about page
-	fetch("./js/members-list.json")
-		.then(response => response.json())
-		.then(data => {
-			let aboutMembers = document.getElementById("about-members");
-			let membersList = "";
+	document.addEventListener('DOMContentLoaded', function () {
+		// Load members for about page
+		fetch("./js/members-list.json")
+			.then(response => response.json())
+			.then(data => {
+				let aboutMembers = document.getElementById("about-members");
+				let membersList = "";
 
-			// Show the first 4 executive members or first 4 members
-			const executiveMemberIds = ['danial', 'fatima', 'sania', 'usama', 'aizaz'];
-			const executiveMembers = data.filter(member =>
-				executiveMemberIds.includes(member.id)
-			);
+				// Define the IDs of the executive members (same as index page for consistency)
+				const executiveMemberIds = ['danial', 'fatima', 'sania', 'usama', 'aizaz', 'nizar'];
 
-			const featuredMembers = executiveMembers.length > 0 ? executiveMembers : data.slice(0, 5);
+				// Filter for executive members only - case insensitive
+				const featuredMembers = data.filter(member =>
+					member.Id && executiveMemberIds.includes(member.Id.toLowerCase())
+				);
 
-			featuredMembers.forEach(member => {
-				membersList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-                    <div class="rs-team-1">
-                        <div class="media-box">
-							<a href="memberPage.html?id=${member.id}">
-                                <img src="${member.image}" alt="${member.name}" class="img-fluid">
-                            </a>
-                        </div>
-                        <div class="body">
-							<div class="title"><a href="memberPage.html?id=${member.id}">${member.name}</a></div>
-                            <div class="position">${member.position}</div>
-                            <div class="sosmed-icon icon-bg-secondary d-inline-flex">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
+				// Only process if we found members
+				if (featuredMembers.length > 0) {
+					featuredMembers.forEach(member => {
+						// Ensure image path is correct
+						let imagePath = member.Image || './images/default-user.png';
+						if (imagePath && !imagePath.includes('http') && !imagePath.startsWith('./')) {
+							imagePath = './images/' + imagePath;
+						}
+
+						membersList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
+                        <div class="rs-team-1">
+                            <div class="media-box">
+                                <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">
+                                    <img src="${imagePath}" 
+                                         alt="${member.Name}" 
+                                         class="img-fluid" 
+                                         onerror="this.onerror=null; this.src='./images/default-user.png';">
+                                </a>
+                            </div>
+                            <div class="body">
+                                <div class="title">
+                                    <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">${member.Name}</a>
+                                </div>
+                                <div class="position">${member.Position || 'Executive Member'}</div>
                             </div>
                         </div>
-                    </div>
+                    </div>`;
+					});
+					aboutMembers.innerHTML = membersList;
+				} else {
+					// Show message if no members found
+					aboutMembers.innerHTML = `<div class="col-12 text-center">
+                    <p>Featured members will be displayed here soon.</p>
                 </div>`;
-			});
-			aboutMembers.innerHTML = membersList;
-		})
-		.catch(error => {
-			console.error('Error loading members for about page:', error);
-			document.getElementById('about-members').innerHTML = `
+				}
+			})
+			.catch(error => {
+				console.error('Error loading members for about page:', error);
+				document.getElementById('about-members').innerHTML = `
             <div class="col-12 text-center">
-                <p>Unable to load members. Please try again later.</p>
+                <p>Unable to load featured members. Please try again later.</p>
             </div>`;
-		});
+			});
+	});
 </script>
 
 </html>

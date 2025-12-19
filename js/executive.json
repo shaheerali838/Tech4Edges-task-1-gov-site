@@ -1,0 +1,68 @@
+[
+  {
+    "Id": "danial",
+    "Membership_no": "N/A",
+    "Name": "Danial Ahmad Paracha",
+    "Position": "Chairman",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "./images/Danial.jpg"
+  },
+  {
+    "Id": "usama",
+    "Membership_no": "N/A",
+    "Name": "M. Usama Hamayoun",
+    "Position": "Secretary General",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/IMG_6083.jpg"
+  },
+  {
+    "Id": "nizar",
+    "Membership_no": "N/A",
+    "Name": "Nizar Ahmad Jadoon",
+    "Position": "Spokesperson",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/Nizaar.jpeg"
+  },
+  {
+    "Id": "aizaz",
+    "Membership_no": "N/A",
+    "Name": "Dr Aizaz Ali Shah",
+    "Position": "Governor",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/aizaz.jpeg"
+  },
+  {
+    "Id": "sania",
+    "Membership_no": "N/A",
+    "Name": "Sania Javed",
+    "Position": "Caretaker Chief Minister",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/Sania.jpeg"
+  },
+  {
+    "Id": "fatima",
+    "Membership_no": "N/A",
+    "Name": "Fatima Advocate",
+    "Position": "Caretaker Speaker",
+    "Father_name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/Fatima.jpeg"
+  }
+]

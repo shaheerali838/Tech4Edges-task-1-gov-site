@@ -322,41 +322,71 @@
 
 </body>
 <script>
-	fetch("./js/members-list.json")
-		.then(response => response.json())
-		.then(data => {
-			let attorneys = document.getElementById("attorneys");
-			let attorneysList = "";
+	document.addEventListener('DOMContentLoaded', function () {
+		fetch("./js/members-list.json")
+			.then(response => response.json())
+			.then(data => {
+				console.log('All members data loaded:', data);
 
-			// IDs to exclude from the list (Executive Committee members)
-			const executiveMemberIds = ['Danial', 'Nizar', 'Usama', 'Fatima', 'Aizaz', 'Sania'];
+				let attorneys = document.getElementById("attorneys");
+				let attorneysList = "";
 
-			// Filter data to exclude the IDs above
-			const filteredData = data.filter(member => !executiveMemberIds.includes(member.Id));
+				// IDs to exclude (Executive Committee members)
+				const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
 
-			filteredData.forEach(member => {
-				attorneysList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-                    <div class="rs-team-1">
-                        <div class="media-box">
-                            <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">
-                                <img 
-                                    src="${member.Image}" 
-                                    alt="${member.Name}" 
-                                    class="img-fluid" 
-                                    onerror="this.onerror=null; this.src='./images/default-user.png';"
-                                >
-                            </a>
+				// Filter non-executive members
+				const filteredData = data.filter(member => {
+					return member.Id && !executiveMemberIds.includes(member.Id.toLowerCase());
+				});
+
+				console.log('Filtered non-executive members:', filteredData.length);
+
+				if (filteredData.length > 0) {
+					filteredData.forEach(member => {
+						let imagePath = member.Image || './images/default-user.png';
+						if (imagePath && !imagePath.includes('http') && !imagePath.startsWith('./')) {
+							imagePath = './images/' + imagePath;
+						}
+
+						attorneysList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
+                        <div class="rs-team-1">
+                            <div class="media-box">
+                                <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">
+                                    <img 
+                                        src="${imagePath}" 
+                                        alt="${member.Name}" 
+                                        class="img-fluid" 
+                                        onerror="this.onerror=null; this.src='./images/default-user.png';"
+                                    >
+                                </a>
+                            </div>
+                            <div class="body">
+                                <div class="title">
+                                    <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">${member.Name}</a>
+                                </div>
+                                <div class="position">${member.Position || 'Member'}</div>
+                            </div>
                         </div>
-                        <div class="body">
-                            <div class="title"><a href="memberPage.html?id=${encodeURIComponent(member.Id)}">${member.Name}</a></div>
-                            <div class="position">${member.Position}</div>
-                        </div>
-                    </div>
+                    </div>`;
+					});
+				} else {
+					attorneysList = `<div class="col-12 text-center">
+                    <p>No regular members found.</p>
+                    <p>All members might be part of the executive committee.</p>
                 </div>`;
+				}
+
+				attorneys.innerHTML = attorneysList;
+			})
+			.catch(error => {
+				console.error("Error loading members:", error);
+				document.getElementById("attorneys").innerHTML = `
+            <div class="col-12 text-center">
+                <p style="color: red;">Error: ${error.message}</p>
+                <p>Please check the browser console for details.</p>
+            </div>`;
 			});
-			attorneys.innerHTML = attorneysList;
-		})
-		.catch(error => console.error("Error loading members:", error));
+	});
 </script>
 
 </html>
