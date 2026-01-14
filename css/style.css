@@ -3604,10 +3604,17 @@ Back To Top Section
   font-family: "Lora", serif;
   -webkit-transition: padding .2s ease-in-out;
   transition: padding .2s ease-in-out;
+  background: rgba(255, 255, 255, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
 }
 
 .navbar-main .navbar {
   padding: 0;
+
 }
 
 .navbar-main ol,
@@ -3663,20 +3670,121 @@ Back To Top Section
 .navbar-main .dropdown-item:focus {
   text-decoration: none;
   background-color: #b89b5e;
+
 }
+
 
 .navbar-main.stiky .navbar-brand img {
   width: 100px;
 }
 
+
 .navbar-main.stiky .navbar {
   padding-top: 8px;
   padding-bottom: 8px;
+
 }
 
 .navbar-main.open .navbar-nav {
   display: none;
 }
+
+/* Ensure the navbar items are vertically centered */
+.navbar-nav .nav-link {
+  line-height: 60px;
+  /* Matches container height for vertical centering */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+/* FIX: Mobile Menu Overlay */
+/* This ensures that when the menu opens, it doesn't get cut off by the height: 60px limit */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 60px;
+    /* Pushes the menu exactly below the header */
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    /* Make sure this matches your theme color */
+    z-index: 1000;
+    /* Ensures it sits on top of other content */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    /* Adds a shadow for readability */
+    padding: 1rem;
+  }
+
+  /* Reset line-height for mobile so links don't look spaced out */
+  .navbar-nav .nav-link {
+    line-height: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+.navbar-main {
+  -webkit-transition: padding .2s ease-in-out;
+  transition: padding .2s ease-in-out;
+  background: rgba(255, 255, 255, 0.34);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  /* --- FIX START --- */
+  position: relative;
+  /* Required for z-index to work */
+  z-index: 9999;
+  /* Forces navbar to sit ON TOP of your page content */
+  overflow: visible;
+  /* Ensures the dropdown isn't cut off by the 60px limit */
+  /* --- FIX END --- */
+}
+
+/* ... keep your other CSS the same ... */
+
+/* FIX FOR MOBILE DROPDOWNS */
+/* On mobile, dropdowns shouldn't float; they should expand the menu downwards */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+
+    /* Allow scrolling if menu is too tall for phone screen */
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .navbar-nav .nav-link {
+    line-height: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #333;
+    /* Ensure text is visible on white background */
+  }
+
+  /* Force mobile dropdowns to be static (accordion style) instead of floating */
+  .navbar-main .dropdown-menu {
+    position: static;
+    float: none;
+    width: 100%;
+    box-shadow: none;
+    background-color: #f8f9fa;
+    /* Slightly darker to distinguish from main menu */
+    border: none;
+    margin-top: 0;
+  }
+}
+
 
 /* end navbar-main global */
 /* END NAVBARMAIN */
@@ -3715,7 +3823,7 @@ Back To Top Section
 
 .header-1 .navbar-main .nav-link {
   color: #222222;
-  padding: 2.5rem 1.5rem;
+  padding: 0rem 1.5rem;
   background-color: transparent;
   border-bottom: 3px solid transparent;
 }
