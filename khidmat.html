@@ -470,6 +470,293 @@
                 font-size: 16px;
             }
         }
+
+        /* --- Navbar Main Styling --- */
+        .navbar-main {
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-main .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        #navbar-example {
+            display: flex !important;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: nowrap;
+        }
+
+        .navbar-brand {
+            padding: 8px 0;
+            margin-right: 0;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            transition: transform 0.3s ease;
+            display: block;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+
+        /* --- Navbar Toggler Styling --- */
+        .navbar-toggler {
+            padding: 5px 10px;
+            border: 1px solid #b89b5e;
+            margin-left: auto;
+            order: 2;
+            flex-shrink: 0;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23b89b5e' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* --- Navigation Collapse --- */
+        .navbar-collapse {
+            order: 3;
+            display: flex !important;
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+
+        /* --- Navigation Links Styling --- */
+        .navbar-nav {
+            display: flex !important;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+            margin-left: 0;
+            width: auto;
+        }
+
+        .navbar-nav .nav-item {
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 8px 12px !important;
+            font-size: 14px;
+            font-weight: 500;
+            color: #333 !important;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            display: block;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: #b89b5e !important;
+        }
+
+        /* --- Dropdown Styling --- */
+        .navbar-nav .dropdown-menu {
+            background-color: white;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            padding: 8px 0;
+            min-width: 180px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none !important;
+            z-index: 1000;
+            margin-top: 5px;
+        }
+
+        .navbar-nav .dropdown-menu.show {
+            display: block !important;
+        }
+
+        .navbar-nav .show > .dropdown-menu {
+            display: block !important;
+        }
+
+        .navbar-nav .dropdown-item {
+            padding: 10px 20px;
+            font-size: 13px;
+            color: #333;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: rgba(184, 155, 94, 0.1);
+            color: #b89b5e;
+        }
+
+        /* --- Ticker improvements --- */
+        .news-ticker {
+            overflow: hidden;
+        }
+
+        .news-ticker marquee {
+            font-size: 0.9rem;
+        }
+
+        /* --- Tablet/Medium Devices (768px - 991px) --- */
+        @media (max-width: 991px) {
+            #navbar-example {
+                flex-wrap: wrap;
+                gap: 0;
+            }
+
+            .navbar-brand {
+                margin-right: 0;
+                order: 1;
+            }
+
+            .navbar-toggler {
+                order: 2;
+                margin-left: auto;
+            }
+
+            .navbar-collapse {
+                order: 3;
+                flex-basis: 100%;
+                width: 100%;
+                padding: 15px 0;
+                border-top: 1px solid rgba(0, 0, 0, 0.1);
+                margin-top: 10px;
+                display: none !important;
+                flex-direction: column;
+            }
+
+            .navbar-collapse.show {
+                display: flex !important;
+            }
+
+            .navbar-nav {
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                padding-bottom: 15px;
+            }
+
+            .navbar-nav .nav-item {
+                width: 100%;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+
+            .navbar-nav .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .navbar-nav .dropdown-menu {
+                position: static !important;
+                display: none !important;
+                float: none;
+                width: 100%;
+                margin-top: 10px;
+                box-shadow: none;
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                background-color: rgba(184, 155, 94, 0.05);
+                top: auto;
+                left: auto;
+            }
+
+            .navbar-nav .dropdown-menu.show {
+                display: block !important;
+            }
+
+            .navbar-nav .show > .dropdown-menu {
+                display: block !important;
+            }
+        }
+
+        /* --- Mobile Devices (480px - 767px) --- */
+        @media (max-width: 767px) {
+            .navbar-brand img {
+                width: 50px;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 10px 0 !important;
+                font-size: 13px;
+            }
+        }
+
+        /* --- Small Mobile Devices (< 480px) --- */
+        @media (max-width: 479px) {
+            .navbar-brand {
+                flex: 0 0 auto;
+            }
+
+            .navbar-brand img {
+                width: 45px;
+            }
+
+            .navbar-toggler {
+                padding: 4px 8px;
+                font-size: 1rem;
+            }
+
+            .navbar-nav .nav-link {
+                padding: 8px 0 !important;
+                font-size: 12px;
+            }
+
+            .news-ticker {
+                padding: 5px 0;
+            }
+
+            .news-ticker .badge-danger {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.4rem;
+                white-space: nowrap;
+            }
+
+            .news-ticker marquee {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* --- Info Bar Adjustments --- */
+        .info {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        .sosmed-icon {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sosmed-icon a {
+            transition: all 0.3s ease;
+        }
     </style>
 
     <script src="js/vendor/modernizr.min.js"></script>
