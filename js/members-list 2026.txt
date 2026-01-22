@@ -28,7 +28,7 @@
     "Position": "Spokesperson",
     "Father_name": "Khan Laiq Jadoon",
     "Cnic": "16202-0110362-7",
-    "District": "Swabi",
+    "District": "Swabi,
     "Contact_no": "0341-9106877",
     "Image": "../images/Nizaar.jpeg"
   },
@@ -61,7 +61,7 @@
     "Position": "Caretaker Speaker",
     "Father_name": "N/A",
     "Cnic": "N/A",
-    "District": "Kohat",
+    "District": Kohat,
     "Contact_no": "091-5700041",
     "Image": "../images/Fatima.jpeg"
   },
