@@ -23,85 +23,6 @@
     <script src="js/vendor/modernizr.min.js"></script>
 
     <style>
-        /* Define the Secondary/Accent Color (Used for emphasized text) */
-        :root {
-            --accent-color: #B89B5E;
-        }
-
-        /* Reverting to theme defaults for main colors, setting height to auto */
-        .full-speech-section {
-            height: auto !important;
-            min-height: 500px;
-            padding-top: 4rem;
-            padding-bottom: 4rem;
-            /* Remove explicit background/color to rely on linked style.css */
-            position: relative;
-        }
-
-        .full-speech-section .hero-title {
-            color: var(--accent-color);
-            /* Apply secondary color to title */
-            margin-top: 0;
-            margin-bottom: 2rem;
-        }
-
-        .full-speech-section .blockquote-footer,
-        .full-speech-section .blockquote-footer cite,
-        .full-speech-section .blockquote-footer p {
-            color: var(--accent-color) !important;
-            /* Apply secondary color to footer text */
-        }
-
-        .full-speech-text strong {
-            color: var(--accent-color);
-            /* Apply secondary color to key/bold phrases */
-        }
-
-        /* IMAGE FLOAT TO TEXT OPTIMIZATION */
-        .full-speech-text img {
-            max-width: 35%;
-            /* Limit image size within the text column */
-            height: auto;
-            border-radius: 5px;
-            margin: 0 20px 10px 0;
-            /* Space right and bottom of the image */
-            float: left;
-            /* Float the image to the left of the text */
-        }
-
-        /* Re-establishing text and column layout */
-        .full-speech-text p {
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            text-align: justify;
-        }
-
-        .full-speech-section .content-row {
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
-        }
-
-        @media screen and (max-width: 768px) {
-            .full-speech-section .content-row {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .full-speech-section .image-col,
-            .full-speech-section .text-col {
-                flex: 1 1 100%;
-                max-width: 100%;
-            }
-
-            .full-speech-text img {
-                float: none;
-                /* Remove float on mobile */
-                max-width: 100%;
-                margin: 10px 0;
-            }
-        }
-
         /* --- Navbar Main Styling --- */
         .navbar-main {
             background-color: white;
@@ -195,10 +116,11 @@
             color: #b89b5e !important;
         }
 
-        /* --- Dropdown Styling --- */
+        /* --- Dropdown Styling (UPDATED) --- */
         .navbar-nav .dropdown-menu {
-            background-color: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: #1d493a;
+            /* Green Background */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 4px;
             padding: 8px 0;
@@ -222,7 +144,8 @@
         .navbar-nav .dropdown-item {
             padding: 10px 20px;
             font-size: 13px;
-            color: #333;
+            color: #ffffff;
+            /* White Text */
             transition: all 0.3s ease;
             display: block;
             width: 100%;
@@ -233,8 +156,10 @@
         }
 
         .navbar-nav .dropdown-item:hover {
-            background-color: rgba(184, 155, 94, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Subtle hover bg */
             color: #b89b5e;
+            /* Gold text on hover */
         }
 
         /* --- Ticker improvements --- */
@@ -303,8 +228,9 @@
                 width: 100%;
                 margin-top: 10px;
                 box-shadow: none;
-                border: 1px solid rgba(0, 0, 0, 0.05);
-                background-color: rgba(184, 155, 94, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background-color: #1d493a !important;
+                /* Green on Mobile too */
                 top: auto;
                 left: auto;
             }

@@ -117,10 +117,11 @@
             color: #b89b5e !important;
         }
 
-        /* --- Dropdown Styling --- */
+        /* --- Dropdown Styling (UPDATED) --- */
         .navbar-nav .dropdown-menu {
-            background-color: white;
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: #1d493a;
+            /* Green Background */
+            border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 4px;
             padding: 8px 0;
@@ -144,7 +145,8 @@
         .navbar-nav .dropdown-item {
             padding: 10px 20px;
             font-size: 13px;
-            color: #333;
+            color: #ffffff;
+            /* White Text */
             transition: all 0.3s ease;
             display: block;
             width: 100%;
@@ -155,8 +157,10 @@
         }
 
         .navbar-nav .dropdown-item:hover {
-            background-color: rgba(184, 155, 94, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
+            /* Subtle hover bg */
             color: #b89b5e;
+            /* Gold text on hover */
         }
 
         /* --- Ticker improvements --- */
@@ -225,8 +229,9 @@
                 width: 100%;
                 margin-top: 10px;
                 box-shadow: none;
-                border: 1px solid rgba(0, 0, 0, 0.05);
-                background-color: rgba(184, 155, 94, 0.05);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                background-color: #1d493a !important;
+                /* Green on Mobile too */
                 top: auto;
                 left: auto;
             }
@@ -309,17 +314,6 @@
 
         .sosmed-icon a {
             transition: all 0.3s ease;
-        }
-
-        /* Specific style for member images */
-        .media-box img {
-            width: 100%;
-            height: 350px;
-            /* Fixed height to keep grid uniform */
-            object-fit: cover;
-            /* Ensures image covers the area without stretching */
-            object-position: top;
-            /* Focus on the face/top of image */
         }
     </style>
 
