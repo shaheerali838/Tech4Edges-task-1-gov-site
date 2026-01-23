@@ -130,7 +130,7 @@
     "Cnic": "21201-3493484-9",
     "District": null,
     "Contact_no": "03051910477",
-    "Image": "./images/Members Pic/Abdul rasheed.pdf"
+    "Image": "./images/Members Pic/Abdul rasheed.jpg"
   },
   {
     "Id": "AbdulSalam",
@@ -372,7 +372,7 @@
     "Cnic": "21502-7129526-3",
     "District": null,
     "Contact_no": "03066129533",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/asad.jpg"
   },
   {
     "Id": "AsamUdDin",
@@ -416,7 +416,7 @@
     "Cnic": "17301-7913170-9",
     "District": null,
     "Contact_no": "03109649182",
-    "Image": "./images/Members Pic/Ayaz Khan Khalil.pdf"
+    "Image": "./images/Members Pic/Ayaz Khan Khalil.jpg"
   },
   {
     "Id": "AyeshaKalsoom",
@@ -724,7 +724,7 @@
     "Cnic": "16101-3442808-7",
     "District": null,
     "Contact_no": "03156980085",
-    "Image": "./images/Members Pic/Hamza sakheed.pdf"
+    "Image": "./images/Members Pic/Hamza sakheed.jpg"
   },
   {
     "Id": "HaroonRashid",
@@ -1230,7 +1230,7 @@
     "Cnic": "17301-4402245-7",
     "District": null,
     "Contact_no": "03009369042",
-    "Image": "./images/Members Pic/Mohammad mustafa ali shah.pdf"
+    "Image": "./images/Members Pic/Mohammad mustafa ali shah.jpg"
   },
   {
     "Id": "MohibUllahAfridi",
@@ -1527,7 +1527,7 @@
     "Cnic": "17202-0347220-7",
     "District": null,
     "Contact_no": "03409038950",
-    "Image": "./images/Members Pic/Muhammad Junaid Pabbi.jpeg"
+    "Image": "./images/Members Pic/Muhammad Junai.jpeg"
   },
   {
     "Id": "Muhammad-Junaid",
@@ -1813,7 +1813,7 @@
     "Cnic": "17301-6984894-7",
     "District": null,
     "Contact_no": "0333-9937200",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Naimat ullah arif.jpeg"
   },
   {
     "Id": "NajeeUllah",
@@ -2352,7 +2352,7 @@
     "Cnic": "17201-4269237-3 ",
     "District": null,
     "Contact_no": "3059712672",
-    "Image": "./images/Members Pic/Taimur Rehmat.pdf"
+    "Image": "./images/Members Pic/Taimur Rehmat.jpg"
   },
   {
     "Id": "TalhaDurrani",
@@ -2561,7 +2561,7 @@
     "Cnic": "16202-9092900-7",
     "District": null,
     "Contact_no": "03339291232",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Zaryab Khan.jpeg"
   },
   {
     "Id": "ZohaibKhan",
@@ -2616,7 +2616,7 @@
     "Cnic": "14101-1221838-7",
     "District": "Hangu",
     "Contact_no": "0331-8022395",
-    "Image": "./images/Members Pic/Yawar Abbas.jprg"
+    "Image": "./images/Members Pic/Yawar Abbas.jpeg"
   },
   {
     "Id": null,
