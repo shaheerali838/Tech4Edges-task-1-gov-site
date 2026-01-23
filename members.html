@@ -752,11 +752,7 @@
 	function handleSearch(event) {
 		event.preventDefault();
 		const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-		if (searchQuery) {
-			displayMembers(allMembers, searchQuery);
-		} else {
-			displayMembers(allMembers, '');
-		}
+		displayMembers(allMembers, searchQuery);
 	}
 
 	// Function to display members
@@ -775,7 +771,7 @@
 		// Apply search filter if query provided
 		if (searchQuery) {
 			filteredData = filteredData.filter(member =>
-				member.Name && member.Name.toLowerCase().startsWith(searchQuery)
+				member.Name && member.Name.toLowerCase().includes(searchQuery)
 			);
 		}
 
@@ -828,11 +824,20 @@
 
 	// Load members on page load
 	document.addEventListener('DOMContentLoaded', function () {
+		// Attach search handler to form
+		document.getElementById('memberSearchForm').addEventListener('submit', handleSearch);
+
 		fetch("./js/members-list.json")
 			.then(response => response.json())
 			.then(data => {
 				console.log('All members data loaded:', data);
 				allMembers = data;
+
+				// Add real-time search as user types (after data is loaded)
+				document.getElementById('searchInput').addEventListener('input', function () {
+					const searchQuery = this.value.trim().toLowerCase();
+					displayMembers(allMembers, searchQuery);
+				});
 
 				// Check for search query in URL
 				const urlParams = new URLSearchParams(window.location.search);

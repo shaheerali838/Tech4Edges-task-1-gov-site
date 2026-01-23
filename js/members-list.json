@@ -15,7 +15,7 @@
     "Membership_no": "KPYA-19-00101",
     "Name": "M. Usama Hamayoun",
     "Position": "Secretary General",
-    "Father_name": "N/A",
+    "Father_name": "Muhammad Hamayoun",
     "Cnic": "N/A",
     "District": "Peshawar",
     "Contact_no": "091-5700041",
@@ -24,7 +24,7 @@
   {
     "Id": "nizar",
     "Membership_no": "KPYA-18-00101",
-    "Name": "Nizar Ahmad Jadoon",
+    "Name": "Engr. Nizar Ahmad Jadoon",
     "Position": "Spokesperson",
     "Father_name": "Khan Laiq Jadoon",
     "Cnic": "16202-0110362-7",
@@ -119,7 +119,7 @@
     "Cnic": "17301-5027729-5",
     "District": null,
     "Contact_no": "0321-8381290",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Abdul Rafay.jpeg"
   },
   {
     "Id": "ABDULRASHEED",
@@ -361,7 +361,7 @@
     "Cnic": "17101-0700297-5",
     "District": null,
     "Contact_no": "03089486534",
-    "Image": "./images/Members Pic/Asad.pdf"
+    "Image": "./images/Members Pic/Asad Ullah Khan.jpeg"
   },
   {
     "Id": "AsadUllahKhanWazir",
@@ -416,7 +416,7 @@
     "Cnic": "17301-7913170-9",
     "District": null,
     "Contact_no": "03109649182",
-    "Image": "./images/Members Pic/Ayaz Khan Khalil.jpg"
+    "Image": "./images/Members Pic/Ayaz Khan Khalil.pdf"
   },
   {
     "Id": "AyeshaKalsoom",
@@ -559,7 +559,7 @@
     "Cnic": "15602-4516282-5",
     "District": null,
     "Contact_no": "03478090494",
-    "Image": "./images/Members Pic/Engr Tauseef  Ahmad.jpeg"
+    "Image": "./images/Members Pic/Engr Tauseef Ahmad.jpeg"
   },
   {
     "Id": "FaqirMuhammadmunib",
@@ -619,13 +619,13 @@
   {
     "Id": "Fazeelatshinwari",
     "Membership_no": "KPYA-25-00551",
-    "Name": "Fazeelat shinwari",
+    "Name": "Dr. Fazeelat shinwari",
     "Position": "YOUTH MPA",
     "Father_name": "Muhammad Zahid ",
     "Cnic": "17301-5004372-2",
     "District": null,
     "Contact_no": null,
-    "Image": "./images/Members Pic/Fazeelat shinwari.jpeg"
+    "Image": "./images/Members Pic/Fazeelat Shinwari.jpeg"
   },
   {
     "Id": "Habibullah",
@@ -964,8 +964,8 @@
     "Position": "YOUTH MPA",
     "Father_name": "Aamir Mir",
     "Cnic": "17301-1703625-6 ",
-    "District": null,
-    "Contact_no": null,
+    "District": "Peshawar",
+    "Contact_no": "0316-0990069",
     "Image": "./images/Members Pic/Javeria Durrani.jpeg"
   },
   {
@@ -1446,11 +1446,11 @@
     "Membership_no": "KPYA-25-00626",
     "Name": "Muhammad hayan",
     "Position": "YOUTH MPA",
-    "Father_name": "Mambar kha ",
+    "Father_name": "Mambar Khan",
     "Cnic": "21201-8972059-9",
-    "District": null,
+    "District": "Khyber",
     "Contact_no": "03336424797",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Hayan.jpeg"
   },
   {
     "Id": "MuhammadHisham",
@@ -1458,7 +1458,7 @@
     "Name": "Muhammad Hisham",
     "Position": "YOUTH MPA",
     "Father_name": "Inayat ur Rehman",
-    "Cnic": "1710173766915",
+    "Cnic": "17101-7376691-5",
     "District": null,
     "Contact_no": "03460482722",
     "Image": "./images/Members Pic/"
@@ -1844,7 +1844,7 @@
     "Position": "YOUTH MPA",
     "Father_name": "Hazrat khan ",
     "Cnic": "21603-7796409-3",
-    "District": null,
+    "District": "Orakzai",
     "Contact_no": "03055330589",
     "Image": "./images/Members Pic/Nasir Ali Orakzai.jpeg"
   },
@@ -1855,9 +1855,9 @@
     "Position": "YOUTH MPA",
     "Father_name": "Mir Kamal ",
     "Cnic": "1620254453439",
-    "District": null,
+    "District": "Swabi",
     "Contact_no": "03335899124",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Nasir Kamal.jpeg"
   },
   {
     "Id": "NasrullahHassrat",
@@ -1994,12 +1994,12 @@
   {
     "Id": "SaharEjazSethi",
     "Membership_no": "KPYA-25-00676",
-    "Name": "Sahar Ejaz Sethi",
+    "Name": "Advocate Sahar Ejaz Sethi",
     "Position": "YOUTH MPA",
     "Father_name": "Muhammad Ajaz",
     "Cnic": "17301-7569922-2",
     "District": null,
-    "Contact_no": null,
+    "Contact_no": "0332-9104661",
     "Image": "./images/Members Pic/Seher Ijaz Sethi.jpeg"
   },
   {
@@ -2031,7 +2031,7 @@
     "Position": "YOUTH MPA",
     "Father_name": "Rehman Hussain Jadoon",
     "Cnic": "17301-9960269-5",
-    "District": null,
+    "District": "Swabi",
     "Contact_no": "03149223312",
     "Image": "./images/Members Pic/"
   },
@@ -2616,7 +2616,7 @@
     "Cnic": "14101-1221838-7",
     "District": "Hangu",
     "Contact_no": "0331-8022395",
-    "Image": "./images/Members Pic/Yawar Abbas.jpeg"
+    "Image": "./images/Members Pic/Yawar Abbas.jprg"
   },
   {
     "Id": null,
