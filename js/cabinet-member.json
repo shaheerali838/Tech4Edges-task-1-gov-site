@@ -1,184 +1,294 @@
 [
   {
-    "id": "sania",
-    "name": "Sania Javed",
-    "position": "Chief Minister (Care-taker)",
+    "Id": "sania",
+    "Membership_no": "KPYA-24-00401",
+    "Name": "Sania Javed",
+    "position": "Caretaker Chief Minister",
     "organization": "Chief Minister Secretariat",
-    "image": "./images/Sania.jpeg"
+    "Father_Name": "Javed Khan",
+    "Cnic": "17301-8341759-4",
+    "District": "Swabi",
+    "Contact_no": "0334-0062811",
+    "Image": "../images/Sania.jpeg"
   },
   {
-    "id": "malak",
-    "name": "Malak Ahmad",
+    "Id": "malakahmad",
+    "Membership_no": "KPYA-20-00201",
+    "Name": "Malak Ahmad",
     "position": "Minister",
-    "organization": "Ministry of Law, Parliamentary Affairs",
-    "image": "/images/members/malak-ahmad.jpg"
+    "Organization": "Ministry of Law, Parliamentary Affairs",
+    "Father_Name": "MUHAMMAD SALEEM",
+    "Cnic": "15302-4669361-9",
+    "District": "Dir Lower",
+    "Contact_no": "0341-9871236",
+    "Image": "/images/members/MALAK AHMAD.jpeg"
   },
   {
-    "id": "adnan",
-    "name": "Dr. Adnan Ashraf",
+    "Id": "Saeedullahkhanwazir",
+    "Membership_no": "KPYA-25-00733",
+    "Name": "Saeed Ullah Khan Wazir",
+    "position": "Minister",
+    "organization": "Ministry of Auqaf, Hajj & Religious Affairs",
+    "Father_Name": "Attaullah Jan",
+    "Cnic": "21508-1424607-1",
+    "District": "NWTD",
+    "Contact_no": "0331-2227770",
+    "Image": "./images/Members Pic/"
+  },
+  {
+    "Id": "ABDULRASHEED",
+    "Membership_no": "KPYA-25-00506",
+    "Name": "ABDUL RASHEED",
+    "position": "Minister",
+    "organization": "Ministry of Energy & Power",
+    "Father_Name": "Niamat khan ",
+    "Cnic": "21201-3493484-9",
+    "District": null,
+    "Contact_no": "03051910477",
+    "Image": "./images/Members Pic/Abdul rasheed.pdf"
+  },
+  {
+    "Id": "AdnanAshraf",
+    "Membership_no": "KPYA-25-00513",
+    "Name": "Dr.Adnan Ashraf",
     "position": "Minister",
     "organization": "Ministry of Health",
-    "image": "/images/members/dr-adnan-ashraf.jpg"
+    "Father_Name": "Ashraf Afridi",
+    "Cnic": "17201-4632145-1",
+    "District": null,
+    "Contact_no": "0333-8595425",
+    "Image": "./images/Members Pic/Adnan Ashraf.jpeg"
   },
   {
-    "id": "nadeem",
-    "name": "M. Nadeem",
-    "position": "Minister",
-    "organization": "Ministry of Elementary & Secondary Education",
-    "image": "/images/members/m-nadeem.jpg"
-  },
-  {
-    "id": "ahad",
-    "name": "Ahad Ullah",
+    "Id": "AhadUllah",
+    "Membership_no": "KPYA-25-00517",
+    "Name": "Ahad Ullah",
     "position": "Minister",
     "organization": "Ministry of Higher Education, Archives & Libraries",
-    "image": "/images/members/ahad-ullah.jpg"
+    "Father_Name": "Subhan Ullah",
+    "Cnic": "16101-4749369-5",
+    "District": null,
+    "Contact_no": "0325-5254540",
+    "Image": "./images/Members Pic/WhatsApp Image 2026-01-25 at 12.22.56 PM.jpeg"
   },
   {
-    "id": "darwesh",
-    "name": "Darwesh Ullah Arif",
+    "Id": "DarweshUllahArif",
+    "Membership_no": "KPYA-25-00542",
+    "Name": "Darwesh Ullah Arif",
     "position": "Minister",
     "organization": "Ministry of Home & Tribal Affairs",
-    "image": "/images/members/darwesh-ullah-arif.jpg"
+    "Father_Name": "Muhammad Arif",
+    "Cnic": "17301-3953719-3",
+    "District": "Peshawar",
+    "Contact_no": "0336-9838957",
+    "Image": "./images/Members Pic/Darwesh Ullah Arif.png"
   },
   {
-    "id": "habib",
-    "name": "Habib Ullah",
-    "position": "Minister",
-    "organization": "Ministry of Information Technology & Communication",
-    "image": "/images/members/habib-ullah.jpg"
-  },
-  {
-    "id": "hamid",
-    "name": "Hamid Jamil",
-    "position": "Minister",
-    "organization": "Ministry of Excise, Taxation & Narcotics Control",
-    "image": "/images/members/hamid-jamil.jpg"
-  },
-  {
-    "id": "noor",
-    "name": "Noor Ul Huda",
-    "position": "Minister",
-    "organization": "Ministry of Social Welfare, Special Education & Women Empowerment",
-    "image": "/images/members/noor-ul-huda.jpg"
-  },
-  {
-    "id": "shahzad",
-    "name": "Shahzad Ali Masroor",
-    "position": "Minister",
-    "organization": "Ministry of Sports, Culture & Archaeology",
-    "image": "/images/members/shahzad-ali-masroor.jpg"
-  },
-  {
-    "id": "mehtab",
-    "name": "Muhammad Mehtab",
-    "position": "Minister",
-    "organization": "Ministry of Labour & Human Resource Development",
-    "image": "/images/members/muhammad-mehtab.jpg"
-  },
-  {
-    "id": "jalil",
-    "name": "Abdul Jalil",
+    "Id": "AbdulJalil",
+    "Membership_no": "KPYA-25-00504",
+    "Name": "Abdul Jalil",
     "position": "Minister",
     "organization": "Ministry of Planning & Development",
-    "image": "/images/members/abdul-jalil.jpg"
+    "Father_Name": "Abdul Wali Khan",
+    "Cnic": "21201-0615011-3",
+    "District": null,
+    "Contact_no": "03331714654",
+    "Image": "./images/Members Pic/Abdul Jalil District Khyber.jpeg"
   },
   {
-    "id": "maaz",
-    "name": "Muhammad Maaz",
+    "Id": "Amirhamza",
+    "Membership_no": "KPYA-25-00521",
+    "Name": "Amir hamza",
+    "position": "Minister",
+    "organization": "Ministry of Agriculture, Livestock, Fisheries & Cooperatives",
+    "Father_Name": "Mushtaq Ahmad",
+    "Cnic": "17101-0268468-9",
+    "District": null,
+    "Contact_no": "03029666375",
+    "Image": "./images/Members Pic/"
+  },
+  {
+    "Id": "MalaikaGul",
+    "Membership_no": "KPYA-25-00594",
+    "Name": "Malaika Gul",
+    "position": "Minister",
+    "organization": "Ministry of Population Welfare",
+    "Father_Name": "Gul Mar Khan",
+    "Cnic": "21201-7096248-2",
+    "District": null,
+    "Contact_no": null,
+    "Image": "./images/Members Pic/Malaika Gul.jpeg"
+  },
+  {
+    "Id": "Mohammadharoon",
+    "Membership_no": "KPYA-25-00605",
+    "Name": "Mohammad haroon",
+    "position": "Minister",
+    "organization": "Ministry of Science & Technology",
+    "Father_Name": "Mohammad saleem ",
+    "Cnic": "16202-4824739-5",
+    "District": "Swabi",
+    "Contact_no": "03351560282",
+    "Image": "./images/Members Pic/"
+  },
+  {
+    "Id": "MuhammadMaaz",
+    "Membership_no": "KPYA-25-00635",
+    "Name": "Muhammad Maaz",
     "position": "Minister",
     "organization": "Ministry of Environment, Forestry & Wildlife",
-    "image": "/images/members/muhammad-maaz.jpg"
+    "Father_Name": "Hazrat Ayub",
+    "Cnic": "15505-7587231-5",
+    "District": null,
+    "Contact_no": "03440009041",
+    "Image": "./images/Members Pic/Muhammad Maaz.jpg"
   },
   {
-    "id": "nasir",
-    "name": "Nasir Ali",
+    "Id": "MuhammadMehtab",
+    "Membership_no": "KPYA-25-00637",
+    "Name": "Muhammad Mehtab",
+    "position": "Minister",
+    "organization": "Ministry of Labour & Human Resource Development",
+    "Father_Name": "Muhammad Mushtaq",
+    "Cnic": "17301-8061246-1",
+    "District": null,
+    "Contact_no": "03109977400",
+    "Image": "./images/Members Pic/Muhammad Mehtab Khan.jpeg"
+  },
+  {
+    "Id": "MuhammadNadeem",
+    "Membership_no": "KPYA-25-00639",
+    "Name": "Muhammad Nadeem",
+    "position": "Minister",
+    "organization": "Ministry of Elementary & Secondary Education",
+    "Father_Name": "Bakht Biland",
+    "Cnic": "17201-9509348-7",
+    "District": "Nowshehra",
+    "Contact_no": "03459318018",
+    "Image": "./images/Members Pic/Muhammad Nadeem.jpeg"
+  },
+  {
+    "Id": "Hamidjamil",
+    "Membership_no": "KPYA-25-00556",
+    "Name": "Hamid jamil",
+    "position": "Minister",
+    "organization": "Ministry of Excise, Taxation & Narcotics Control",
+    "Father_Name": "Jamil hussain",
+    "Cnic": "14101-3089379-9",
+    "District": null,
+    "Contact_no": "03339739207",
+    "Image": "./images/Members Pic/Hamid jamil.jpeg"
+  },
+  {
+    "Id": "NOORULHUDASHAH",
+    "Membership_no": "KPYA-25-00666",
+    "Name": "NOOR UL HUDA SHAH",
+    "position": "Minister",
+    "organization": "Ministry of Social Welfare, Special Education & Women Empowerment",
+    "Father_Name": "SYED ASHFAQ ALI SHAH",
+    "Cnic": "17301-1118858-6",
+    "District": null,
+    "Contact_no": null,
+    "Image": "./images/Members Pic/"
+  },
+  {
+    "Id": "ShahzadAli",
+    "Membership_no": "KPYA-25-00714",
+    "Name": "Shahzad Ali Masroor",
+    "position": "Minister",
+    "organization": "Ministry of Sports, Culture & Archaeology",
+    "Father_Name": "Gulzar Ali",
+    "Cnic": "16201-5209286-7",
+    "District": "Swabi",
+    "Contact_no": "0314-3065900",
+    "Image": "./images/Members Pic/Shahzad Ali.jpeg"
+  },
+  {
+    "Id": "Nasirali",
+    "Membership_no": "KPYA-25-00662",
+    "Name": "Nasir ali",
     "position": "Minister",
     "organization": "Ministry of Human Rights",
-    "image": "/images/members/nasir-ali.jpg"
+    "Father_Name": "Hazrat khan ",
+    "Cnic": "21603-7796409-3",
+    "District": "Orakzai",
+    "Contact_no": "03055330589",
+    "Image": "./images/Members Pic/Nasir Ali Orakzai.jpeg"
   },
   {
-    "id": "rashed",
-    "name": "Syed Rashed Ali Shah",
+    "Id": "SyedRashedAliShah",
+    "Membership_no": "KPYA-25-00705",
+    "Name": "Syed Rashed Ali Shah",
     "position": "Minister",
     "organization": "Ministry of Prisons & Correctional Services",
-    "image": "/images/members/syed-rashed-ali-shah.jpg"
+    "Father_Name": "Syed Mubarak Ali Shah ",
+    "Cnic": "13501-0998652-1",
+    "District": null,
+    "Contact_no": "03469564958",
+    "Image": "./images/Members Pic/Syed Rashed Ali Shah.jpeg"
   },
   {
-    "id": "jalal",
-    "name": "Jalal Ahmad",
+    "Id": "JalalAhmad",
+    "Membership_no": "KPYA-25-00579",
+    "Name": "Jalal Ahmad",
     "position": "Minister",
     "organization": "Ministry of Information & Broadcasting",
-    "image": "/images/members/jalal-ahmad.jpg"
+    "Father_Name": "Humayun Khan",
+    "Cnic": "17201-1845013-9",
+    "District": null,
+    "Contact_no": "3108708228",
+    "Image": "./images/Members Pic/Jalal Ahmad.jpeg"
   },
   {
     "id": "bilal",
-    "name": "Syed Bilal Shah",
+    "Name": "Syed Bilal Shah",
     "position": "Minister",
     "organization": "Ministry of Industries, Commerce & Technical Education",
     "image": "/images/members/syed-bilal-shah.jpg"
   },
   {
-    "id": "naeem",
-    "name": "Naeem Anwar",
-    "position": "Minister",
-    "organization": "Ministry of Local Government, Elections & Rural Development",
-    "image": "/images/members/naeem-anwar.jpg"
-  },
-  {
-    "id": "malaika",
-    "name": "Malaika",
-    "position": "Minister",
-    "organization": "Ministry of Population Welfare",
-    "image": "/images/members/malaika.jpg"
-  },
-  {
-    "id": "haroon",
-    "name": "Muhammad Haroon",
-    "position": "Minister",
-    "organization": "Ministry of Science & Technology",
-    "image": "/images/members/muhammad-haroon.jpg"
-  },
-  {
     "id": "zabih",
-    "name": "Zabih Ullah",
+    "Name": "Zabih Ullah",
     "position": "Minister",
     "organization": "Ministry of Public Health Engineering",
     "image": "/images/members/zabih-ullah.jpg"
   },
   {
-    "id": "abbas",
-    "name": "Syed Muhammad Ali Abbas Shah",
+    "Id": "SyedMuhammadAliAbbasShah",
+    "Membership_no": "KPYA-25-00703",
+    "Name": "Syed Muhammad Ali Abbas Shah",
     "position": "Minister",
     "organization": "Ministry of Transport",
-    "image": "/images/members/syed-muhammad-ali-abbas-shah.jpg"
+    "Father_Name": "Syed Fayyaz Ali Shah",
+    "Cnic": "17301-8431901-7",
+    "District": null,
+    "Contact_no": "03447010049",
+    "Image": "./images/Members Pic/Syed Muhammad Ali Abbas shah.jpeg"
   },
   {
     "id": "said",
-    "name": "Said Asghar Khan",
+    "Name": "Said Asghar Khan",
     "position": "Minister",
     "organization": "Tourism & Youth Affairs",
     "image": "/images/members/said-asghar-khan.jpg"
   },
   {
-    "id": "rasheed",
-    "name": "Abdul Rasheed",
+    "Id": "Habibullah",
+    "Membership_no": "KPYA-25-00552",
+    "Name": "Habibullah",
     "position": "Minister",
-    "organization": "Ministry of Energy & Power",
-    "image": "/images/members/abdul-rasheed.jpg"
+    "organization": "Ministry of Information Technology & Communication",
+    "Father_Name": "Umara khan",
+    "Cnic": "16103-0369133-9",
+    "District": null,
+    "Contact_no": "03105267276",
+    "Image": "./images/Members Pic/HabibUllah.jpeg"
   },
   {
-    "id": "aamir",
-    "name": "Aamir Hamza",
+    "id": "naeem",
+    "Name": "Naeem Anwar",
     "position": "Minister",
-    "organization": "Ministry of Agriculture, Livestock, Fisheries & Cooperatives",
-    "image": "/images/members/aamir-hamza.jpg"
-  },
-  {
-    "id": "saeed",
-    "name": "Saeed Ullah Wazir",
-    "position": "Minister",
-    "organization": "Ministry of Auqaf, Hajj & Religious Affairs",
-    "image": "/images/members/aamir-hamza.jpg"
+    "organization": "Ministry of Local Government, Elections & Rural Development",
+    "image": "/images/members/naeem-anwar.jpg"
   }
 ]
