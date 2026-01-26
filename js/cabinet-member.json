@@ -16,7 +16,7 @@
     "Membership_no": "KPYA-20-00201",
     "Name": "Malak Ahmad",
     "position": "Minister",
-    "Organization": "Ministry of Law, Parliamentary Affairs",
+    "organization": "Ministry of Law, Parliamentary Affairs",
     "Father_Name": "MUHAMMAD SALEEM",
     "Cnic": "15302-4669361-9",
     "District": "Dir Lower",
@@ -33,7 +33,7 @@
     "Cnic": "21508-1424607-1",
     "District": "NWTD",
     "Contact_no": "0331-2227770",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Saeed Ullah Khan Wazir.jpeg  "
   },
   {
     "Id": "ABDULRASHEED",
@@ -45,7 +45,7 @@
     "Cnic": "21201-3493484-9",
     "District": null,
     "Contact_no": "03051910477",
-    "Image": "./images/Members Pic/Abdul rasheed.pdf"
+    "Image": "./images/Members Pic/Abdul rasheed.jpg"
   },
   {
     "Id": "AdnanAshraf",
