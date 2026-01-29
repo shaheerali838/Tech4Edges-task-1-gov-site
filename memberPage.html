@@ -977,6 +977,7 @@
 			}
 
 			// Load and display member data
+			// Load and display member data
 			async function loadMemberData() {
 				const memberId = getMemberId();
 				const loadingElement = document.getElementById('memberLoading');
@@ -986,26 +987,46 @@
 				console.log('Loading member with ID:', memberId);
 
 				try {
-					// Try to load the JSON file
-					const response = await fetch('./js/members-list.json');
+					// 1. Fetch BOTH JSON files in parallel using Promise.all
+					const [membersResponse, cabinetResponse] = await Promise.all([
+						fetch('./js/members-list.json'),
+						fetch('./js/cabinet-member.json')
+					]);
 
-					if (!response.ok) {
-						throw new Error(`Failed to load JSON: ${response.status}`);
+					let allMembers = [];
+
+					// 2. Process Members List
+					if (membersResponse.ok) {
+						const membersData = await membersResponse.json();
+						allMembers = [...allMembers, ...membersData];
+					} else {
+						console.warn("Warning: Could not load members-list.json");
 					}
 
-					const members = await response.json();
-					console.log('Total members loaded:', members.length);
+					// 3. Process Cabinet List
+					if (cabinetResponse.ok) {
+						const cabinetData = await cabinetResponse.json();
+						allMembers = [...allMembers, ...cabinetData];
+					} else {
+						console.warn("Warning: Could not load cabinet-member.json");
+					}
 
-					// Find the member by ID
+					if (allMembers.length === 0) {
+						throw new Error("Failed to load any member data sources.");
+					}
+
+					console.log('Total combined members loaded:', allMembers.length);
+
+					// 4. Find the member by ID (in the combined list)
 					let member = null;
 
 					if (memberId) {
 						// Try exact match first
-						member = members.find(m => m.Id === memberId);
+						member = allMembers.find(m => m.Id === memberId);
 
 						// Try case-insensitive match
 						if (!member) {
-							member = members.find(m =>
+							member = allMembers.find(m =>
 								m.Id && m.Id.toLowerCase() === memberId.toLowerCase()
 							);
 						}
@@ -1013,7 +1034,7 @@
 						// Try by name as last resort
 						if (!member) {
 							const searchName = memberId.toLowerCase();
-							member = members.find(m =>
+							member = allMembers.find(m =>
 								m.Name && m.Name.toLowerCase().includes(searchName)
 							);
 						}
@@ -1025,37 +1046,34 @@
 
 					console.log('Found member:', member);
 
-					// Update page content
+					// --- UPDATE PAGE CONTENT ---
+					// We use || to handle case sensitivity (e.g., Position vs position)
+
+					// Title & Breadcrumb
 					document.title = `${member.Name} | KPYA Member Profile`;
-
-					// Update breadcrumb
 					const breadcrumbName = document.getElementById('breadcrumbName');
-					if (breadcrumbName) {
-						breadcrumbName.textContent = member.Name;
-					}
-
-					// Update page title
+					if (breadcrumbName) breadcrumbName.textContent = member.Name;
 					const pageTitle = document.querySelector('.title-page');
-					if (pageTitle) {
-						pageTitle.textContent = member.Name;
-					}
+					if (pageTitle) pageTitle.textContent = member.Name;
 
-					// Update name
+					// Name
 					const memberName = document.getElementById('memberName');
-					if (memberName) {
-						memberName.textContent = member.Name;
-					}
+					if (memberName) memberName.textContent = member.Name;
 
-					// Update position
+					// Position (Handles "Position" from members list and "position" from cabinet)
 					const memberPosition = document.getElementById('memberPosition');
 					if (memberPosition) {
-						memberPosition.textContent = member.Position || 'Youth Member';
+						memberPosition.textContent = member.Position || member.position || 'Youth Member';
 					}
 
-					// Update district/organization
+					// Organization / District
+					// Cabinet members have "organization", General members have "District"
 					const memberOrganization = document.getElementById('memberOrganization');
 					if (memberOrganization) {
-						if (member.District && member.District !== 'null' && member.District !== null) {
+						if (member.organization) {
+							memberOrganization.textContent = member.organization;
+							memberOrganization.style.display = 'block';
+						} else if (member.District && member.District !== 'null' && member.District !== null) {
 							memberOrganization.textContent = `District: ${member.District}`;
 							memberOrganization.style.display = 'block';
 						} else {
@@ -1063,32 +1081,29 @@
 						}
 					}
 
-					// Hide constituency section if no data
+					// Hide constituency section generally
 					const constituencySection = document.querySelector('.constituency');
-					if (constituencySection) {
-						constituencySection.style.display = 'none';
-					}
+					if (constituencySection) constituencySection.style.display = 'none';
 
-					// Update contact phone
+					// Contact Phone
 					const contactPhone = document.getElementById('contactPhone');
-					if (contactPhone && member.Contact_no && member.Contact_no !== 'N/A') {
-						const phoneNumber = member.Contact_no.trim();
-						contactPhone.textContent = phoneNumber;
-						contactPhone.href = `tel:${phoneNumber.replace(/\D/g, '')}`;
-						contactPhone.style.color = '#223555';
-					} else {
-						contactPhone.textContent = 'Not Available';
-						contactPhone.removeAttribute('href');
-						contactPhone.style.color = '#666';
+					if (contactPhone) {
+						const phone = member.Contact_no;
+						if (phone && phone !== 'N/A' && phone !== null) {
+							contactPhone.textContent = phone;
+							contactPhone.href = `tel:${phone.replace(/\D/g, '')}`;
+							contactPhone.style.color = '#223555';
+						} else {
+							contactPhone.textContent = 'Not Available';
+							contactPhone.removeAttribute('href');
+							contactPhone.style.color = '#666';
+						}
 					}
 
-					// Update membership ID (replacing email field)
+					// Membership ID
 					const contactEmailText = document.getElementById('contactEmailText');
 					const emailLabel = document.querySelector('.contact-info p:nth-child(2) strong');
-
-					if (emailLabel) {
-						emailLabel.innerHTML = '<i class="fa fa-id-card" style="margin-right: 8px;"></i> Membership ID:';
-					}
+					if (emailLabel) emailLabel.innerHTML = '<i class="fa fa-id-card" style="margin-right: 8px;"></i> Membership ID:';
 
 					if (contactEmailText) {
 						if (member.Membership_no && member.Membership_no !== 'N/A') {
@@ -1101,161 +1116,87 @@
 						contactEmailText.removeAttribute('href');
 					}
 
-					// Load member image
+					// Image Handling
 					const memberImage = document.getElementById('memberImage');
 					const photoPlaceholder = document.getElementById('photoPlaceholder');
+					const imageSource = member.Image || member.image; // Handle lowercase key in cabinet
 
-					if (member.Image && member.Image !== 'N/A') {
-						let imagePath = member.Image.trim();
-
-						// Ensure proper image path
-						if (!imagePath.includes('http') && !imagePath.startsWith('./')) {
+					if (imageSource && imageSource !== 'N/A') {
+						let imagePath = imageSource.trim();
+						if (!imagePath.includes('http') && !imagePath.startsWith('./') && !imagePath.startsWith('../') && !imagePath.startsWith('/')) {
 							imagePath = './images/' + imagePath;
 						}
-
-						console.log('Loading image from:', imagePath);
+						// Fix path levels if needed
+						if (imagePath.startsWith('../')) {
+							imagePath = imagePath.replace('../', './');
+						}
 
 						memberImage.src = imagePath;
 						memberImage.alt = member.Name;
 						memberImage.style.display = 'block';
 						photoPlaceholder.style.display = 'none';
 
-						// Handle image load error
 						memberImage.onerror = function () {
-							console.log('Image failed to load, showing placeholder');
 							this.style.display = 'none';
 							photoPlaceholder.style.display = 'flex';
-
-							// Show initials in placeholder
-							const initials = member.Name
-								.split(' ')
-								.map(word => word[0])
-								.join('')
-								.toUpperCase()
-								.substring(0, 2);
-							photoPlaceholder.textContent = initials || 'KPYA';
-							photoPlaceholder.style.fontSize = '60px';
+							setPlaceholderInitials(member.Name);
 						};
 					} else {
-						// No image - show placeholder with initials
 						memberImage.style.display = 'none';
 						photoPlaceholder.style.display = 'flex';
+						setPlaceholderInitials(member.Name);
+					}
 
-						const initials = member.Name
-							.split(' ')
-							.map(word => word[0])
-							.join('')
-							.toUpperCase()
-							.substring(0, 2);
+					function setPlaceholderInitials(name) {
+						const initials = name.split(' ').map(w => w[0]).join('').toUpperCase().substring(0, 2);
 						photoPlaceholder.textContent = initials || 'KPYA';
 						photoPlaceholder.style.fontSize = '60px';
 					}
 
-					// Create member details in description section
+					// Generate Details Grid
 					const descriptionElement = document.getElementById('memberDescription');
 					if (descriptionElement) {
 						let detailsHTML = '<div class="member-details-grid">';
 
-						// Add all available details
-						if (member.Name) {
-							detailsHTML += `
-                        <div class="detail-item">
-                            <div class="detail-label">Full Name:</div>
-                            <div class="detail-value">${member.Name}</div>
-                        </div>`;
-						}
+						const fields = [
+							{ label: "Full Name", value: member.Name },
+							// Handle Key Difference: Father_name vs Father_Name
+							{ label: "Father's Name", value: member.Father_name || member.Father_Name },
+							{ label: "CNIC", value: member.Cnic },
+							{ label: "Membership ID", value: member.Membership_no },
+							// Handle Key Difference: Position vs position
+							{ label: "Position", value: member.Position || member.position },
+							{ label: "Ministry/Org", value: member.organization }, // Specific to cabinet
+							{ label: "District", value: member.District },
+							{ label: "Contact Number", value: member.Contact_no }
+						];
 
-						if (member.Father_name && member.Father_name !== 'N/A') {
-							detailsHTML += `
-                        <div class="detail-item">
-                            <div class="detail-label">Father's Name:</div>
-                            <div class="detail-value">${member.Father_name}</div>
-                        </div>`;
-						}
-
-						if (member.Cnic && member.Cnic !== 'N/A') {
-							detailsHTML += `
-                        <div class="detail-item">
-                            <div class="detail-label">CNIC:</div>
-                            <div class="detail-value">${member.Cnic}</div>
-                        </div>`;
-						}
-
-						if (member.Membership_no && member.Membership_no !== 'N/A') {
-							detailsHTML += `
-                        <div class="detail-item">
-                            <div class="detail-label">Membership ID:</div>
-                            <div class="detail-value">${member.Membership_no}</div>
-                        </div>`;
-						}
-
-						if (member.Position) {
-							detailsHTML += `
-                        <div class="detail-item">
-                            <div class="detail-label">Position:</div>
-                            <div class="detail-value">${member.Position}</div>
-                        </div>`;
-						}
-
-						if (member.District && member.District !== 'null' && member.District !== null) {
-							detailsHTML += `
-                        <div class="detail-item">
-                            <div class="detail-label">District:</div>
-                            <div class="detail-value">${member.District}</div>
-                        </div>`;
-						}
-
-						if (member.Contact_no && member.Contact_no !== 'N/A') {
-							detailsHTML += `
-                        <div class="detail-item">
-                            <div class="detail-label">Contact Number:</div>
-                            <div class="detail-value">${member.Contact_no}</div>
-                        </div>`;
-						}
+						fields.forEach(field => {
+							if (field.value && field.value !== 'N/A' && field.value !== 'null') {
+								detailsHTML += `
+                    <div class="detail-item">
+                        <div class="detail-label">${field.label}:</div>
+                        <div class="detail-value">${field.value}</div>
+                    </div>`;
+							}
+						});
 
 						detailsHTML += '</div>';
 
-						// Add CSS for the grid
-						const style = document.createElement('style');
-						style.textContent = `
-                    .member-details-grid {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                        gap: 15px;
-                        margin-top: 10px;
-                    }
-                    .detail-item {
-                        background: #f8f9fa;
-                        padding: 15px;
-                        border-radius: 8px;
-                        border-left: 4px solid #223555;
-                        transition: all 0.3s ease;
-                    }
-                    .detail-item:hover {
-                        background: #e9ecef;
-                        transform: translateY(-2px);
-                        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-                    }
-                    .detail-label {
-                        font-weight: 600;
-                        color: #223555;
-                        font-size: 14px;
-                        margin-bottom: 5px;
-                        text-transform: uppercase;
-                        letter-spacing: 0.5px;
-                    }
-                    .detail-value {
-                        color: #2c3e50;
-                        font-size: 16px;
-                        font-weight: 500;
-                    }
-                    @media (max-width: 768px) {
-                        .member-details-grid {
-                            grid-template-columns: 1fr;
-                        }
-                    }
+						// Ensure styles exist
+						if (!document.getElementById('grid-styles')) {
+							const style = document.createElement('style');
+							style.id = 'grid-styles';
+							style.textContent = `
+                    .member-details-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 10px; }
+                    .detail-item { background: #f8f9fa; padding: 15px; border-radius: 8px; border-left: 4px solid #223555; transition: all 0.3s ease; }
+                    .detail-item:hover { background: #e9ecef; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+                    .detail-label { font-weight: 600; color: #223555; font-size: 14px; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+                    .detail-value { color: #2c3e50; font-size: 16px; font-weight: 500; }
+                    @media (max-width: 768px) { .member-details-grid { grid-template-columns: 1fr; } }
                 `;
-						document.head.appendChild(style);
+							document.head.appendChild(style);
+						}
 
 						descriptionElement.innerHTML = detailsHTML;
 					}
@@ -1266,20 +1207,12 @@
 
 				} catch (error) {
 					console.error('Error loading member data:', error);
-
 					loadingElement.style.display = 'none';
 					errorElement.style.display = 'block';
-
 					const errorMessage = document.getElementById('errorMessage');
-					if (errorMessage) {
-						errorMessage.textContent = error.message || 'Failed to load member data. Please try again.';
-					}
-
-					// Log the full error for debugging
-					console.error('Full error details:', error);
+					if (errorMessage) errorMessage.textContent = error.message;
 				}
 			}
-
 			// Add retry button functionality
 			window.loadMemberData = loadMemberData;
 
