@@ -315,6 +315,123 @@
         .sosmed-icon a {
             transition: all 0.3s ease;
         }
+
+        /* ... existing styles ... */
+
+        /* --- Navbar Search Styling --- */
+        .member-search-form {
+            margin-left: auto;
+            flex-shrink: 0;
+            order: 1;
+            display: flex;
+        }
+
+        .member-search-form .input-group {
+            display: flex;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .member-search-form .form-control {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #b89b5e;
+            border-right: none;
+            border-radius: 20px 0 0 20px;
+            height: 36px;
+            font-size: 12px;
+            padding: 6px 15px;
+            width: 150px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .member-search-form .form-control::placeholder {
+            color: #999;
+        }
+
+        .member-search-form .form-control:focus {
+            background: #ffffff;
+            box-shadow: none;
+            width: 180px;
+            border-color: #1D493A;
+        }
+
+        .member-search-form .btn-custom {
+            background-color: #1D493A;
+            color: #b89b5e;
+            border: 1px solid #b89b5e;
+            border-left: none;
+            border-radius: 0 20px 20px 0;
+            height: 36px;
+            padding: 0 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .member-search-form .btn-custom:hover,
+        .member-search-form .btn-custom:focus {
+            background-color: #b89b5e;
+            color: #ffffff;
+            box-shadow: none;
+            outline: none;
+        }
+
+        /* --- Responsive Styling (Mobile/Tablet) --- */
+        @media (max-width: 991px) {
+            .member-search-form {
+                order: 0;
+                margin-left: 0;
+                width: 100%;
+                margin: 15px 0 0 0;
+                flex-basis: 100%;
+            }
+
+            .member-search-form .input-group {
+                width: 100%;
+            }
+
+            .member-search-form .form-control {
+                width: 100% !important;
+                border-radius: 20px 0 0 20px;
+            }
+
+            .member-search-form .btn-custom {
+                border-radius: 0 20px 20px 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+
+            .member-search-form .form-control,
+            .member-search-form .form-control:focus {
+                font-size: 13px;
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 479px) {
+            .member-search-form {
+                margin-top: 10px;
+            }
+
+            .member-search-form .form-control {
+                height: 32px;
+                font-size: 12px;
+                padding: 4px 10px;
+                border-radius: 15px 0 0 15px;
+            }
+
+            .member-search-form .btn-custom {
+                height: 32px;
+                padding: 0 10px;
+                border-radius: 0 15px 15px 0;
+                font-size: 12px;
+            }
+        }
     </style>
 
 </head>
@@ -421,10 +538,26 @@
                                 <a class="nav-link" href="contact.html">CONTACT US</a>
                             </li>
                         </ul>
+                        <form class="form-inline ml-lg-3 my-2 my-lg-0 member-search-form" id="cabinetSearchForm"
+                            action="cabinet.html" method="GET">
+                            <div class="input-group">
+                                <input class="form-control" type="search" id="searchInput" name="q"
+                                    placeholder="Find Minister..." aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-custom" type="submit">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </nav>
             </div>
         </div>
+    </div>
+    </nav>
+    </div>
+    </div>
 
     </div>
 
@@ -599,21 +732,40 @@
 </body>
 
 <script>
-    // Load Cabinet members
-    fetch("./js/cabinet-member.json")
-        .then(response => response.json())
-        .then(data => {
-            let container = document.getElementById("cabinet-grid");
-            let membersList = "";
+    let allCabinetData = []; // Store data globally for filtering
 
-            data.forEach(member => {
+    // Function to display members
+    function displayCabinet(members, searchQuery = '') {
+        const container = document.getElementById("cabinet-grid");
+        let membersList = "";
+
+        // Filter Logic
+        let filteredData = members;
+        if (searchQuery) {
+            searchQuery = searchQuery.toLowerCase();
+            filteredData = members.filter(member => {
+                // Search by Name, Position, or Ministry
+                return (member.Name && member.Name.toLowerCase().includes(searchQuery)) ||
+                    (member.position && member.position.toLowerCase().includes(searchQuery)) ||
+                    (member.organization && member.organization.toLowerCase().includes(searchQuery));
+            });
+        }
+
+        if (filteredData.length > 0) {
+            filteredData.forEach(member => {
+                // Handle Image Path
+                let imagePath = member.Image || member.image || './images/default-user.png';
+                if (imagePath && !imagePath.includes('http') && !imagePath.startsWith('./') && !imagePath.startsWith('../') && !imagePath.startsWith('/')) {
+                    imagePath = './images/' + imagePath;
+                }
+
                 membersList += `
                 <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
                     <div class="rs-team-1">
                         <div class="media-box">
-                            <a href="memberPage.html?id=${member.Id}">
+                            <a href="memberPage.html?id=${member.Id || member.id}">
                                 <img 
-                                    src="${member.Image}" 
+                                    src="${imagePath}" 
                                     alt="${member.Name}" 
                                     class="img-fluid" 
                                     onerror="this.onerror=null; this.src='./images/default-user.png';"
@@ -621,24 +773,70 @@
                             </a>
                         </div>
                         <div class="body">
-                            <div class="title"><a href="memberPage.html?id=${member.Id}">${member.Name}</a></div>
+                            <div class="title"><a href="memberPage.html?id=${member.Id || member.id}">${member.Name}</a></div>
                             <div class="position" style="color: #b58d04; font-weight: 600;">${member.position}</div>
                             <div class="text-muted" style="font-size: 13px; line-height: 1.4; margin-top: 5px;">${member.organization}</div>
-                            
-                          
                         </div>
                     </div>
                 </div>`;
             });
-            container.innerHTML = membersList;
-        })
-        .catch(error => {
-            console.error('Error loading cabinet members:', error);
-            document.getElementById('cabinet-grid').innerHTML = `
+        } else {
+            membersList = `
             <div class="col-12 text-center">
-                <p>Unable to load cabinet members. Please ensure the JSON file is correct.</p>
+                <p>No cabinet members found matching "<strong>${searchQuery}</strong>".</p>
             </div>`;
-        });
+        }
+
+        container.innerHTML = membersList;
+    }
+
+    // Handle Search Form Submission (Prevent page reload)
+    function handleCabinetSearch(event) {
+        event.preventDefault();
+        const query = document.getElementById('searchInput').value.trim();
+        displayCabinet(allCabinetData, query);
+    }
+
+    // Load Data on Page Load
+    document.addEventListener('DOMContentLoaded', function () {
+        // Attach Submit Event
+        const searchForm = document.getElementById('cabinetSearchForm');
+        if (searchForm) {
+            searchForm.addEventListener('submit', handleCabinetSearch);
+        }
+
+        // Attach Real-time Input Event
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('input', function () {
+                displayCabinet(allCabinetData, this.value.trim());
+            });
+        }
+
+        // Fetch Data
+        fetch("./js/cabinet-member.json")
+            .then(response => response.json())
+            .then(data => {
+                allCabinetData = data; // Store data
+
+                // Check for URL query param ?q=name
+                const urlParams = new URLSearchParams(window.location.search);
+                const initialQuery = urlParams.get('q') || '';
+
+                if (initialQuery && searchInput) {
+                    searchInput.value = initialQuery;
+                }
+
+                displayCabinet(data, initialQuery);
+            })
+            .catch(error => {
+                console.error('Error loading cabinet members:', error);
+                document.getElementById('cabinet-grid').innerHTML = `
+                <div class="col-12 text-center">
+                    <p>Unable to load cabinet members. Please ensure the JSON file is correct.</p>
+                </div>`;
+            });
+    });
 </script>
 
 </html>

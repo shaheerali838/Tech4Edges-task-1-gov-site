@@ -48,9 +48,10 @@
     "Membership_no": "KPYA-24-00401",
     "Name": "Sania Javed",
     "Position": "Caretaker Chief Minister",
-    "Father_name": "N/A",
-    "Cnic": "N/A",
-    "District": null,
+    "organization": "Chief Minister Secretariat",
+    "Father_name": "Javed Khan",
+    "Cnic": "17301-8341759-4",
+    "District": "Swabi",
     "Contact_no": "091-5700041",
     "Image": "../images/Sania.jpeg"
   },

@@ -44,8 +44,7 @@
 		}
 
 		.navbar-main .container {
-			padding-left: 15px;
-			padding-right: 15px;
+			padding: 0 15px;
 		}
 
 		#navbar-example {
@@ -72,7 +71,7 @@
 			transform: scale(1.05);
 		}
 
-		/* --- Navbar Toggler Styling --- */
+		/* --- Navbar Toggler --- */
 		.navbar-toggler {
 			padding: 5px 10px;
 			border: 1px solid #b89b5e;
@@ -90,7 +89,6 @@
 			background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23b89b5e' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 		}
 
-		/* --- Navigation Collapse --- */
 		.navbar-collapse {
 			order: 3;
 			display: flex !important;
@@ -98,7 +96,7 @@
 			flex-grow: 1;
 		}
 
-		/* --- Navigation Links Styling --- */
+		/* --- Navigation Links --- */
 		.navbar-nav {
 			display: flex !important;
 			flex-direction: row;
@@ -130,7 +128,7 @@
 			color: #b89b5e !important;
 		}
 
-		/* --- Dropdown Styling (UPDATED) --- */
+		/* --- Dropdown Styling --- */
 		.navbar-nav .dropdown-menu {
 			background-color: #1d493a;
 			/* Green Background */
@@ -147,10 +145,7 @@
 			margin-top: 5px;
 		}
 
-		.navbar-nav .dropdown-menu.show {
-			display: block !important;
-		}
-
+		.navbar-nav .dropdown-menu.show,
 		.navbar-nav .show>.dropdown-menu {
 			display: block !important;
 		}
@@ -159,7 +154,6 @@
 			padding: 10px 20px;
 			font-size: 13px;
 			color: #ffffff;
-			/* White Text */
 			transition: all 0.3s ease;
 			display: block;
 			width: 100%;
@@ -171,10 +165,261 @@
 
 		.navbar-nav .dropdown-item:hover {
 			background-color: rgba(255, 255, 255, 0.1);
-			/* Subtle hover bg */
 			color: #b89b5e;
-			/* Gold text on hover */
 		}
+
+		/* --- Navbar Search --- */
+		.member-search-form {
+			margin-left: auto;
+			flex-shrink: 0;
+			order: 1;
+			display: flex;
+		}
+
+		.member-search-form .input-group {
+			display: flex;
+			border-radius: 20px;
+			overflow: hidden;
+		}
+
+		.member-search-form .form-control {
+			background: rgba(255, 255, 255, 0.7);
+			border: 1px solid #b89b5e;
+			border-right: none;
+			border-radius: 20px 0 0 20px;
+			height: 36px;
+			font-size: 12px;
+			padding: 6px 15px;
+			width: 150px;
+			transition: all 0.3s ease;
+			outline: none;
+		}
+
+		.member-search-form .form-control::placeholder {
+			color: #999;
+		}
+
+		.member-search-form .form-control:focus {
+			background: #ffffff;
+			box-shadow: none;
+			width: 180px;
+			border-color: #1D493A;
+		}
+
+		.member-search-form .btn-custom {
+			background-color: #1D493A;
+			color: #b89b5e;
+			border: 1px solid #b89b5e;
+			border-left: none;
+			border-radius: 0 20px 20px 0;
+			height: 36px;
+			padding: 0 12px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 14px;
+		}
+
+		.member-search-form .btn-custom:hover,
+		.member-search-form .btn-custom:focus {
+			background-color: #b89b5e;
+			color: #ffffff;
+			box-shadow: none;
+			outline: none;
+		}
+
+		/* --- Ticker & Info --- */
+		.news-ticker {
+			overflow: hidden;
+		}
+
+		.news-ticker marquee {
+			font-size: 0.9rem;
+		}
+
+		.info {
+			display: flex;
+			gap: 20px;
+			flex-wrap: wrap;
+		}
+
+		.info-item {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			font-size: 13px;
+			white-space: nowrap;
+		}
+
+		.sosmed-icon {
+			display: flex;
+			gap: 10px;
+		}
+
+		.sosmed-icon a {
+			transition: all 0.3s ease;
+		}
+
+		/* --- Tablet/Medium Devices (768px - 991px) --- */
+		@media (max-width: 991px) {
+			#navbar-example {
+				flex-wrap: wrap;
+				gap: 0;
+			}
+
+			.navbar-brand {
+				margin-right: 0;
+				order: 1;
+			}
+
+			.navbar-toggler {
+				order: 2;
+				margin-left: auto;
+			}
+
+			.navbar-collapse {
+				order: 3;
+				flex-basis: 100%;
+				width: 100%;
+				padding: 15px 0;
+				border-top: 1px solid rgba(0, 0, 0, 0.1);
+				margin-top: 10px;
+				display: none !important;
+				flex-direction: column;
+			}
+
+			.navbar-collapse.show {
+				display: flex !important;
+			}
+
+			.member-search-form {
+				order: 0;
+				margin-left: 0;
+				width: 100%;
+				margin: 15px 0 0 0;
+				flex-basis: 100%;
+			}
+
+			.navbar-nav {
+				flex-direction: column;
+				width: 100%;
+				text-align: center;
+				gap: 0;
+				padding-bottom: 15px;
+			}
+
+			.navbar-nav .nav-item {
+				width: 100%;
+				padding: 10px 0;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+			}
+
+			.navbar-nav .nav-item:last-child {
+				border-bottom: none;
+			}
+
+			.navbar-nav .dropdown-menu {
+				position: static !important;
+				display: none !important;
+				float: none;
+				width: 100%;
+				margin-top: 10px;
+				box-shadow: none;
+				border: 1px solid rgba(0, 0, 0, 0.05);
+				background-color: rgba(184, 155, 94, 0.05);
+				top: auto;
+				left: auto;
+			}
+
+			/* Removed duplicate .dropdown-menu.show rules as they inherit from global */
+
+			.member-search-form .input-group {
+				width: 100%;
+			}
+
+			.member-search-form .form-control {
+				width: 100% !important;
+				border-radius: 20px 0 0 20px;
+			}
+
+			.member-search-form .btn-custom {
+				border-radius: 0 20px 20px 0;
+			}
+		}
+
+		/* --- Mobile Devices --- */
+		@media (max-width: 767px) {
+			.navbar-brand img {
+				width: 50px;
+			}
+
+			.navbar-nav .nav-link {
+				padding: 10px 0 !important;
+				font-size: 13px;
+			}
+
+			.member-search-form .form-control,
+			.member-search-form .form-control:focus {
+				font-size: 13px;
+				width: 100% !important;
+			}
+		}
+
+		@media (max-width: 479px) {
+			.navbar-brand {
+				flex: 0 0 auto;
+			}
+
+			.navbar-brand img {
+				width: 45px;
+			}
+
+			.navbar-toggler {
+				padding: 4px 8px;
+				font-size: 1rem;
+			}
+
+			.navbar-nav .nav-link {
+				padding: 8px 0 !important;
+				font-size: 12px;
+			}
+
+			.news-ticker {
+				padding: 5px 0;
+			}
+
+			.news-ticker .badge-danger {
+				font-size: 0.65rem;
+				padding: 0.2rem 0.4rem;
+				white-space: nowrap;
+			}
+
+			.news-ticker marquee {
+				font-size: 0.75rem;
+			}
+
+			.member-search-form {
+				margin-top: 10px;
+			}
+
+			.member-search-form .form-control {
+				height: 32px;
+				font-size: 12px;
+				padding: 4px 10px;
+				border-radius: 15px 0 0 15px;
+			}
+
+			.member-search-form .btn-custom {
+				height: 32px;
+				padding: 0 10px;
+				border-radius: 0 15px 15px 0;
+				font-size: 12px;
+			}
+		}
+
+		/* ... existing styles ... */
 
 		/* --- Navbar Search Styling --- */
 		.member-search-form {
@@ -238,97 +483,14 @@
 			outline: none;
 		}
 
-		/* --- Ticker improvements --- */
-		.news-ticker {
-			overflow: hidden;
-		}
-
-		.news-ticker marquee {
-			font-size: 0.9rem;
-		}
-
-		/* --- Tablet/Medium Devices (768px - 991px) --- */
+		/* --- Responsive Styling (Mobile/Tablet) --- */
 		@media (max-width: 991px) {
-			#navbar-example {
-				flex-wrap: wrap;
-				gap: 0;
-			}
-
-			.navbar-brand {
-				margin-right: 0;
-				order: 1;
-			}
-
-			.navbar-toggler {
-				order: 2;
-				margin-left: auto;
-			}
-
-			.navbar-collapse {
-				order: 3;
-				flex-basis: 100%;
-				width: 100%;
-				padding: 15px 0;
-				border-top: 1px solid rgba(0, 0, 0, 0.1);
-				margin-top: 10px;
-				display: none !important;
-				flex-direction: column;
-			}
-
-			.navbar-collapse.show {
-				display: flex !important;
-			}
-
 			.member-search-form {
 				order: 0;
 				margin-left: 0;
 				width: 100%;
-			}
-
-			.navbar-nav {
-				flex-direction: column;
-				width: 100%;
-				text-align: center;
-				gap: 0;
-				padding-bottom: 15px;
-			}
-
-			.navbar-nav .nav-item {
-				width: 100%;
-				padding: 10px 0;
-				border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-			}
-
-			.navbar-nav .nav-item:last-child {
-				border-bottom: none;
-			}
-
-			.navbar-nav .dropdown-menu {
-				position: static !important;
-				display: none !important;
-				float: none;
-				width: 100%;
-				margin-top: 10px;
-				box-shadow: none;
-				border: 1px solid rgba(0, 0, 0, 0.05);
-				background-color: rgba(184, 155, 94, 0.05);
-				top: auto;
-				left: auto;
-			}
-
-			.navbar-nav .dropdown-menu.show {
-				display: block !important;
-			}
-
-			.navbar-nav .show>.dropdown-menu {
-				display: block !important;
-			}
-
-			.member-search-form {
-				width: 100%;
 				margin: 15px 0 0 0;
 				flex-basis: 100%;
-				display: flex;
 			}
 
 			.member-search-form .input-group {
@@ -345,61 +507,16 @@
 			}
 		}
 
-		/* --- Mobile Devices (480px - 767px) --- */
 		@media (max-width: 767px) {
-			.navbar-brand img {
-				width: 50px;
-			}
 
-			.navbar-nav .nav-link {
-				padding: 10px 0 !important;
-				font-size: 13px;
-			}
-
-			.member-search-form .form-control {
-				font-size: 13px;
-				width: 100% !important;
-			}
-
+			.member-search-form .form-control,
 			.member-search-form .form-control:focus {
+				font-size: 13px;
 				width: 100% !important;
 			}
 		}
 
-		/* --- Small Mobile Devices (< 480px) --- */
 		@media (max-width: 479px) {
-			.navbar-brand {
-				flex: 0 0 auto;
-			}
-
-			.navbar-brand img {
-				width: 45px;
-			}
-
-			.navbar-toggler {
-				padding: 4px 8px;
-				font-size: 1rem;
-			}
-
-			.navbar-nav .nav-link {
-				padding: 8px 0 !important;
-				font-size: 12px;
-			}
-
-			.news-ticker {
-				padding: 5px 0;
-			}
-
-			.news-ticker .badge-danger {
-				font-size: 0.65rem;
-				padding: 0.2rem 0.4rem;
-				white-space: nowrap;
-			}
-
-			.news-ticker marquee {
-				font-size: 0.75rem;
-			}
-
 			.member-search-form {
 				margin-top: 10px;
 			}
@@ -417,30 +534,6 @@
 				border-radius: 0 15px 15px 0;
 				font-size: 12px;
 			}
-		}
-
-		/* --- Info Bar Adjustments --- */
-		.info {
-			display: flex;
-			gap: 20px;
-			flex-wrap: wrap;
-		}
-
-		.info-item {
-			display: flex;
-			align-items: center;
-			gap: 8px;
-			font-size: 13px;
-			white-space: nowrap;
-		}
-
-		.sosmed-icon {
-			display: flex;
-			gap: 10px;
-		}
-
-		.sosmed-icon a {
-			transition: all 0.3s ease;
 		}
 	</style>
 
@@ -553,11 +646,11 @@
 							</li>
 						</ul>
 
-						<form class="form-inline ml-lg-3 my-2 my-lg-0 member-search-form" id="memberSearchForm"
-							action="members.html" method="GET">
+						<form class="form-inline ml-lg-3 my-2 my-lg-0 member-search-form" id="cabinetSearchForm"
+							action="cabinet.html" method="GET">
 							<div class="input-group">
 								<input class="form-control" type="search" id="searchInput" name="q"
-									placeholder="Find Member..." aria-label="Search">
+									placeholder="Find Minister..." aria-label="Search">
 								<div class="input-group-append">
 									<button class="btn btn-custom" type="submit">
 										<i class="fa fa-search"></i>
@@ -750,118 +843,138 @@
 
 </body>
 <script>
-	let allMembers = []; // Store all members data
-
-	// Function to handle search
-	function handleSearch(event) {
-		event.preventDefault();
-		const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-		displayMembers(allMembers, searchQuery);
-	}
+	let allMembersData = []; // Store data globally
 
 	// Function to display members
 	function displayMembers(members, searchQuery = '') {
-		let attorneys = document.getElementById("attorneys");
-		let attorneysList = "";
+		const container = document.getElementById("attorneys");
+		let membersList = "";
 
 		// IDs to exclude (Executive Committee members)
 		const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
 
-		// Filter non-executive members
+		// 1. Filter out Executives first
 		let filteredData = members.filter(member => {
 			return member.Id && !executiveMemberIds.includes(member.Id.toLowerCase());
 		});
 
-		// Apply search filter if query provided
+		// 2. Apply Search Filter (Name, Position, District, ID)
 		if (searchQuery) {
-			filteredData = filteredData.filter(member =>
-				member.Name && member.Name.toLowerCase().includes(searchQuery)
-			);
+			searchQuery = searchQuery.toLowerCase();
+			filteredData = filteredData.filter(member => {
+				// Safely check properties exist before converting to lowercase
+				const nameMatch = member.Name && member.Name.toLowerCase().includes(searchQuery);
+				const posMatch = member.Position && member.Position.toLowerCase().includes(searchQuery);
+				const distMatch = member.District && member.District.toLowerCase().includes(searchQuery);
+				const idMatch = member.Membership_no && member.Membership_no.toLowerCase().includes(searchQuery);
+
+				return nameMatch || posMatch || distMatch || idMatch;
+			});
 		}
 
 		console.log('Displaying members:', filteredData.length);
 
 		if (filteredData.length > 0) {
 			filteredData.forEach(member => {
+				// Robust Image Path Handling
 				let imagePath = member.Image || './images/default-user.png';
-				if (imagePath && !imagePath.includes('http') && !imagePath.startsWith('./')) {
+				if (imagePath && !imagePath.includes('http') && !imagePath.startsWith('./') && !imagePath.startsWith('../') && !imagePath.startsWith('/')) {
 					imagePath = './images/' + imagePath;
 				}
 
-				attorneysList += `<div class="col-sm-6 col-md-6 col-lg-3 mb-4">
-                        <div class="rs-team-1">
-                            <div class="media-box">
-                                <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">
-                                    <img 
-                                        src="${imagePath}" 
-                                        alt="${member.Name}" 
-                                        class="img-fluid" 
-                                        onerror="this.onerror=null; this.src='./images/default-user.png';"
-                                    >
-                                </a>
-                            </div>
-                            <div class="body">
-                                <div class="title">
-                                    <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">${member.Name}</a>
-                                </div>
-                                <div class="position">${member.Position || 'Member'}</div>
-                            </div>
+				// Handle ../ prefix if needed
+				if (imagePath.startsWith('../')) {
+					imagePath = imagePath.replace('../', './');
+				}
+
+				membersList += `
+                <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
+                    <div class="rs-team-1">
+                        <div class="media-box">
+                            <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">
+                                <img 
+                                    src="${imagePath}" 
+                                    alt="${member.Name}" 
+                                    class="img-fluid" 
+                                    onerror="this.onerror=null; this.src='./images/default-user.png';"
+                                >
+                            </a>
                         </div>
-                    </div>`;
+                        <div class="body">
+                            <div class="title">
+                                <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">${member.Name}</a>
+                            </div>
+                            <div class="position">${member.Position || 'Member'}</div>
+                            ${member.District ? `<div class="text-muted" style="font-size: 12px;">${member.District}</div>` : ''}
+                        </div>
+                    </div>
+                </div>`;
 			});
 		} else {
 			if (searchQuery) {
-				attorneysList = `<div class="col-12 text-center">
+				membersList = `
+                <div class="col-12 text-center">
                     <p>No members found matching "<strong>${searchQuery}</strong>".</p>
-                    <p>Try searching with a different name.</p>
+                    <p>Try searching by Name, District, or Membership ID.</p>
                 </div>`;
 			} else {
-				attorneysList = `<div class="col-12 text-center">
+				membersList = `
+                <div class="col-12 text-center">
                     <p>No regular members found.</p>
-                    <p>All members might be part of the executive committee.</p>
                 </div>`;
 			}
 		}
 
-		attorneys.innerHTML = attorneysList;
+		container.innerHTML = membersList;
+	}
+
+	// Handle Search Submit
+	function handleMemberSearch(event) {
+		event.preventDefault();
+		const query = document.getElementById('searchInput').value.trim();
+		displayMembers(allMembersData, query);
 	}
 
 	// Load members on page load
 	document.addEventListener('DOMContentLoaded', function () {
-		// Attach search handler to form
-		document.getElementById('memberSearchForm').addEventListener('submit', handleSearch);
+		// Attach Submit Event
+		const searchForm = document.getElementById('memberSearchForm');
+		if (searchForm) {
+			searchForm.addEventListener('submit', handleMemberSearch);
+		}
 
+		// Attach Real-time Input Event
+		const searchInput = document.getElementById('searchInput');
+		if (searchInput) {
+			searchInput.addEventListener('input', function () {
+				displayMembers(allMembersData, this.value.trim());
+			});
+		}
+
+		// Fetch Data
 		fetch("./js/members-list.json")
 			.then(response => response.json())
 			.then(data => {
 				console.log('All members data loaded:', data);
-				allMembers = data;
+				allMembersData = data;
 
-				// Add real-time search as user types (after data is loaded)
-				document.getElementById('searchInput').addEventListener('input', function () {
-					const searchQuery = this.value.trim().toLowerCase();
-					displayMembers(allMembers, searchQuery);
-				});
-
-				// Check for search query in URL
+				// Check for URL query param ?q=name
 				const urlParams = new URLSearchParams(window.location.search);
-				const searchQuery = urlParams.get('q');
+				const initialQuery = urlParams.get('q') || '';
 
-				// Display members with optional search filter
-				displayMembers(data, searchQuery || '');
-
-				// Pre-fill search input if query exists
-				if (searchQuery) {
-					document.getElementById('searchInput').value = searchQuery;
+				if (initialQuery && searchInput) {
+					searchInput.value = initialQuery;
 				}
+
+				displayMembers(data, initialQuery);
 			})
 			.catch(error => {
 				console.error("Error loading members:", error);
 				document.getElementById("attorneys").innerHTML = `
-            <div class="col-12 text-center">
-                <p style="color: red;">Error: ${error.message}</p>
-                <p>Please check the browser console for details.</p>
-            </div>`;
+                <div class="col-12 text-center">
+                    <p style="color: red;">Error: ${error.message}</p>
+                    <p>Please check the browser console for details.</p>
+                </div>`;
 			});
 	});
 </script>
