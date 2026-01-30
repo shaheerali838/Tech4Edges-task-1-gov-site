@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>KPYA - Cabinet</title>
 
-
     <link rel="shortcut icon" href="./images/Kpya Logo.PNG">
     <link rel="apple-touch-icon" href="./images/Kpya Logo.PNG">
     <link rel="apple-touch-icon" sizes="72x72" href="./images/Kpya Logo.PNG">
@@ -24,7 +23,7 @@
     <script src="js/vendor/modernizr.min.js"></script>
 
     <style>
-        /* --- Navbar Main Styling --- */
+        /* --- Reuse your existing styles --- */
         .navbar-main {
             background-color: white;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -59,7 +58,6 @@
             transform: scale(1.05);
         }
 
-        /* --- Navbar Toggler Styling --- */
         .navbar-toggler {
             padding: 5px 10px;
             border: 1px solid #b89b5e;
@@ -77,7 +75,6 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23b89b5e' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
-        /* --- Navigation Collapse --- */
         .navbar-collapse {
             order: 3;
             display: flex !important;
@@ -85,7 +82,6 @@
             flex-grow: 1;
         }
 
-        /* --- Navigation Links Styling --- */
         .navbar-nav {
             display: flex !important;
             flex-direction: row;
@@ -117,10 +113,8 @@
             color: #b89b5e !important;
         }
 
-        /* --- Dropdown Styling (UPDATED) --- */
         .navbar-nav .dropdown-menu {
             background-color: #1d493a;
-            /* Green Background */
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 4px;
@@ -146,7 +140,6 @@
             padding: 10px 20px;
             font-size: 13px;
             color: #ffffff;
-            /* White Text */
             transition: all 0.3s ease;
             display: block;
             width: 100%;
@@ -158,12 +151,9 @@
 
         .navbar-nav .dropdown-item:hover {
             background-color: rgba(255, 255, 255, 0.1);
-            /* Subtle hover bg */
             color: #b89b5e;
-            /* Gold text on hover */
         }
 
-        /* --- Ticker improvements --- */
         .news-ticker {
             overflow: hidden;
         }
@@ -172,7 +162,7 @@
             font-size: 0.9rem;
         }
 
-        /* --- Tablet/Medium Devices (768px - 991px) --- */
+        /* Mobile Styles */
         @media (max-width: 991px) {
             #navbar-example {
                 flex-wrap: wrap;
@@ -231,7 +221,6 @@
                 box-shadow: none;
                 border: 1px solid rgba(255, 255, 255, 0.1);
                 background-color: #1d493a !important;
-                /* Green on Mobile too */
                 top: auto;
                 left: auto;
             }
@@ -245,7 +234,6 @@
             }
         }
 
-        /* --- Mobile Devices (480px - 767px) --- */
         @media (max-width: 767px) {
             .navbar-brand img {
                 width: 50px;
@@ -257,7 +245,6 @@
             }
         }
 
-        /* --- Small Mobile Devices (< 480px) --- */
         @media (max-width: 479px) {
             .navbar-brand {
                 flex: 0 0 auto;
@@ -292,7 +279,6 @@
             }
         }
 
-        /* --- Info Bar Adjustments --- */
         .info {
             display: flex;
             gap: 20px;
@@ -316,9 +302,7 @@
             transition: all 0.3s ease;
         }
 
-        /* ... existing styles ... */
-
-        /* --- Navbar Search Styling --- */
+        /* Search Form */
         .member-search-form {
             margin-left: auto;
             flex-shrink: 0;
@@ -380,7 +364,6 @@
             outline: none;
         }
 
-        /* --- Responsive Styling (Mobile/Tablet) --- */
         @media (max-width: 991px) {
             .member-search-form {
                 order: 0;
@@ -444,7 +427,6 @@
 
     <a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
 
-    <!-- HEADER -->
     <div class="header header-1">
 
         <div class="news-ticker bg-dark text-white py-1">
@@ -630,14 +612,12 @@
                         <div class="footer-item text-white">
                             <img src="./images/Kpya Logo.PNG" alt="logo bottom" class="logo-bottom">
                             <div class="spacer-30"></div>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-                                tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-                                nonummy.</p>
+                            <p>The Khyber Pakhtunkhwa Youth Assembly empowers young leaders through civic engagement and
+                                leadership development.</p>
                             <div class="sosmed-icon icon-bg-primary d-inline-flex">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-pinterest"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                             </div>
                         </div>
@@ -711,7 +691,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12">
-
+                        <p class="ftex">Copyright © 2024 Khyber Pakhtunkhwa Youth Assembly. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -744,7 +724,7 @@
         if (searchQuery) {
             searchQuery = searchQuery.toLowerCase();
             filteredData = members.filter(member => {
-                // Search by Name, Position, or Ministry
+                // Search by Name, Position, or Organization
                 return (member.Name && member.Name.toLowerCase().includes(searchQuery)) ||
                     (member.position && member.position.toLowerCase().includes(searchQuery)) ||
                     (member.organization && member.organization.toLowerCase().includes(searchQuery));
@@ -759,11 +739,14 @@
                     imagePath = './images/' + imagePath;
                 }
 
+                // Create link to single detail page
+                const detailLink = `memberPage.html?id=${encodeURIComponent(member.Id)}`;
+
                 membersList += `
                 <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
                     <div class="rs-team-1">
                         <div class="media-box">
-                            <a href="memberPage.html?id=${member.Id || member.id}">
+                            <a href="${detailLink}">
                                 <img 
                                     src="${imagePath}" 
                                     alt="${member.Name}" 
@@ -773,9 +756,9 @@
                             </a>
                         </div>
                         <div class="body">
-                            <div class="title"><a href="memberPage.html?id=${member.Id || member.id}">${member.Name}</a></div>
-                            <div class="position" style="color: #b58d04; font-weight: 600;">${member.position}</div>
-                            <div class="text-muted" style="font-size: 13px; line-height: 1.4; margin-top: 5px;">${member.organization}</div>
+                            <div class="title"><a href="${detailLink}">${member.Name}</a></div>
+                            <div class="position" style="color: #b58d04; font-weight: 600;">${member.position || member.Position}</div>
+                            <div class="text-muted" style="font-size: 13px; line-height: 1.4; margin-top: 5px;">${member.organization || ''}</div>
                         </div>
                     </div>
                 </div>`;
@@ -813,11 +796,14 @@
             });
         }
 
-        // Fetch Data
-        fetch("./js/cabinet-member.json")
+        // Fetch Data from the UNIFIED file
+        fetch("./js/members-data.json")
             .then(response => response.json())
             .then(data => {
-                allCabinetData = data; // Store data
+                // Filter only Cabinet members
+                const cabinetMembers = data.filter(item => item.type === 'cabinet');
+
+                allCabinetData = cabinetMembers; // Store filtered data
 
                 // Check for URL query param ?q=name
                 const urlParams = new URLSearchParams(window.location.search);
@@ -827,7 +813,7 @@
                     searchInput.value = initialQuery;
                 }
 
-                displayCabinet(data, initialQuery);
+                displayCabinet(allCabinetData, initialQuery);
             })
             .catch(error => {
                 console.error('Error loading cabinet members:', error);

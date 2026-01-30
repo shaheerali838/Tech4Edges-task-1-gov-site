@@ -2,25 +2,16 @@
 <html lang="en">
 
 <head>
-	<!-- Basic Page Needs
-    ================================================== -->
 	<meta charset="utf-8">
-	<!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>KPYA</title>
+	<title>KPYA - Members</title>
 
 
-	<!-- ==============================================
-	Favicons
-	=============================================== -->
 	<link rel="shortcut icon" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" sizes="72x72" href="./images/Kpya Logo.PNG">
 	<link rel="apple-touch-icon" sizes="114x114" href="./images/Kpya Logo.PNG">
 
-	<!-- ==============================================
-	CSS VENDOR
-	=============================================== -->
 	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/vendor/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/vendor/owl.carousel.min.css">
@@ -28,9 +19,6 @@
 	<link rel="stylesheet" type="text/css" href="css/vendor/magnific-popup.css">
 	<link rel="stylesheet" type="text/css" href="css/vendor/animate.min.css">
 
-	<!-- ==============================================
-	Custom Stylesheet
-	=============================================== -->
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 
 	<script src="js/vendor/modernizr.min.js"></script>
@@ -71,7 +59,6 @@
 			transform: scale(1.05);
 		}
 
-		/* --- Navbar Toggler --- */
 		.navbar-toggler {
 			padding: 5px 10px;
 			border: 1px solid #b89b5e;
@@ -96,7 +83,6 @@
 			flex-grow: 1;
 		}
 
-		/* --- Navigation Links --- */
 		.navbar-nav {
 			display: flex !important;
 			flex-direction: row;
@@ -128,10 +114,8 @@
 			color: #b89b5e !important;
 		}
 
-		/* --- Dropdown Styling --- */
 		.navbar-nav .dropdown-menu {
 			background-color: #1d493a;
-			/* Green Background */
 			border: 1px solid rgba(255, 255, 255, 0.1);
 			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 			border-radius: 4px;
@@ -168,7 +152,7 @@
 			color: #b89b5e;
 		}
 
-		/* --- Navbar Search --- */
+		/* Navbar Search */
 		.member-search-form {
 			margin-left: auto;
 			flex-shrink: 0;
@@ -230,7 +214,7 @@
 			outline: none;
 		}
 
-		/* --- Ticker & Info --- */
+		/* Ticker & Info */
 		.news-ticker {
 			overflow: hidden;
 		}
@@ -262,7 +246,7 @@
 			transition: all 0.3s ease;
 		}
 
-		/* --- Tablet/Medium Devices (768px - 991px) --- */
+		/* Tablet/Medium Devices (768px - 991px) */
 		@media (max-width: 991px) {
 			#navbar-example {
 				flex-wrap: wrap;
@@ -333,8 +317,6 @@
 				left: auto;
 			}
 
-			/* Removed duplicate .dropdown-menu.show rules as they inherit from global */
-
 			.member-search-form .input-group {
 				width: 100%;
 			}
@@ -349,7 +331,7 @@
 			}
 		}
 
-		/* --- Mobile Devices --- */
+		/* Mobile Devices */
 		@media (max-width: 767px) {
 			.navbar-brand img {
 				width: 50px;
@@ -418,140 +400,20 @@
 				font-size: 12px;
 			}
 		}
-
-		/* ... existing styles ... */
-
-		/* --- Navbar Search Styling --- */
-		.member-search-form {
-			margin-left: auto;
-			flex-shrink: 0;
-			order: 1;
-			display: flex;
-		}
-
-		.member-search-form .input-group {
-			display: flex;
-			border-radius: 20px;
-			overflow: hidden;
-		}
-
-		.member-search-form .form-control {
-			background: rgba(255, 255, 255, 0.7);
-			border: 1px solid #b89b5e;
-			border-right: none;
-			border-radius: 20px 0 0 20px;
-			height: 36px;
-			font-size: 12px;
-			padding: 6px 15px;
-			width: 150px;
-			transition: all 0.3s ease;
-			outline: none;
-		}
-
-		.member-search-form .form-control::placeholder {
-			color: #999;
-		}
-
-		.member-search-form .form-control:focus {
-			background: #ffffff;
-			box-shadow: none;
-			width: 180px;
-			border-color: #1D493A;
-		}
-
-		.member-search-form .btn-custom {
-			background-color: #1D493A;
-			color: #b89b5e;
-			border: 1px solid #b89b5e;
-			border-left: none;
-			border-radius: 0 20px 20px 0;
-			height: 36px;
-			padding: 0 12px;
-			cursor: pointer;
-			transition: all 0.3s ease;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			font-size: 14px;
-		}
-
-		.member-search-form .btn-custom:hover,
-		.member-search-form .btn-custom:focus {
-			background-color: #b89b5e;
-			color: #ffffff;
-			box-shadow: none;
-			outline: none;
-		}
-
-		/* --- Responsive Styling (Mobile/Tablet) --- */
-		@media (max-width: 991px) {
-			.member-search-form {
-				order: 0;
-				margin-left: 0;
-				width: 100%;
-				margin: 15px 0 0 0;
-				flex-basis: 100%;
-			}
-
-			.member-search-form .input-group {
-				width: 100%;
-			}
-
-			.member-search-form .form-control {
-				width: 100% !important;
-				border-radius: 20px 0 0 20px;
-			}
-
-			.member-search-form .btn-custom {
-				border-radius: 0 20px 20px 0;
-			}
-		}
-
-		@media (max-width: 767px) {
-
-			.member-search-form .form-control,
-			.member-search-form .form-control:focus {
-				font-size: 13px;
-				width: 100% !important;
-			}
-		}
-
-		@media (max-width: 479px) {
-			.member-search-form {
-				margin-top: 10px;
-			}
-
-			.member-search-form .form-control {
-				height: 32px;
-				font-size: 12px;
-				padding: 4px 10px;
-				border-radius: 15px 0 0 15px;
-			}
-
-			.member-search-form .btn-custom {
-				height: 32px;
-				padding: 0 10px;
-				border-radius: 0 15px 15px 0;
-				font-size: 12px;
-			}
-		}
 	</style>
 
 </head>
 
 <body>
 
-	<!-- LOAD PAGE -->
 	<div class="animationload">
 		<div class="loader"></div>
 	</div>
 
-	<!-- BACK TO TOP SECTION -->
 	<a href="#0" class="cd-top cd-is-visible cd-fade-out">Top</a>
 
 
 
-	<!-- HEADER -->
 	<div class="header header-1">
 
 		<div class="news-ticker bg-dark text-white py-1">
@@ -646,8 +508,8 @@
 							</li>
 						</ul>
 
-						<form class="form-inline ml-lg-3 my-2 my-lg-0 member-search-form" id="cabinetSearchForm"
-							action="cabinet.html" method="GET">
+						<form class="form-inline ml-lg-3 my-2 my-lg-0 member-search-form" id="memberSearchForm"
+							action="members.html" method="GET">
 							<div class="input-group">
 								<input class="form-control" type="search" id="searchInput" name="q"
 									placeholder="Find Minister..." aria-label="Search">
@@ -665,7 +527,6 @@
 	</div>
 
 
-	<!-- BANNER -->
 	<div class="section banner-page" style="position: relative;"
 		data-background="./images/ad7404fa7-b4d1-4ccb-ae3a-6baa362f6ac9.jpg">
 		<div
@@ -692,7 +553,6 @@
 		</div>
 	</div>
 
-	<!-- HOW TO HELP US -->
 	<div class="section">
 		<div class="content-wrap">
 			<div class="container">
@@ -704,7 +564,6 @@
 		</div>
 	</div>
 
-	<!-- CTA -->
 	<div class="section bg-primary">
 		<div class="content-wrap py-3">
 			<div class="container">
@@ -719,7 +578,6 @@
 		</div>
 	</div>
 
-	<!-- FOOTER SECTION -->
 	<div class="footer " style="position: relative;" data-background="./images/download4.jpg">
 
 		<div
@@ -733,9 +591,8 @@
 						<div class="footer-item">
 							<img src="./images/Kpya Logo.PNG" alt="logo bottom" class="logo-bottom">
 							<div class="spacer-30"></div>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-								tincidunt ut laoreet. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-								nonummy.</p>
+							<p>The Khyber Pakhtunkhwa Youth Assembly empowers young leaders through civic engagement and
+								leadership development.</p>
 							<div class="sosmed-icon icon-bg-primary d-inline-flex">
 								<a href="#"><i class="fa fa-facebook"></i></a>
 								<a href="#"><i class="fa fa-twitter"></i></a>
@@ -770,12 +627,6 @@
 									</div>
 									<div class="info-text">info@kpyouthassembly.com</div>
 								</li>
-								<!-- <li>
-									<div class="info-icon">
-										<span class="fa fa-clock-o"></span>
-									</div>
-									<div class="info-text">Mon - Sat 09:00 - 17:00</div>
-								</li> -->
 							</ul>
 
 						</div>
@@ -820,8 +671,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12 col-md-12">
-						<p class="ftex">Copyright 2019 &copy; <span class="color-primary">Lawe Html Template</span>.
-							Designed by <span class="color-primary">Rometheme.</span></p>
+						<p class="ftex">Copyright 2024 &copy; <span class="color-primary">Khyber Pakhtunkhwa Youth
+								Assembly</span>. All rights reserved.</p>
 					</div>
 				</div>
 			</div>
@@ -829,13 +680,11 @@
 
 	</div>
 
-	<!-- JS VENDOR -->
 	<script src="js/vendor/jquery.min.js"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>
 	<script src="js/vendor/owl.carousel.js"></script>
 	<script src="js/vendor/jquery.magnific-popup.min.js"></script>
 
-	<!-- SENDMAIL -->
 	<script src="js/vendor/validator.min.js"></script>
 	<script src="js/vendor/form-scripts.js"></script>
 
@@ -850,10 +699,10 @@
 		const container = document.getElementById("attorneys");
 		let membersList = "";
 
-		// IDs to exclude (Executive Committee members)
+		// IDs to exclude (Executive Committee members, even if type is 'member')
 		const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
 
-		// 1. Filter out Executives first
+		// 1. Filter out Executives
 		let filteredData = members.filter(member => {
 			return member.Id && !executiveMemberIds.includes(member.Id.toLowerCase());
 		});
@@ -864,7 +713,7 @@
 			filteredData = filteredData.filter(member => {
 				// Safely check properties exist before converting to lowercase
 				const nameMatch = member.Name && member.Name.toLowerCase().includes(searchQuery);
-				const posMatch = member.Position && member.Position.toLowerCase().includes(searchQuery);
+				const posMatch = (member.Position || member.position) && (member.Position || member.position).toLowerCase().includes(searchQuery);
 				const distMatch = member.District && member.District.toLowerCase().includes(searchQuery);
 				const idMatch = member.Membership_no && member.Membership_no.toLowerCase().includes(searchQuery);
 
@@ -877,7 +726,7 @@
 		if (filteredData.length > 0) {
 			filteredData.forEach(member => {
 				// Robust Image Path Handling
-				let imagePath = member.Image || './images/default-user.png';
+				let imagePath = member.Image || member.image || './images/default-user.png';
 				if (imagePath && !imagePath.includes('http') && !imagePath.startsWith('./') && !imagePath.startsWith('../') && !imagePath.startsWith('/')) {
 					imagePath = './images/' + imagePath;
 				}
@@ -887,11 +736,14 @@
 					imagePath = imagePath.replace('../', './');
 				}
 
+				// Create link to single detail page
+				const detailLink = `memberPage.html?id=${encodeURIComponent(member.Id)}`;
+
 				membersList += `
                 <div class="col-sm-6 col-md-6 col-lg-3 mb-4">
                     <div class="rs-team-1">
                         <div class="media-box">
-                            <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">
+                            <a href="${detailLink}">
                                 <img 
                                     src="${imagePath}" 
                                     alt="${member.Name}" 
@@ -902,9 +754,9 @@
                         </div>
                         <div class="body">
                             <div class="title">
-                                <a href="memberPage.html?id=${encodeURIComponent(member.Id)}">${member.Name}</a>
+                                <a href="${detailLink}">${member.Name}</a>
                             </div>
-                            <div class="position">${member.Position || 'Member'}</div>
+                            <div class="position">${member.Position || member.position || 'Member'}</div>
                             ${member.District ? `<div class="text-muted" style="font-size: 12px;">${member.District}</div>` : ''}
                         </div>
                     </div>
@@ -951,12 +803,14 @@
 			});
 		}
 
-		// Fetch Data
-		fetch("./js/members-list.json")
+		// Fetch Data from Unified JSON
+		fetch("./js/members-data.json")
 			.then(response => response.json())
 			.then(data => {
-				console.log('All members data loaded:', data);
-				allMembersData = data;
+				// Filter only 'member' type
+				const regularMembers = data.filter(item => item.type === 'member');
+				console.log('Regular members loaded:', regularMembers.length);
+				allMembersData = regularMembers;
 
 				// Check for URL query param ?q=name
 				const urlParams = new URLSearchParams(window.location.search);
@@ -966,14 +820,14 @@
 					searchInput.value = initialQuery;
 				}
 
-				displayMembers(data, initialQuery);
+				displayMembers(allMembersData, initialQuery);
 			})
 			.catch(error => {
 				console.error("Error loading members:", error);
 				document.getElementById("attorneys").innerHTML = `
                 <div class="col-12 text-center">
-                    <p style="color: red;">Error: ${error.message}</p>
-                    <p>Please check the browser console for details.</p>
+                    <p style="color: red;">Error: Unable to load member data.</p>
+                    <p>Please check if js/members-data.json exists.</p>
                 </div>`;
 			});
 	});
