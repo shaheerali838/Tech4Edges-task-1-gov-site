@@ -624,7 +624,7 @@
 	<script>
 		// Load Executive Committee members
 		document.addEventListener('DOMContentLoaded', function () {
-			fetch("./js/members-list.json")
+			fetch("./js/members-data.json")
 				.then(response => {
 					if (!response.ok) {
 						throw new Error(`HTTP error! status: ${response.status}`);

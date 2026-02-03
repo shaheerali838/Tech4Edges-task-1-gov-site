@@ -711,7 +711,7 @@
 <script>
 	document.addEventListener('DOMContentLoaded', function () {
 		// Load members for about page
-		fetch("./js/members-list.json")
+		fetch("./js/members-data.json")
 			.then(response => response.json())
 			.then(data => {
 				let aboutMembers = document.getElementById("about-members");
