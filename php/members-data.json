@@ -75,7 +75,7 @@
     "Cnic": "16101-4749369-5",
     "District": null,
     "Contact_no": "0325-5254540",
-    "Image": "./images/Members Pic/Ahad Ullah.jpeg"
+    "Image": "./images/Members Pic/WhatsApp Image 2026-01-25 at 12.22.56 PM.jpeg"
   },
   {
     "Id": "Amirhamza",
@@ -231,7 +231,7 @@
     "Cnic": "17301-1118858-6",
     "District": null,
     "Contact_no": null,
-    "Image": "./images/Members Pic/Noor Ul Huda Shah.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "SyedMuhammadAliAbbasShah",
@@ -387,7 +387,7 @@
     "Cnic": "14301-4207089-1",
     "District": null,
     "Contact_no": "03340532673",
-    "Image": "./images/Members Pic/Aamir Niaz.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Abdulbasit",
@@ -411,7 +411,7 @@
     "Cnic": "17301-8923797-5",
     "District": null,
     "Contact_no": "03121999398",
-    "Image": "./images/Members Pic/Abdul rasheed.pdf"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "AbdulRafey",
@@ -435,7 +435,7 @@
     "Cnic": "21203-3460232-9",
     "District": null,
     "Contact_no": "03285362371",
-    "Image": "./images/Members Pic/Abdul Salam.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "abdulwahab",
@@ -447,7 +447,7 @@
     "Cnic": "42501-8092605-9",
     "District": null,
     "Contact_no": "03336230978",
-    "Image": "./images/Members Pic/Abdul Wahab 1774.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "AbdurRahim",
@@ -603,7 +603,7 @@
     "Cnic": "17301-9787944-9 ",
     "District": null,
     "Contact_no": "3305829063",
-    "Image": "./images/Members Pic/Arif ur rehman Khalil.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "AsadRauf",
@@ -627,7 +627,7 @@
     "Cnic": "17101-0700297-5",
     "District": null,
     "Contact_no": "03089486534",
-    "Image": "./images/Members Pic/Asad Ullah Khan.jpeg"
+    "Image": "./images/Members Pic/asad ullah khan wazir.jpeg"
   },
   {
     "Id": "AsadUllahKhanWazir",
@@ -639,7 +639,7 @@
     "Cnic": "21502-7129526-3",
     "District": null,
     "Contact_no": "03066129533",
-    "Image": "./images/Members Pic/asad ullah khan wazir.jpeg"
+    "Image": "./images/Members Pic/Asad.jpg"
   },
   {
     "Id": "AsamUdDin",
@@ -651,7 +651,7 @@
     "Cnic": "21708-1870425-9",
     "District": null,
     "Contact_no": "03099610062",
-    "Image": "./images/Members Pic/Asam Ud Din.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "AtifAslam",
@@ -663,17 +663,17 @@
     "Cnic": "21201-7574940-3",
     "District": null,
     "Contact_no": "03369253096",
-    "Image": "./images/Members Pic/Atif Aslam.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Awaiskhan",
     "type": "member",
     "Membership_no": "KPYA-25-00531",
-    "Name": "Awais Khan",
+    "Name": "Awais khan",
     "position": "YOUTH MPA",
-    "Father_Name": "Khan Zeb",
+    "Father_Name": "khan zeb",
     "Cnic": "16204-0453103-3",
-    "District": "Swabi",
+    "District": null,
     "Contact_no": "03439877011",
     "Image": "./images/Members Pic/"
   },
@@ -685,7 +685,7 @@
     "position": "YOUTH MPA",
     "Father_Name": "Muhammad Fayaz",
     "Cnic": "17301-7913170-9",
-    "District": "Peshawar",
+    "District": null,
     "Contact_no": "03109649182",
     "Image": "./images/Members Pic/Ayaz Khan Khalil.jpg"
   },
@@ -723,7 +723,7 @@
     "Cnic": "17301-1697563-7",
     "District": null,
     "Contact_no": "03105959023",
-    "Image": "./images/Members Pic/Ayub Jan Awan.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "AzizurRahman",
@@ -759,7 +759,7 @@
     "Cnic": "16101-9735812-5",
     "District": null,
     "Contact_no": "03030952725",
-    "Image": "./images/Members Pic/Basit Ali.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Bilalahmad",
@@ -831,7 +831,7 @@
     "Cnic": "11201-1416727-7",
     "District": null,
     "Contact_no": "03119365655",
-    "Image": "./images/Members Pic/Faqir Muhammad Munib.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Farhanullah",
@@ -855,7 +855,7 @@
     "Cnic": "17301-8504331-9",
     "District": null,
     "Contact_no": "03339155482",
-    "Image": "./images/Members Pic/Fawad Ahmad Awan.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "FawadKhan",
@@ -927,7 +927,7 @@
     "Cnic": "14101-7546142-7",
     "District": null,
     "Contact_no": "03329594490",
-    "Image": "./images/Members Pic/Hameed ullah.pdf"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "HammadKhalId",
@@ -987,7 +987,7 @@
     "Cnic": "21103-5193299-7",
     "District": null,
     "Contact_no": "03018192815",
-    "Image": "./images/Members Pic/Haroon Rasheed.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "HasanAli",
@@ -999,7 +999,7 @@
     "Cnic": "16201-0421770-1",
     "District": null,
     "Contact_no": "03427811061",
-    "Image": "./images/Members Pic/Hasan Ali.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "HasnainKhan",
@@ -1026,16 +1026,16 @@
     "Image": "./images/Members Pic/"
   },
   {
-    "Id": "HuzaifaArbab",
+    "Id": "HazaifaArbab",
     "type": "member",
     "Membership_no": "KPYA-25-00567",
-    "Name": "Huzaifa Arbab",
+    "Name": "Hazaifa Arbab",
     "position": "YOUTH MPA",
     "Father_Name": "Arbab yahya Jan",
     "Cnic": "17301-2202076-3",
     "District": null,
     "Contact_no": "0332 9966069",
-    "Image": "./images/Members Pic/Huzaifa Arbab.jpg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "HilalZafar",
@@ -1047,7 +1047,7 @@
     "Cnic": "17301-0849543-5",
     "District": null,
     "Contact_no": "03329118496",
-    "Image": "./images/Members Pic/Hilal Zafar.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Huzaifaahmadkhan",
@@ -1119,7 +1119,7 @@
     "Cnic": "21203-9611677-9",
     "District": null,
     "Contact_no": "0333 3435060",
-    "Image": "./images/Members Pic/Inqlab.jpg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "IrshadAhmad",
@@ -1185,7 +1185,7 @@
     "Id": "Jamilulhassan",
     "type": "member",
     "Membership_no": "KPYA-25-00581",
-    "Name": "Qazi Jamil ul hassan",
+    "Name": "Jamil ul hassan",
     "position": "YOUTH MPA",
     "Father_Name": "Qazi Muhammad Ilyas ",
     "Cnic": "32103-1158291-5 ",
@@ -1311,7 +1311,7 @@
     "Cnic": "11101-2171549-3",
     "District": null,
     "Contact_no": "03158464664",
-    "Image": "./images/Members Pic/M Safdar Alam.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "MUmarFarooq",
@@ -1431,7 +1431,7 @@
     "Cnic": "17301-4516122-7",
     "District": null,
     "Contact_no": "03341017399",
-    "Image": "./images/Members Pic/Mian Nouman Ali Shah.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "MisbahUdDin",
@@ -1635,7 +1635,7 @@
     "Cnic": "14301-6369792-7",
     "District": null,
     "Contact_no": "0333-9616623",
-    "Image": "./images/Members Pic/Muhammad Arsalan.jpg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "MuhammadAtif",
@@ -1695,7 +1695,7 @@
     "Cnic": "17301-1664635-5",
     "District": null,
     "Contact_no": "03219838962",
-    "Image": "./images/Members Pic/Muhammad Hasanat.pdf"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Muhammadhayan",
@@ -1719,7 +1719,7 @@
     "Cnic": "17101-7376691-5",
     "District": null,
     "Contact_no": "03460482722",
-    "Image": "./images/Members Pic/Muhammad Hisham.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "MuhammadiatizazArif",
@@ -1791,7 +1791,7 @@
     "Cnic": "17202-0347220-7",
     "District": null,
     "Contact_no": "03409038950",
-    "Image": "./images/Members Pic/Muhammad Junaid Pabbi.jpeg"
+    "Image": "./images/Members Pic/Muhammad Junai.jpeg"
   },
   {
     "Id": "Muhammad-JunaId",
@@ -1959,7 +1959,7 @@
     "Cnic": "15302-9755726-1",
     "District": null,
     "Contact_no": "03445349509",
-    "Image": "./images/Members Pic/Muhammad yasir.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "MuhammadYousaf",
@@ -2055,7 +2055,7 @@
     "Cnic": "17301-8005228-1",
     "District": null,
     "Contact_no": "03109988477",
-    "Image": "./images/Members Pic/Najee Ullah.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Naseerullah",
@@ -2103,7 +2103,7 @@
     "Cnic": "15602-9947635-9",
     "District": null,
     "Contact_no": "03415444979",
-    "Image": "./images/Members Pic/Nazif Ali.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "NoumanIjaz",
@@ -2163,7 +2163,7 @@
     "Cnic": "15602-7163477-9",
     "District": null,
     "Contact_no": "0322 9537791",
-    "Image": "./images/Members Pic/Saad Ahmad.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "SadanJamal",
@@ -2523,7 +2523,7 @@
     "Cnic": "16202-7688786-9",
     "District": null,
     "Contact_no": "03449680646",
-    "Image": "./images/Members Pic/Syed Mahad Ali Shah.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "Syedmudasserjamil",
@@ -2547,7 +2547,7 @@
     "Cnic": "1430176827481",
     "District": null,
     "Contact_no": "03351952569",
-    "Image": "./images/Members Pic/Syed Noor ul Huda.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "SyedShabbirHussain",
@@ -2571,7 +2571,7 @@
     "Cnic": "11102-0421089-3",
     "District": null,
     "Contact_no": "03499452722",
-    "Image": "./images/Members Pic/Taimoor Khan.jpeg"
+    "Image": "./images/Members Pic/"
   },
   {
     "Id": "TaimurRehmat",
