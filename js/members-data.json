@@ -302,12 +302,12 @@
     "Image": "/images/members/zabih-ullah.jpg"
   },
   {
-    "Id": "saId",
+    "Id": "said",
     "type": "cabinet",
-    "Name": "SaId Asghar Khan",
+    "Name": "Said Asghar Khan",
     "position": "Minister",
     "organization": "Tourism & Youth Affairs",
-    "Image": "/images/members/saId-asghar-khan.jpg"
+    "Image": "/images/members/said-asghar-khan.jpg"
   },
   {
     "Id": "naeem",
@@ -411,7 +411,7 @@
     "Cnic": "17301-8923797-5",
     "District": null,
     "Contact_no": "03121999398",
-    "Image": "./images/Members Pic/Abdul rasheed.pdf"
+    "Image": "./images/Members Pic/Abdul Hameed.jpeg"
   },
   {
     "Id": "AbdulRafey",
@@ -555,7 +555,7 @@
     "Cnic": "21707-5016095-1",
     "District": null,
     "Contact_no": "03077159935",
-    "Image": "./images/Members Pic/ajmal khan dotani,jpeg"
+    "Image": "./images/Members Pic/ajmal khan dotani.jpeg"
   },
   {
     "Id": "AmirHizbullahKhanYousafzai",
@@ -587,7 +587,7 @@
     "Membership_no": "KPYA-25-00524",
     "Name": "Arif ur rahman",
     "position": "YOUTH MPA",
-    "Father_Name": "SaId rahman",
+    "Father_Name": "Said rahman",
     "Cnic": "15705-2450292-5",
     "District": null,
     "Contact_no": "03709611741",
@@ -927,7 +927,7 @@
     "Cnic": "14101-7546142-7",
     "District": null,
     "Contact_no": "03329594490",
-    "Image": "./images/Members Pic/Hameed ullah.pdf"
+    "Image": "./images/Members Pic/Hameed ullah.jpg"
   },
   {
     "Id": "HammadKhalId",
@@ -939,7 +939,7 @@
     "Cnic": "13503-2429899-9",
     "District": null,
     "Contact_no": "03209319022",
-    "Image": "./images/Members Pic/Hammad KhalId.jpeg"
+    "Image": "./images/Members Pic/Hammad Khalid.jpeg"
   },
   {
     "Id": "Hammadkhan",
@@ -1119,7 +1119,7 @@
     "Cnic": "21203-9611677-9",
     "District": null,
     "Contact_no": "0333 3435060",
-    "Image": "./images/Members Pic/Inqlab.jpg"
+    "Image": "./images/Members Pic/Inqlab.jpeg"
   },
   {
     "Id": "IrshadAhmad",
@@ -1218,10 +1218,10 @@
     "Image": "./images/Members Pic/"
   },
   {
-    "Id": "JunaIdAliShahBukhari",
+    "Id": "JunaidAliShahBukhari",
     "type": "member",
     "Membership_no": "KPYA-25-00584",
-    "Name": "JunaId Ali Shah Bukhari",
+    "Name": "Junaid Ali Shah Bukhari",
     "position": "YOUTH MPA",
     "Father_Name": "Anwar Ali Shah Bukhari",
     "Cnic": "14301-8689141-1",
@@ -1230,16 +1230,16 @@
     "Image": "./images/Members Pic/"
   },
   {
-    "Id": "JunaIdwazir",
+    "Id": "Junaidwazir",
     "type": "member",
     "Membership_no": "KPYA-25-00585",
-    "Name": "JunaId wazir",
+    "Name": "Junaid wazir",
     "position": "YOUTH MPA",
     "Father_Name": "Hameed khan",
     "Cnic": "17301-5181603-3",
     "District": null,
     "Contact_no": "03319180552",
-    "Image": "./images/Members Pic/JunaId Wazir.jpeg"
+    "Image": "./images/Members Pic/Junaid Wazir.jpeg"
   },
   {
     "Id": "KalsoomMunira",
@@ -1479,7 +1479,7 @@
     "Cnic": "21201-1590352-9",
     "District": null,
     "Contact_no": "03359278726",
-    "Image": "./images/Members Pic/Muhaib Ullah  AfrIdi.jpeg"
+    "Image": "./images/Members Pic/Muhaib Ullah  Afridi.jpeg"
   },
   {
     "Id": "MohsinJan",
@@ -1575,7 +1575,7 @@
     "Cnic": "14202-6611812-7",
     "District": null,
     "Contact_no": "03339849527",
-    "Image": "./images/Members Pic/Dr. M. Abdur Rehman SIddiqui.jpeg"
+    "Image": "./images/Members Pic/Dr. M. Abdur Rehman Siddiqui.jpeg"
   },
   {
     "Id": "MuhammadAbuzar",
@@ -1679,7 +1679,7 @@
     "Membership_no": "KPYA-25-00624",
     "Name": "Muhammad Hanif Khan",
     "position": "YOUTH MPA",
-    "Father_Name": "UbaId Ullah",
+    "Father_Name": "Ubaid Ullah",
     "Cnic": "16102-4736655-3",
     "District": null,
     "Contact_no": "03159819453",
@@ -1695,7 +1695,7 @@
     "Cnic": "17301-1664635-5",
     "District": null,
     "Contact_no": "03219838962",
-    "Image": "./images/Members Pic/Muhammad Hasanat.pdf"
+    "Image": "./images/Members Pic/Muhammad Hasanat.jpg"
   },
   {
     "Id": "Muhammadhayan",
@@ -1743,7 +1743,7 @@
     "Cnic": "17101-9933528-1",
     "District": null,
     "Contact_no": "03147739262",
-    "Image": "./images/Members Pic/Muhammad Ibrahim.jpej"
+    "Image": "./images/Members Pic/Muhammad Ibrahim.jpeg"
   },
   {
     "Id": "MuhammadIlyas",
@@ -1782,28 +1782,28 @@
     "Image": "./images/Members Pic/"
   },
   {
-    "Id": "MuhammadJunaId",
+    "Id": "MuhammadJunaid",
     "type": "member",
     "Membership_no": "KPYA-25-00633",
-    "Name": "Muhammad JunaId",
+    "Name": "Muhammad Junaid",
     "position": "YOUTH MPA",
     "Father_Name": "Zahir Muhammad",
     "Cnic": "17202-0347220-7",
     "District": null,
     "Contact_no": "03409038950",
-    "Image": "./images/Members Pic/Muhammad Junaid Pabbi.jpeg"
+    "Image": "./images/Members Pic/Muhammad Junai.jpeg"
   },
   {
-    "Id": "Muhammad-JunaId",
+    "Id": "Muhammad-Junaid",
     "type": "member",
     "Membership_no": "KPYA-25-00634",
-    "Name": "Muhammad JunaId",
+    "Name": "Muhammad Junaid",
     "position": "YOUTH MPA",
     "Father_Name": "Muhammad Tariq",
     "Cnic": "17301-0875754-5",
     "District": null,
     "Contact_no": "03169060802",
-    "Image": "./images/Members Pic/Muhammad JunaId 802.jpeg"
+    "Image": "./images/Members Pic/Muhammad Junaid 802.jpeg"
   },
   {
     "Id": "MuhammadMashoodNasir",
@@ -1943,7 +1943,7 @@
     "Membership_no": "KPYA-25-00650",
     "Name": "Muhammad Uzair",
     "position": "YOUTH MPA",
-    "Father_Name": "SaId Badshah",
+    "Father_Name": "Said Badshah",
     "Cnic": "16101-8703046-5",
     "District": null,
     "Contact_no": "03415597700",
@@ -1998,10 +1998,10 @@
     "Image": "./images/Members Pic/Muhammad Zubair Peshawar.jpeg"
   },
   {
-    "Id": "MuhammadZulqarnainHaIder",
+    "Id": "MuhammadZulqarnainHaider",
     "type": "member",
     "Membership_no": "KPYA-25-00656",
-    "Name": "Muhammad Zulqarnain HaIder",
+    "Name": "Muhammad Zulqarnain Haider",
     "position": "YOUTH MPA",
     "Father_Name": "Malik Muhammad Ayaz",
     "Cnic": "17301-3096690-5",
@@ -2139,7 +2139,7 @@
     "Cnic": "15101-3039948-3",
     "District": null,
     "Contact_no": "03439906488",
-    "Image": "./images/Members Pic/RashId Ahmad.jpeg"
+    "Image": "./images/Members Pic/Rashid Ahmad.jpeg"
   },
   {
     "Id": "Razgulkhan",
@@ -2226,16 +2226,16 @@
     "Image": "./images/Members Pic/Seher Ijaz Sethi.jpeg"
   },
   {
-    "Id": "SaIdMuhammad",
+    "Id": "SaidMuhammad",
     "type": "member",
     "Membership_no": "KPYA-25-00677",
-    "Name": "SaId Muhammad",
+    "Name": "Said Muhammad",
     "position": "YOUTH MPA",
     "Father_Name": "Awaz gul ",
     "Cnic": "17301-1474205-9",
     "District": null,
     "Contact_no": "03339155659",
-    "Image": "./images/Members Pic/SaId Muhammad afrIdi.jpeg"
+    "Image": "./images/Members Pic/Said Muhammad afridi.jpeg"
   },
   {
     "Id": "SALIHHAYAT",
@@ -2615,7 +2615,7 @@
     "Membership_no": "KPYA-25-00711",
     "Name": "Tariq Khan",
     "position": "YOUTH MPA",
-    "Father_Name": "SaId Akbar Jan",
+    "Father_Name": "Said Akbar Jan",
     "Cnic": "21104-5538627-9",
     "District": null,
     "Contact_no": "0304 2728993",
@@ -2771,7 +2771,7 @@
     "Membership_no": "KPYA-25-00725",
     "Name": "Zakir shah",
     "position": "YOUTH MPA",
-    "Father_Name": "Mian saId Tahir",
+    "Father_Name": "Mian said Tahir",
     "Cnic": "91509-0220501-3",
     "District": null,
     "Contact_no": "03408841177",
@@ -2783,7 +2783,7 @@
     "Membership_no": "KPYA-25-00726",
     "Name": "Zakir Ullah",
     "position": "YOUTH MPA",
-    "Father_Name": "SaId Karim ",
+    "Father_Name": "Said Karim ",
     "Cnic": "21201-9758544-7",
     "District": null,
     "Contact_no": "03029575259",
@@ -2843,7 +2843,7 @@
     "Membership_no": "KPYA-25-00731",
     "Name": "Zubair Khan",
     "position": "YOUTH MPA",
-    "Father_Name": "SaId Zamin Shah",
+    "Father_Name": "Said Zamin Shah",
     "Cnic": "15101-0609406-1",
     "District": null,
     "Contact_no": "03329696290",
