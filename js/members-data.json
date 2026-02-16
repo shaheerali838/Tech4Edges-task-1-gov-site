@@ -1095,7 +1095,7 @@
     "Cnic": "17101-2435013-3",
     "District": null,
     "Contact_no": "03169931577",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Immad Zeb Khan.jpeg"
   },
   {
     "Id": "imrankhan",
@@ -1215,7 +1215,7 @@
     "Cnic": "17301-0182002-1",
     "District": null,
     "Contact_no": "0332 9980317",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Jawad akbar.jpeg"
   },
   {
     "Id": "JunaidAliShahBukhari",
@@ -1335,7 +1335,7 @@
     "Cnic": "17301-5562973-3",
     "District": null,
     "Contact_no": "0335 9591271",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/M Yousaf.png"
   },
   {
     "Id": "MALAKABBASKHAN",
@@ -1839,7 +1839,7 @@
     "Cnic": "17301-6511106-3",
     "District": null,
     "Contact_no": "03139607010",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad omer khan.jpeg"
   },
   {
     "Id": "MuhammadRafiq",
@@ -2007,7 +2007,7 @@
     "Cnic": "17301-3096690-5",
     "District": null,
     "Contact_no": "03110195067",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Zulqarnain Haider.jpg"
   },
   {
     "Id": "MuneeburRehman",
@@ -2109,13 +2109,13 @@
     "Id": "NoumanIjaz",
     "type": "member",
     "Membership_no": "KPYA-25-00667",
-    "Name": "Nouman Ijaz",
+    "Name": "Adv. Nouman Ijaz",
     "position": "YOUTH MPA",
     "Father_Name": "Fazal Rabbi ",
-    "Cnic": "1560269433",
+    "Cnic": "15602-6943337-3",
     "District": null,
     "Contact_no": "03441414413",
-    "Image": "./images/Members Pic/Nouman Ijaz.jpeg"
+    "Image": "./images/Members Pic/Nouman Ijaz.png"
   },
   {
     "Id": "RahIdjamal",
@@ -2619,7 +2619,7 @@
     "Father_Name": "Said Akbar Jan",
     "Cnic": "21104-5538627-9",
     "District": null,
-    "Contact_no": "0304 2728993",
+    "Contact_no": "0304 2818993",
     "Image": "./images/Members Pic/Tariq Khan.jpeg"
   },
   {
