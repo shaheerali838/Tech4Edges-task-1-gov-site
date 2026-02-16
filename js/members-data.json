@@ -14,7 +14,7 @@
   },
   {
     "Id": "malakahmad",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-20-00201",
     "Name": "Malak Ahmad",
     "position": "Minister",
@@ -27,7 +27,7 @@
   },
   {
     "Id": "AbdulJalil",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00504",
     "Name": "Abdul Jalil",
     "position": "Minister",
@@ -40,7 +40,7 @@
   },
   {
     "Id": "ABDULRASHEED",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00506",
     "Name": "ABDUL RASHEED",
     "position": "Minister",
@@ -53,7 +53,7 @@
   },
   {
     "Id": "AdnanAshraf",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00513",
     "Name": "Dr.Adnan Ashraf",
     "position": "Minister",
@@ -66,7 +66,7 @@
   },
   {
     "Id": "AhadUllah",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00517",
     "Name": "Ahad Ullah",
     "position": "Minister",
@@ -79,7 +79,7 @@
   },
   {
     "Id": "Amirhamza",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00521",
     "Name": "Amir hamza",
     "position": "Minister",
@@ -92,7 +92,7 @@
   },
   {
     "Id": "DarweshUllahArif",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00542",
     "Name": "Darwesh Ullah Arif",
     "position": "Minister",
@@ -105,7 +105,7 @@
   },
   {
     "Id": "Habibullah",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00552",
     "Name": "Habibullah",
     "position": "Minister",
@@ -118,7 +118,7 @@
   },
   {
     "Id": "Hamidjamil",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00556",
     "Name": "Hamid jamil",
     "position": "Minister",
@@ -131,7 +131,7 @@
   },
   {
     "Id": "JalalAhmad",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00579",
     "Name": "Jalal Ahmad",
     "position": "Minister",
@@ -144,7 +144,7 @@
   },
   {
     "Id": "MalaikaGul",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00594",
     "Name": "Malaika Gul",
     "position": "Minister",
@@ -157,7 +157,7 @@
   },
   {
     "Id": "Mohammadharoon",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00605",
     "Name": "Mohammad haroon",
     "position": "Minister",
@@ -170,7 +170,7 @@
   },
   {
     "Id": "MuhammadMaaz",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00635",
     "Name": "Muhammad Maaz",
     "position": "Minister",
@@ -183,7 +183,7 @@
   },
   {
     "Id": "MuhammadMehtab",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00637",
     "Name": "Muhammad Mehtab",
     "position": "Minister",
@@ -196,7 +196,7 @@
   },
   {
     "Id": "MuhammadNadeem",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00639",
     "Name": "Muhammad Nadeem",
     "position": "Minister",
@@ -209,7 +209,7 @@
   },
   {
     "Id": "Nasirali",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00662",
     "Name": "Nasir ali",
     "position": "Minister",
@@ -222,7 +222,7 @@
   },
   {
     "Id": "NOORULHUDASHAH",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00666",
     "Name": "NOOR UL HUDA SHAH",
     "position": "Minister",
@@ -235,7 +235,7 @@
   },
   {
     "Id": "SyedMuhammadAliAbbasShah",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00703",
     "Name": "Syed Muhammad Ali Abbas Shah",
     "position": "Minister",
@@ -248,7 +248,7 @@
   },
   {
     "Id": "SyedRashedAliShah",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00705",
     "Name": "Syed Rashed Ali Shah",
     "position": "Minister",
@@ -261,7 +261,7 @@
   },
   {
     "Id": "ShahzadAli",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00714",
     "Name": "Shahzad Ali Masroor",
     "position": "Minister",
@@ -274,7 +274,7 @@
   },
   {
     "Id": "Saeedullahkhanwazir",
-    "type": "cabinet",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00733",
     "Name": "Saeed Ullah Khan Wazir",
     "position": "Minister",
@@ -2477,6 +2477,7 @@
     "Contact_no": "03419719757",
     "Image": "./images/Members Pic/Siyam iqbal.jpeg"
   },
+
   {
     "Id": "SubhanUllah",
     "type": "member",

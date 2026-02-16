@@ -800,8 +800,8 @@
         fetch("./js/members-data.json")
             .then(response => response.json())
             .then(data => {
-                // Filter only Cabinet members
-                const cabinetMembers = data.filter(item => item.type === 'cabinet');
+                //Filter only Cabinet members - updated to support comma-separated types
+                const cabinetMembers = data.filter(item => item.type && item.type.includes('cabinet'));
 
                 allCabinetData = cabinetMembers; // Store filtered data
 
