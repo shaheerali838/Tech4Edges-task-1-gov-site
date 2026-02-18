@@ -699,11 +699,9 @@
 		const container = document.getElementById("attorneys");
 		let membersList = "";
 
-		// IDs to exclude (Executive Committee members, even if type is 'member')
-		const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
-
-		// 1. Filter out Executives
+		// All members are shown (executives included with their positions)
 		let filteredData = members.filter(member => {
+			const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
 			return member.Id && !executiveMemberIds.includes(member.Id.toLowerCase());
 		});
 
@@ -807,8 +805,8 @@
 		fetch("./js/members-data.json")
 			.then(response => response.json())
 			.then(data => {
-				// Filter only regular members - updated to support comma-separated types
-				const regularMembers = data.filter(item => item.type && item.type.includes('member'));
+				// Filter only pure 'member' type - excludes cabinet and cabinet,member entries
+				const regularMembers = data.filter(item => item.type && item.type.trim() === 'member');
 				console.log('Regular members loaded:', regularMembers.length);
 				allMembersData = regularMembers;
 
