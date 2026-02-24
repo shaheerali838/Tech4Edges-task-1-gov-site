@@ -1409,7 +1409,9 @@
     "Cnic": "17103-0386019-3",
     "District": null,
     "Contact_no": "03025997097",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/",
+    "description": "A respected medical professional and community leader, Dr Medrar Ullah brings a unique perspective to political leadership. His dedication to healthcare reform and youth development has made him an invaluable asset to the Ittehad Party. He works tirelessly to bridge the gap between healthcare and governance.",
+    "quote": "Unity is not just a word; it is a commitment to stand together for the betterment of our people and our province."
   },
   {
     "Id": "MianBilalAliShah",
@@ -2733,7 +2735,9 @@
     "Cnic": "21201-5248243-3",
     "District": null,
     "Contact_no": "0333-3433193",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/",
+    "description": "A dynamic young leader from the tribal areas, Wajid Shah Afridi embodies the spirit of Jazba Party. His passion for youth empowerment and grassroots activism has inspired countless young people to participate in the political process. He advocates for equal opportunities and progressive change.",
+    "quote": "Passion without action is merely a dream. We must channel our energy into building a brighter future for every young person in KP."
   },
   {
     "Id": "WasimAkram",
@@ -2854,7 +2858,9 @@
     "Cnic": "15101-0609406-1",
     "District": null,
     "Contact_no": "03329696290",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/",
+    "description": "A dedicated community organizer and social activist, Zubair Khan has been at the forefront of service-oriented leadership. His commitment to welfare programs and community development reflects the core values of the Khidmat Party. He believes in leading by example through selfless service.",
+    "quote": "Service to humanity is the highest form of leadership. Together, we can uplift our communities and create lasting change."
   },
   {
     "Id": "YawarAbbas",

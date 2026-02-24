@@ -1239,6 +1239,8 @@
                     let deputyHTML = '';
                     deputyChiefs.forEach(dc => {
                         const img = dc.Image || dc.image || './images/default-user.png';
+                        const desc = dc.description || '';
+                        const quote = dc.quote || '';
                         deputyHTML += `
                             <div class="chief-profile" style="margin-top:20px;">
                                 <div class="chief-photo">
@@ -1248,6 +1250,8 @@
                                 <div class="chief-info">
                                     <h2 class="chief-name">${dc.Name}</h2>
                                     <p class="chief-title">${dc.position}</p>
+                                    ${desc ? `<div class="chief-description">${desc}</div>` : ''}
+                                    ${quote ? `<div class="chief-quote">"${quote}"</div>` : ''}
                                 </div>
                             </div>`;
                     });
