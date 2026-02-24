@@ -699,10 +699,14 @@
 		const container = document.getElementById("attorneys");
 		let membersList = "";
 
-		// All members are shown (executives included with their positions)
+		// Filter: exclude executives by ID, and exclude party chiefs / deputy chiefs by role type
+		const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
+		const excludedTypes = ['party-chief', 'deputy-chief'];
 		let filteredData = members.filter(member => {
-			const executiveMemberIds = ['danial', 'nizar', 'usama', 'fatima', 'aizaz', 'sania'];
-			return member.Id && !executiveMemberIds.includes(member.Id.toLowerCase());
+			if (!member.Id) return false;
+			if (executiveMemberIds.includes(member.Id.toLowerCase())) return false;
+			if (member.type && excludedTypes.includes(member.type.toLowerCase())) return false;
+			return true;
 		});
 
 		// 2. Apply Search Filter (Name, Position, District, ID)

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -969,6 +969,8 @@
                         </div>
                     </div>
                 </div>
+                <!-- Deputy Chief(s) - populated dynamically -->
+                <div id="deputyChiefSection" style="display:none;"></div>
 
                 <div class="party-stats">
                     <div class="row">
@@ -1198,137 +1200,116 @@
     <script src="js/vendor/form-scripts.js"></script>
     <script src="js/script.js"></script>
 
+    <!-- Dynamic Party Members Loading -->
     <script>
-        // Load party members from JSON
-        async function loadPartyMembers() {
+        const PARTY_NAME = 'jazba';
+
+        async function loadPartyData() {
             const loadingElement = document.getElementById('membersLoading');
             const errorElement = document.getElementById('membersError');
             const membersGrid = document.getElementById('membersGrid');
-            const partyName = 'jazba';
 
-            // Show loading state
             loadingElement.style.display = 'block';
             errorElement.style.display = 'none';
             membersGrid.style.display = 'none';
 
             try {
-                // Fetch members data from JSON file
-                const response = await fetch('./js/members-list.json');
+                const response = await fetch('./js/members-data.json');
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const allData = await response.json();
 
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                // === Party Chief (dynamically from JSON) ===
+                const chiefEntry = allData.find(m =>
+                    m.type === 'party-chief' && m.party === PARTY_NAME
+                );
+                if (chiefEntry) {
+                    const chiefImage = document.getElementById('chiefImage');
+                    chiefImage.src = chiefEntry.Image || chiefEntry.image || './images/default-chief.jpg';
+                    chiefImage.onerror = function () { this.onerror = null; this.src = './images/default-user.png'; };
+                    document.getElementById('chiefName').textContent = chiefEntry.Name;
+                    document.getElementById('chiefTitle').textContent = chiefEntry.position;
                 }
 
-                const allMembers = await response.json();
+                // === Deputy Chief(s) ===
+                const deputyChiefs = allData.filter(m =>
+                    m.type === 'deputy-chief' && m.party === PARTY_NAME
+                );
+                const deputySection = document.getElementById('deputyChiefSection');
+                if (deputyChiefs.length > 0 && deputySection) {
+                    let deputyHTML = '';
+                    deputyChiefs.forEach(dc => {
+                        const img = dc.Image || dc.image || './images/default-user.png';
+                        deputyHTML += `
+                            <div class="chief-profile" style="margin-top:20px;">
+                                <div class="chief-photo">
+                                    <img src="${img}" alt="${dc.Name}"
+                                        onerror="this.onerror=null; this.src='./images/default-user.png'">
+                                </div>
+                                <div class="chief-info">
+                                    <h2 class="chief-name">${dc.Name}</h2>
+                                    <p class="chief-title">${dc.position}</p>
+                                </div>
+                            </div>`;
+                    });
+                    deputySection.innerHTML = `
+                        <div class="chief-header" style="margin-top:30px;">
+                            <h3>Deputy Chief${deputyChiefs.length > 1 ? 's' : ''}</h3>
+                        </div>
+                        ${deputyHTML}`;
+                    deputySection.style.display = 'block';
+                }
 
-                // Filter members by party
-                const partyMembers = allMembers.filter(member =>
-                    member.party && member.party.toLowerCase() === partyName
+                // === Regular Party Members ===
+                const partyMembers = allData.filter(m =>
+                    m.type === 'member' && m.party && m.party.toLowerCase() === PARTY_NAME
                 );
 
-                // Update statistics
-                document.getElementById('totalMembers').textContent = partyMembers.length;
+                document.getElementById('totalMembers').textContent =
+                    partyMembers.length + (chiefEntry ? 1 : 0) + deputyChiefs.length;
 
                 if (partyMembers.length === 0) {
                     membersGrid.innerHTML = `
                         <div class="col-12">
                             <div class="alert alert-info text-center">
-                                <h4>No Members Found</h4>
-                                <p>No members found for Jazba Party. Check back soon for updates.</p>
+                                <h4>No Regular Members Listed</h4>
+                                <p>Regular party members for Jazba Party will appear here.</p>
                             </div>
-                        </div>
-                    `;
+                        </div>`;
                 } else {
-                    // Generate members grid
                     let membersHTML = '';
                     partyMembers.forEach(member => {
+                        const img = member.Image || member.image || './images/default-user.png';
                         membersHTML += `
                             <div class="party-member-card">
                                 <div class="member-photo-container">
-                                    <a href="memberPage.html?id=${member.id}">
-                                        <img src="${member.image}" alt="${member.name}" class="img-fluid" onerror="this.src='./images/default-user.png'">
-                                    </a>
+                                    <img src="${img}" alt="${member.Name}"
+                                        onerror="this.onerror=null; this.src='./images/default-user.png'">
                                 </div>
                                 <div class="member-info">
-                                    <h4 class="member-name">${member.name}</h4>
+                                    <h4 class="member-name">${member.Name}</h4>
                                     <p class="member-position">${member.position || 'Member'}</p>
-                                    <p class="member-constituency">${member.constituency || 'Constituency information not available'}</p>
-                                    <a href="memberPage.html?id=${member.id}" class="view-profile-btn">
-                                        View Profile
-                                    </a>
+                                    <p class="member-constituency">${member.District || ''}</p>
+                                    <a href="memberPage.html?id=${encodeURIComponent(member.Id)}" class="view-profile-btn">View Profile</a>
                                 </div>
-                            </div>
-                        `;
+                            </div>`;
                     });
                     membersGrid.innerHTML = membersHTML;
                 }
 
-                // Hide loading and show content
                 loadingElement.style.display = 'none';
                 membersGrid.style.display = 'grid';
 
             } catch (error) {
-                console.error('Error loading party members:', error);
-
-                // Show error message
+                console.error('Error loading party data:', error);
                 loadingElement.style.display = 'none';
                 errorElement.style.display = 'block';
                 document.getElementById('errorMessage').textContent =
-                    `Unable to load party members: ${error.message}. Please try again later.`;
+                    `Unable to load party data: ${error.message}. Please try again later.`;
             }
         }
 
-        // Load party members when page loads
-        document.addEventListener('DOMContentLoaded', loadPartyMembers);
-
-        // Make function available globally for retry button
-        window.loadPartyMembers = loadPartyMembers;
-
-        // Party Chief Data
-        const partyChiefs = {
-            'jazba': {
-                name: 'Mr. Shabir Ahmad ',
-                title: 'Chief of Jazba Party',
-                image: './images/jazba-chief.jpeg',
-                description: 'A visionary leader with extensive experience in youth empowerment and political activism. Under his leadership, Jazba Party has grown into a formidable force for progressive change in Khyber Pakhtunkhwa. He is committed to creating opportunities for young people and ensuring their voices are heard in the political arena.',
-                quote: '"Our youth are not just the future; they are the present. We must empower them today to build a better tomorrow."'
-            },
-            'khidmat': {
-                name: 'Mr. Khidmat Leader',
-                title: 'Chief of Khidmat Party',
-                image: './images/khidmat-chief.jpg',
-                description: 'A dedicated social worker with decades of experience in community service and development. Under his guidance, Khidmat Party has initiated numerous welfare projects across Khyber Pakhtunkhwa. His commitment to serving the underprivileged has earned him respect across party lines.',
-                quote: '"True leadership is measured by service to others. We must always put the community first in everything we do."'
-            },
-            'ittehad': {
-                name: 'Mr. Ittehad Leader',
-                title: 'Chief of Ittehad Party',
-                image: './images/ittehad-chief.jpg',
-                description: 'A seasoned politician known for his bridge-building abilities and commitment to national unity. He has successfully brought together diverse groups to work for common goals. Under his leadership, Ittehad Party has become a symbol of cooperation and consensus politics.',
-                quote: '"In unity lies strength. When we work together, there is no challenge we cannot overcome."'
-            }
-        };
-
-        // Load party chief information
-        document.addEventListener('DOMContentLoaded', function () {
-            const party = 'jazba'; // This should be set based on the page
-            const chief = partyChiefs[party];
-
-            if (chief) {
-                // Set chief image with fallback
-                const chiefImage = document.getElementById('chiefImage');
-                chiefImage.src = chief.image;
-                chiefImage.onerror = function () {
-                    this.src = './images/default-chief.jpg';
-                };
-
-                // Set chief details
-                document.getElementById('chiefName').textContent = chief.name;
-                document.getElementById('chiefTitle').textContent = chief.title;
-                document.getElementById('chiefDescription').textContent = chief.description;
-                document.getElementById('chiefQuote').textContent = chief.quote;
-            }
-        });
+        document.addEventListener('DOMContentLoaded', loadPartyData);
+        window.loadPartyMembers = loadPartyData;
     </script>
 </body>
 
