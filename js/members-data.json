@@ -295,7 +295,7 @@
   },
   {
     "Id": "ZabihUllah",
-    "type": "member",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00746",
     "Name": "Zabih Ullah",
     "position": "Minister",
@@ -308,7 +308,7 @@
   },
   {
     "Id": "SaidAzanKhan",
-    "type": "member",
+    "type": "cabinet,member",
     "Membership_no": "KPYA-25-00745",
     "Name": "Said Azan Khan",
     "position": "Minister",
@@ -340,6 +340,30 @@
     "Image": "./images/Danial.JPG"
   },
   {
+    "Id": "nizar",
+    "type": "member",
+    "Membership_no": "KPYA-18-00101",
+    "Name": "Engr. Nizar Ahmad Jadoon",
+    "position": "Spokesperson",
+    "Father_Name": "Khan Laiq Jadoon",
+    "Cnic": "16202-0110362-7",
+    "District": "Swabi",
+    "Contact_no": "0341-9106877",
+    "Image": "../images/Nizaar.jpeg"
+  },
+  {
+    "Id": "aizaz",
+    "type": "member",
+    "Membership_no": "KPYA-18-00102",
+    "Name": "Dr Aizaz Ali Shah",
+    "position": "Governor",
+    "Father_Name": "N/A",
+    "Cnic": "N/A",
+    "District": null,
+    "Contact_no": "091-5700041",
+    "Image": "../images/aizaz.jpeg"
+  },
+  {
     "Id": "usama",
     "type": "member",
     "Membership_no": "KPYA-19-00101",
@@ -363,31 +387,6 @@
     "Contact_no": "091-5700041",
     "Image": "../images/Fatima.jpeg"
   },
-  {
-    "Id": "aizaz",
-    "type": "member",
-    "Membership_no": "KPYA-18-00102",
-    "Name": "Dr Aizaz Ali Shah",
-    "position": "Governor",
-    "Father_Name": "N/A",
-    "Cnic": "N/A",
-    "District": null,
-    "Contact_no": "091-5700041",
-    "Image": "../images/aizaz.jpeg"
-  },
-  {
-    "Id": "nizar",
-    "type": "member",
-    "Membership_no": "KPYA-18-00101",
-    "Name": "Engr. Nizar Ahmad Jadoon",
-    "position": "Spokesperson",
-    "Father_Name": "Khan Laiq Jadoon",
-    "Cnic": "16202-0110362-7",
-    "District": "Swabi",
-    "Contact_no": "0341-9106877",
-    "Image": "../images/Nizaar.jpeg"
-  },
-
   {
     "Id": "AamirNiaz",
     "type": "member",
