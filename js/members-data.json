@@ -686,7 +686,7 @@
     "Cnic": "16204-0453103-3",
     "District": "Swabi",
     "Contact_no": "03439877011",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Awais Khan.jpeg"
   },
   {
     "Id": "AyazKhanKhalil",
@@ -818,7 +818,7 @@
     "Cnic": "17301-9588069-3",
     "District": null,
     "Contact_no": "0332-3919527",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Dr Atif.jpeg"
   },
   {
     "Id": "EngrTauseefAhmad",
@@ -1202,7 +1202,7 @@
     "Cnic": "32103-1158291-5 ",
     "District": null,
     "Contact_no": "03439354255",
-    "Image": "./images/Members Pic/Qazi Jamil ul Hasan"
+    "Image": "./images/Members Pic/Qazi Jamil ul Hasan.jpeg"
   },
   {
     "Id": "JaveriaDurrani",
@@ -2138,11 +2138,11 @@
     "Membership_no": "KPYA-25-00668",
     "Name": "Rahid jamal",
     "position": "YOUTH MPA",
-    "Father_Name": "Noor Jamal ",
+    "Father_Name": "Noor Jamal",
     "Cnic": "21202-9487835-5",
     "District": null,
     "Contact_no": "03129099021",
-    "Image": "./images/Members Pic/Rashid Ahmad.jpeg"
+    "Image": "./images/Members Pic"
   },
   {
     "Id": "RashidAhmad",
