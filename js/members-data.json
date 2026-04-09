@@ -166,7 +166,7 @@
     "Cnic": "16202-4824739-5",
     "District": "Swabi",
     "Contact_no": "03351560282",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Haroon.jpeg"
   },
   {
     "Id": "MuhammadMaaz",
@@ -283,7 +283,7 @@
     "Cnic": "21508-1424607-1",
     "District": "NWTD",
     "Contact_no": "0331-2227770",
-    "Image": "./images/Members Pic/Saeed Ullah Khan Wazir.jpeg  "
+    "Image": "./images/Members Pic/Saeed Ullah Khan Wazir.jpeg"
   },
   {
     "Id": "bilal",
@@ -331,7 +331,7 @@
     "Id": "danial",
     "type": "member",
     "Membership_no": "KPYA-16-00001",
-    "Name": "Danial Ahmad Paracha",
+    "Name": "Danial Ahmed Paracha",
     "position": "Chairman",
     "Father_Name": "Ayaz Ahmad",
     "Cnic": "N/A",
@@ -896,7 +896,7 @@
     "Id": "Fazeelatshinwari",
     "type": "member",
     "Membership_no": "KPYA-25-00551",
-    "Name": "Dr. Fazeelat shinwari",
+    "Name": "Dr. Fazeelat Shinwari",
     "position": "YOUTH MPA",
     "Father_Name": "Muhammad Zahid ",
     "Cnic": "17301-5004372-2",
@@ -1022,7 +1022,7 @@
     "Cnic": "16101-6997667-5",
     "District": null,
     "Contact_no": "03190190780",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Hasnain Khan.jpeg"
   },
   {
     "Id": "Hassanjan",
@@ -1034,7 +1034,7 @@
     "Cnic": "17101-7210685-9",
     "District": null,
     "Contact_no": "03487989883",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Hassan Jan.jpeg"
   },
   {
     "Id": "HuzaifaArbab",
@@ -1070,7 +1070,7 @@
     "Cnic": "16101-0870448-9",
     "District": null,
     "Contact_no": "03309238933",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Huzaifa Ahmad Khan.jpeg"
   },
   {
     "Id": "Ihsanullah",
@@ -1142,7 +1142,7 @@
     "Cnic": "15201-5283818-3",
     "District": null,
     "Contact_no": "03431112421",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Irshad Ahmad.jpeg"
   },
   {
     "Id": "Ismail",
@@ -1169,16 +1169,16 @@
     "Image": "./images/Members Pic/Ismail Jadoon.jpeg"
   },
   {
-    "Id": "IzharUdDin",
+    "Id": "IzharUhHaq",
     "type": "member",
     "Membership_no": "KPYA-25-00578",
-    "Name": "Izhar Ud Din",
+    "Name": "Muhammad Izhar Ul Haq",
     "position": "YOUTH MPA",
-    "Father_Name": "M IRShad ",
+    "Father_Name": "Muhammad Irshad Ul Haq",
     "Cnic": "11101-9226993-3",
     "District": null,
     "Contact_no": "0335-9797391",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Izhar ul Haq.jpeg"
   },
   {
     "Id": "JamalShah",
@@ -1202,7 +1202,7 @@
     "Cnic": "32103-1158291-5 ",
     "District": null,
     "Contact_no": "03439354255",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Qazi Jamil ul Hasan"
   },
   {
     "Id": "JaveriaDurrani",
@@ -1238,7 +1238,7 @@
     "Cnic": "14301-8689141-1",
     "District": null,
     "Contact_no": "03348266481",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Junaid Ali Shah Bukhari.jpeg"
   },
   {
     "Id": "Junaidwazir",
@@ -1310,7 +1310,7 @@
     "Cnic": "17301-4338558-9",
     "District": null,
     "Contact_no": "0334 9142899",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/M Bilal.jpeg"
   },
   {
     "Id": "MSafdarAlam",
@@ -1419,7 +1419,7 @@
     "Cnic": "17103-0386019-3",
     "District": "Charsadda",
     "Contact_no": "03025997097",
-    "Image": "./images/Members Pic/",
+    "Image": "./images/Members Pic/Dr Medrar Ullah.jpeg",
     "description": "A respected medical professional and community leader, Dr Medrar Ullah brings a unique perspective to political leadership. His dedication to healthcare reform and youth development has made him an invaluable asset to the Ittehad Party. He works tirelessly to bridge the gap between healthcare and governance.",
     "quote": "Unity is not just a word; it is a commitment to stand together for the betterment of our people and our province."
   },
@@ -1463,13 +1463,13 @@
     "Id": "MoatasimShah",
     "type": "member",
     "Membership_no": "KPYA-25-00604",
-    "Name": "Moatasim Shah",
+    "Name": "Dr Moatasim Shah",
     "position": "YOUTH MPA",
     "Father_Name": "Gharib Shah ",
     "Cnic": "17301-1622708-1",
     "District": null,
     "Contact_no": "03159807798",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Moatasim Shah.jpeg"
   },
   {
     "Id": "Mohammadmustafaalishah",
@@ -1505,7 +1505,7 @@
     "Cnic": "17101-1605307-7",
     "District": null,
     "Contact_no": "03421000681",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Mohsin Jan.jpeg"
   },
   {
     "Id": "MoizAzam",
@@ -1577,7 +1577,7 @@
     "Cnic": "17102-2934198-3",
     "District": null,
     "Contact_no": "03010908082",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Abdullah Shah.jpeg"
   },
   {
     "Id": "MAbdurRehmanSiddiqui",
@@ -1613,7 +1613,7 @@
     "Cnic": "15101-1191698-5",
     "District": null,
     "Contact_no": "03369398499",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Alyan Khan.jpeg"
   },
   {
     "Id": "MuhammadAmad",
@@ -1625,7 +1625,7 @@
     "Cnic": "17301-8869115-9",
     "District": null,
     "Contact_no": "03148131309",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Amad.jpeg"
   },
   {
     "Id": "MuhammadAmeerHamza",
@@ -1637,7 +1637,7 @@
     "Cnic": "17301-0400230-1",
     "District": null,
     "Contact_no": "03112244007",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Ameer Hamza.jpeg"
   },
   {
     "Id": "MuhammadArsalan",
@@ -1673,7 +1673,7 @@
     "Cnic": "11101-7693388-9",
     "District": null,
     "Contact_no": "03431908497",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Awais Khan.jpeg"
   },
   {
     "Id": "MuhammadHamid",
@@ -1697,7 +1697,7 @@
     "Cnic": "16102-4736655-3",
     "District": null,
     "Contact_no": "03159819453",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Hanif Khan.jpeg"
   },
   {
     "Id": "MuhammadHasanat",
@@ -1769,7 +1769,7 @@
     "Cnic": "15102-0393296-3",
     "District": null,
     "Contact_no": "03439244308",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Ilyas.jpeg"
   },
   {
     "Id": "Muhammadimran",
@@ -1781,7 +1781,7 @@
     "Cnic": "21601-7114096-9",
     "District": null,
     "Contact_no": "03058668278",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Imran.jpeg"
   },
   {
     "Id": "MuhammadIrfan",
@@ -1793,7 +1793,7 @@
     "Cnic": "15202-3172536-1",
     "District": null,
     "Contact_no": "03468297949",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Irfan.jpeg"
   },
   {
     "Id": "MuhammadJunaid",
@@ -1865,7 +1865,7 @@
     "Cnic": "21201-2440399-1",
     "District": null,
     "Contact_no": "03339620489",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Rafiq.jpeg"
   },
   {
     "Id": "Muhammadsalman",
@@ -1889,7 +1889,7 @@
     "Cnic": "21505-0949554-5",
     "District": null,
     "Contact_no": "03369526490",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Muhammad Saud.jpeg"
   },
   {
     "Id": "MuhammadsawoodAhmad",
@@ -2142,7 +2142,7 @@
     "Cnic": "21202-9487835-5",
     "District": null,
     "Contact_no": "03129099021",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Rashid Ahmad.jpeg"
   },
   {
     "Id": "RashidAhmad",
@@ -2166,7 +2166,7 @@
     "Cnic": "17301-9441686-7",
     "District": null,
     "Contact_no": "03125996974",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Razgul Khan.jpeg"
   },
   {
     "Id": "SaadAhmad",
@@ -2298,7 +2298,7 @@
     "Cnic": "15602-2503037-2",
     "District": null,
     "Contact_no": null,
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Female Icon.png"
   },
   {
     "Id": "SaraKhan",
@@ -2310,7 +2310,7 @@
     "Cnic": "13501-2443736-0",
     "District": null,
     "Contact_no": null,
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Female Icon.png"
   },
   {
     "Id": "SareerKhan",
@@ -2346,7 +2346,7 @@
     "Cnic": "17101-7841731-4",
     "District": null,
     "Contact_no": null,
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Female Icon.png"
   },
   {
     "Id": "Shadabkhan",
@@ -2412,13 +2412,13 @@
     "Id": "SheerazAliBasskhan(SAẞK)",
     "type": "member",
     "Membership_no": "KPYA-25-00691",
-    "Name": "Sheeraz Ali Bass khan(SAẞK)",
+    "Name": "Sheeraz Ali",
     "position": "YOUTH MPA",
     "Father_Name": "Muhammad Haneef",
     "Cnic": "15503-8804167-1",
     "District": null,
     "Contact_no": "03461766760",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Sheeraz Ali.jpeg"
   },
   {
     "Id": "ShehriyarAlamKhan",
@@ -2442,7 +2442,7 @@
     "Cnic": "154026-813491-1",
     "District": null,
     "Contact_no": "03431006267",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Shahzad Hussain.jpeg"
   },
   {
     "Id": "ShehrozAbdullah",
@@ -2624,7 +2624,7 @@
     "Cnic": "17301-4788679-7",
     "District": null,
     "Contact_no": "0315-3616144",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Talha Ghani Awan.jpeg"
   },
   {
     "Id": "TariqKhan",
@@ -2745,7 +2745,7 @@
     "Cnic": "21201-5248243-3",
     "District": "Khyber",
     "Contact_no": "0333-3433193",
-    "Image": "./images/Members Pic/",
+    "Image": "./images/Members Pic/Wajid Shah Afridi.jpeg",
     "description": "A dynamic young leader from the tribal areas, Wajid Shah Afridi embodies the spirit of Jazba Party. His passion for youth empowerment and grassroots activism has inspired countless young people to participate in the political process. He advocates for equal opportunities and progressive change.",
     "quote": "Passion without action is merely a dream. We must channel our energy into building a brighter future for every young person in KP."
   },
@@ -2807,7 +2807,7 @@
     "Cnic": "21201-9758544-7",
     "District": null,
     "Contact_no": "03029575259",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Zakir Ullah.jpeg"
   },
   {
     "Id": "Zaryabkhan",
@@ -2834,10 +2834,10 @@
     "Image": "./images/Members Pic/"
   },
   {
-    "Id": "ZohiabBabar",
+    "Id": "ZohaibBabar",
     "type": "member",
     "Membership_no": "KPYA-25-00729",
-    "Name": "Zohiab Babar",
+    "Name": "Zohaib Babar",
     "position": "YOUTH MPA",
     "Father_Name": "Babar Gul",
     "Cnic": "13503-2232851-7",
@@ -2868,7 +2868,7 @@
     "Cnic": "15101-0609406-1",
     "District": "Buner",
     "Contact_no": "03329696290",
-    "Image": "./images/Members Pic/",
+    "Image": "./images/Members Pic/Zubair Khan.jpeg",
     "description": "A dedicated community organizer and social activist, Zubair Khan has been at the forefront of service-oriented leadership. His commitment to welfare programs and community development reflects the core values of the Khidmat Party. He believes in leading by example through selfless service.",
     "quote": "Service to humanity is the highest form of leadership. Together, we can uplift our communities and create lasting change."
   },
@@ -3038,6 +3038,6 @@
     "Cnic": "16202-5761484-7",
     "District": "Swabi",
     "Contact_no": "03445035573",
-    "Image": "./images/Members Pic/"
+    "Image": "./images/Members Pic/Ubaid Ali.jpeg"
   }
 ]
